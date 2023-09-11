@@ -6,3 +6,32 @@
     on that page only (the ones not reused in other pages).
 */
 
+
+.back-landing {
+    background-image: url('https://www.onlytenis.com/blog/wp-content/uploads/2022/02/diferencias-entre-padel-y-tenis.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    background: cover;
+    background-color: black;
+}
+
+.second-bg {
+    background-image: url('https://st4.depositphotos.com/1424188/30935/i/450/depositphotos_309357508-stock-photo-paddle-tennis-player-man-light.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    background: cover;
+    background-color: black;
+
+}
+.final-bg {
+    background-image: url('https://st4.depositphotos.com/1424188/27933/i/450/depositphotos_279338722-stock-photo-paddle-tennis-player-man-light.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    background: cover;
+    background-color: black;
+
+}
+
