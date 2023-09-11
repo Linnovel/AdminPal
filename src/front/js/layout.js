@@ -2,15 +2,11 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
-<<<<<<< HEAD
 import Login from "./component/Login";
 import Register from "./component/Register";
-=======
-
 import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
-import {RegisterClub} from "./pages/registerClub";
->>>>>>> 836690c
+import { RegisterClub } from "./pages/registerClub";
 import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
