@@ -14,6 +14,7 @@
     background-position: top;
     background: cover;
     background-color: black;
+height:620px;    
 }
 
 .second-bg {
@@ -32,6 +33,25 @@
     background-position: top;
     background: cover;
     background-color: black;
+    
 
 }
+
+.boton-main {
+    background-color: #00c221;
+}
+.cart-1 {
+    background-color: #00c221;
+
+}
+
+
+.navbtn {
+    background-color: #00c221;
+
+}
+
+
+
+
 
