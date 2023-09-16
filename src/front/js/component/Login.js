@@ -1,14 +1,17 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/home.css";
 import { useNavigate } from "react-router-dom";
+import logopadel from "../../img/logopadel.png";
 
 const loginUser = {
-	"email": '',
-	"password": ''
-}
+  email: "",
+  password: "",
+};
 
 export const Login = () => {
+
 	const { store, actions } = useContext(Context)
 	const [login, setLogin] = useState(loginUser)
 
@@ -59,7 +62,7 @@ export const Login = () => {
 			</div>
 		</div>
 	);
+
 };
 
 export default Login;
-

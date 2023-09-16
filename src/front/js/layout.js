@@ -15,6 +15,8 @@ import { Home } from "./pages/home";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import ReservasCanchas from "./component/ReservasCanchas";
+
 
 
 //create your first component
@@ -29,10 +31,11 @@ const Layout = () => {
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                    <Navbar />
+                   
                     <Routes>
-
+                    
                         <Route element={<LandingPage />} path="/LandingPage" />
+                        <Route element={<ReservasCanchas />} path="/reservascanchas" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />
                         <Route element={<RegisterUser />} path="/registerUser" />
@@ -44,7 +47,6 @@ const Layout = () => {
                         <Route element={<RegisterPlace />} path="/registerPlace/:id" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
-                    <Footer />
                 </ScrollToTop>
             </BrowserRouter>
         </div>
