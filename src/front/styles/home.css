@@ -6,52 +6,69 @@
     on that page only (the ones not reused in other pages).
 */
 
-
 .back-landing {
-    background-image: url('https://www.onlytenis.com/blog/wp-content/uploads/2022/02/diferencias-entre-padel-y-tenis.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-    background: cover;
-    background-color: black;
-height:620px;    
+  background-image: url("https://www.onlytenis.com/blog/wp-content/uploads/2022/02/diferencias-entre-padel-y-tenis.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  background: cover;
+  background-color: black;
+  height: 740px;
 }
 
 .second-bg {
-    background-image: url('https://st4.depositphotos.com/1424188/30935/i/450/depositphotos_309357508-stock-photo-paddle-tennis-player-man-light.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-    background: cover;
-    background-color: black;
-
+  background-image: url("https://st4.depositphotos.com/1424188/30935/i/450/depositphotos_309357508-stock-photo-paddle-tennis-player-man-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  background: cover;
+  background-color: black;
 }
 .final-bg {
-    background-image: url('https://st4.depositphotos.com/1424188/27933/i/450/depositphotos_279338722-stock-photo-paddle-tennis-player-man-light.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top;
-    background: cover;
-    background-color: black;
-    
-
+  background-image: url("https://media.istockphoto.com/id/1215423687/es/foto/palista-jugador-hombre-pintura-ligera-aislada-fondo-negro.jpg?s=612x612&w=0&k=20&c=tWVfEBTkuxexOOViORe8P0wNuzyqXcNmuyqM0hYnWpU=");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  background: cover;
+  background-color: black;
+  height: 660px;
 }
+
+.back-landing2 {
+  background-image: url("https://st4.depositphotos.com/1424188/30935/i/450/depositphotos_309357508-stock-photo-paddle-tennis-player-man-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  background: cover;
+  background-color: black;
+  height: 780px;
+}
+
+.back-landing3 {
+  background-image: url("https://st4.depositphotos.com/1424188/30935/i/450/depositphotos_309357508-stock-photo-paddle-tennis-player-man-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  background: cover;
+  background-color: black;
+  height: 780px;
+}
+
 
 .boton-main {
-    background-color: #00c221;
+  background-color: #00c221;
 }
 .cart-1 {
-    background-color: #00c221;
-
+  background-color: #00c221;
 }
-
 
 .navbtn {
-    background-color: #00c221;
-
+  background-color: #00c221;
 }
 
-
-
-
-
+.bg-glass1 {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
