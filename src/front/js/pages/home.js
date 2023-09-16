@@ -7,6 +7,7 @@ import Register from "../component/Register";
 import "../../styles/home.css";
 import LandingPage from "../component/LandingPage";
 
+
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 

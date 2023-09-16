@@ -4,12 +4,19 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 import Login from "./component/Login";
 import Register from "./component/Register";
-import { Single } from "./pages/single";
-import injectContext from "./store/appContext";
-import { Navbar } from "./component/navbar";
+import { ClubList } from "./pages/clubList";
+import { RegisterClub } from "./pages/registerClub";
+import { RegisterUser } from "./pages/registerUser";
+import { EditClub } from "./pages/editClub";
+import { DetailClub } from "./pages/detailClub";
+import RegisterPlace from "./pages/registerPlace";
 import LandingPage from "./component/LandingPage";
 import { Home } from "./pages/home";
+import injectContext from "./store/appContext";
+import { Navbar } from "./component/navbar";
+import { Footer } from "./component/footer";
 import ReservasCanchas from "./component/ReservasCanchas";
+
 
 
 //create your first component
@@ -18,20 +25,26 @@ const Layout = () => {
     // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
     const basename = process.env.BASENAME || "";
 
-    if(!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL/ >;
+    if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "") return <BackendURL />;
 
     return (
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                    {/* <Navbar /> */}
+                   
                     <Routes>
-                        <Route element={<Home/>} path="/home"/>
+                    
                         <Route element={<LandingPage />} path="/LandingPage" />
                         <Route element={<ReservasCanchas />} path="/reservascanchas" />
                         <Route element={<Login />} path="/login" />
-                        <Route element={<Register />} path="/register" />                        
-                        <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<Register />} path="/register" />
+                        <Route element={<RegisterUser />} path="/registerUser" />
+                        <Route element={<Home />} path="/" />
+                        <Route element={<RegisterClub />} path="/clubs" />
+                        <Route element={<ClubList />} path="/clublist" />
+                        <Route element={<DetailClub />} path="/detailClub/:id" />
+                        <Route element={<EditClub />} path="/editClub/:id" />
+                        <Route element={<RegisterPlace />} path="/registerPlace/:id" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                 </ScrollToTop>
