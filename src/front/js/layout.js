@@ -4,14 +4,18 @@ import ScrollToTop from "./component/scrollToTop";
 import { BackendURL } from "./component/backendURL";
 import Login from "./component/Login";
 import Register from "./component/Register";
-import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
+import { ClubList } from "./pages/clubList";
 import { RegisterClub } from "./pages/registerClub";
-import { Single } from "./pages/single";
+import { RegisterUser } from "./pages/registerUser";
+import { EditClub } from "./pages/editClub";
+import { DetailClub } from "./pages/detailClub";
+import RegisterPlace from "./pages/registerPlace";
+import LandingPage from "./component/LandingPage";
+import { Home } from "./pages/home";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import LandingPage from "./component/LandingPage";
+
 
 //create your first component
 const Layout = () => {
@@ -31,10 +35,13 @@ const Layout = () => {
                         <Route element={<LandingPage />} path="/LandingPage" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<Register />} path="/register" />
+                        <Route element={<RegisterUser />} path="/registerUser" />
                         <Route element={<Home />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
                         <Route element={<RegisterClub />} path="/clubs" />
-                        <Route element={<Single />} path="/single/:theid" />
+                        <Route element={<ClubList />} path="/clublist" />
+                        <Route element={<DetailClub />} path="/detailClub/:id" />
+                        <Route element={<EditClub />} path="/editClub/:id" />
+                        <Route element={<RegisterPlace />} path="/registerPlace/:id" />
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />

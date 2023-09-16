@@ -4,7 +4,7 @@ import rigoImageUrl from "../../img/rigo-baby.jpg";
 import Login from "../component/Login";
 import Register from "../component/Register";
 import "../../styles/home.css";
-import Register from "../component/Register";
+
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);

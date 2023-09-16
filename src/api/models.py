@@ -7,6 +7,8 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(250), unique=False, nullable=False)
+    name = db.Column(db.String(100), unique=False, nullable=False)
+    last_name= db.Column(db.String(100), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
     club= db.relationship("Club", backref="user", lazy=True)
 
@@ -17,6 +19,8 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "name": self.name,
+            "last_name": self.last_name
             # do not serialize the password, its a security breach
         }
 
@@ -24,9 +28,12 @@ class User(db.Model):
 class Club(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=True, nullable=False)
+    estado = db.Column(db.String(120), unique=False, nullable=False)
+    ciudad = db.Column(db.String(120), unique=False, nullable=False)
+    direccion = db.Column(db.String(200), unique=False, nullable=False)
     description = db.Column(db.String(300), unique=False, nullable=False)
-    id_user= db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
-    place= db.relationship("Place", backref="club", lazy=True)
+    id_user = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+    place = db.relationship("Place", backref="club", lazy=True)
 
 
     def __repr__(self):
@@ -36,7 +43,11 @@ class Club(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "ciudad": self.ciudad,
+            "estado": self.estado,
+            "direccion": self.direccion,
             "description": self.description,
+            "id_user": self.id_user
            
     }
 #modelo de lugares

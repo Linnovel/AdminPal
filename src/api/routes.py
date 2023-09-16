@@ -4,6 +4,8 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Club, Place, Image
 from api.utils import generate_sitemap, APIException
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
+from werkzeug.security import generate_password_hash, check_password_hash
 
 api = Blueprint('api', __name__)
 
@@ -17,7 +19,9 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
-###### users
+
+########### Endpoints de Usuario###################
+
 @api.route('/users', methods=['GET'])
 def get_users():
     users = User.query.all()
@@ -25,7 +29,32 @@ def get_users():
     return jsonify(serialized_user), 200
 
 
-########### Endpoints de Usuario###################
+# create user
+@api.route('/user', methods=['POST'])
+def create_user():
+    data = request.get_json()
+    name = data.get("name", None)
+    last_name = data.get("last_name", None)
+    email= data.get("email", None)
+    password= data.get("password", None)
+     # validamos que el usrio exista
+    user_exist = User.query.filter_by(email=email).first()
+    if user_exist:
+        return jsonify({"error": "User exist"}), 404
+    
+    #si no existe continuamos
+    hashed_password = generate_password_hash(password)
+
+    try:
+        new_user = User(name=name, last_name=last_name, email=email, password=hashed_password, is_active=True)
+        db.session.add(new_user)
+        db.session.commit()
+        return jsonify(new_user.serialize()), 201
+
+    except Exception as error:
+        db.session.rollback()
+        return jsonify(error), 500
+
 #validamos al usuario y le asignamos un token
 @api.route('/login', methods=['POST'])
 def user_login():
@@ -67,17 +96,32 @@ def get_club_by_id(id):
     return jsonify(current_club.serialize()), 200
 
 
+# GET club by id by users
+@api.route('/club/user', methods=['GET'])
+@jwt_required()
+def get_club_by_id_user():
+    token = get_jwt_identity()
+    current_club = Club.query.filter_by(id_user=token["id"]).all() #devuelve un arreglo de objetos
+    if not current_club:
+        return jsonify({"error": "clubs not found"}), 404
+    return  jsonify([club.serialize() for club in current_club]), 200 #serializamos el arreglo de objetos
+
 # [POST] create club
 @api.route('/club', methods=['POST'])
+@jwt_required()
 def create_club():
     data = request.get_json()
+    token = get_jwt_identity()
     name = data.get("name", None)
     description = data.get("description", None)
-    user = data.get("user", None)
+    estado= data.get("estado", None)
+    ciudad= data.get("ciudad", None)
+    direccion= data.get("direccion", None)
+    
 
 
     try:
-        new_club = Club(name=name, description=description, id_user=user)
+        new_club = Club(name=name, description=description, estado=estado, ciudad=ciudad, direccion=direccion, id_user=token["id"])
         db.session.add(new_club)
         db.session.commit()
         return jsonify(new_club.serialize()), 201
@@ -88,10 +132,14 @@ def create_club():
 
 # PUT club
 @api.route('/club/<int:id>', methods=['PUT'])
+@jwt_required()
 def update_club_by_id(id):
     data = request.get_json()
     name = data.get("name", None)
     description = data.get("description", None)
+    estado= data.get("estado", None)
+    ciudad= data.get("ciudad", None)
+    direccion= data.get("direccion", None)
 
     update_club = Club.query.get(id)
     if not update_club:
@@ -100,6 +148,9 @@ def update_club_by_id(id):
     try:
         update_club.name = name
         update_club.description = description
+        update_club.estado= estado
+        update_club.ciudad= ciudad
+        update_club.direccion= direccion
         db.session.commit()
         return jsonify({"club": update_club.serialize()}), 200
 
@@ -110,6 +161,7 @@ def update_club_by_id(id):
 
 # delete a club
 @api.route('/club/<int:id>', methods=['DELETE'])
+@jwt_required()
 def delete_club_by_id(id):
     club_to_delete = Club.query.get(id)
 
@@ -284,3 +336,11 @@ def delete_image_by_id(id):
     except Exception as error:
         db.session.rollback()
         return error, 500
+
+#obtenemos el token
+@api.route("/private", methods=["GET"])
+@jwt_required()
+def get_private_data():
+    user = get_jwt_identity()
+    return jsonify({"data": user}), 200
+
