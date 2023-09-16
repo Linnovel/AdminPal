@@ -21,7 +21,7 @@ export const ReservasCanchas = () => {
             
             <div className="ml-auto ">
               <div className="d-flex align-items-center gap-2 ">
-                <Link to="/home">
+                <Link to="/">
                   <button
                     type="submit"
                     className="btn btn-success mb-2 navbtn fw-bolder"

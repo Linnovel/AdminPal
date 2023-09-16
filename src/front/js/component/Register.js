@@ -35,7 +35,7 @@ export const Register = () => {
         >
           <div className="container">
             <span className="navbar-brand mb-0">
-				<Link to="/home">
+				<Link to="/">
               <img
                 src={logopadel}
                 className="img-fluid"
