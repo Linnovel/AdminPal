@@ -1,15 +1,17 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { ClubForm } from "../component/clubForm";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
+import { Panel } from "../component/panel";
 
 const initialValue = {
     "name": '',
     "description": '',
     "ciudad": '',
     "estado": '',
-    "direccion": ''
+    "direccion": '',
+    "email": '',
+    "phone": ''
 
 }
 
@@ -18,6 +20,22 @@ export const RegisterClub = () => {
     const { store, actions } = useContext(Context)
     const navigate = useNavigate();
     const [dataClub, setDataClub] = useState(initialValue)
+
+    //capturamos el valor de los inputs 
+    const hanndleEvent = (event) => {
+
+        setDataClub({ ...dataClub, [event.target.name]: event.target.value })
+    }
+
+    //enviamos el valor
+    const handleSubmit = async () => {
+        const club = await actions.registerClub(dataClub)
+
+        alert("Club registrado");
+        navigate("/clubList");
+
+
+    }
 
     //validamos que exista un token, si no existe lo enviamos a login
     useEffect(() => {
@@ -29,27 +47,13 @@ export const RegisterClub = () => {
         actions.getUserData();
     }, [store.token]);
 
-    //capturamos el valor de los inputs 
-    const hanndleEvent = (event) => {
-
-        setDataClub({ ...dataClub, [event.target.name]: event.target.value })
-    }
-
-    //enviamos el valor
-    const handleSubmit = () => {
-        actions.registerClub(dataClub);
-        alert("Club registrado")
-        navigate("/clubList");
-    }
-    const SubmitListclubs = async () => {
-        navigate("/clubList");
-    }
 
     return (
         <>
-            <div>{store.userData.email}{'  '}{store.userData.id}</div>
-            <ClubForm submit={handleSubmit} hanndleEvent={hanndleEvent} title={"Registra tu Club"} />
-            <button className="btn btn-primary" onClick={SubmitListclubs}>Ver Clubs</button>
+            <Panel />
+            <div className="back-landing3">
+                <ClubForm submit={handleSubmit} hanndleEvent={hanndleEvent} title={"Registra tu Club"} />
+            </div>
         </>
     );
 };

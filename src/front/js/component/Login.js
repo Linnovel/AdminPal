@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { useNavigate } from "react-router-dom";
-import logopadel from "../../img/logopadel.png";
+
 
 const loginUser = {
-  email: "",
-  password: "",
+	email: "",
+	password: "",
 };
 
 export const Login = () => {
@@ -25,27 +25,32 @@ export const Login = () => {
 
 	const handleSubmit = async () => {
 
-		const result = await actions.login(login);
+		if (await actions.login(login) == false) {
+			alert("Datos Incorrectos")
+			navigate("/login");
+			return;
+		}
+
 		navigate("/clublist");
-		return;
+
 
 	}
 
 
 	return (
 		<div>
-			<div className="container ">
+			<div className="container-fluid back-landing3"  >
 
 				<div className="row">
-					<div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-						<div className="card p-5  border-0 shadow rounded-3 my-5 ">
-							<h2 className="text-center">Accede a tu usuario</h2>
+					<div className="col-sm-9 col-md-7 col-lg-5 mx-auto form-box">
+						<div className="card p-5  border-0 shadow rounded-3 my-5 form">
+							<h2 className="text-center fw-semibold">Accede a tu Cuenta</h2>
 							<form>
 								<div className="mb-3">
 
 									<label htmlFor="exampleInputEmail1" className="form-label" >Correo Electronico {''}<i className="fa-solid fa-at"></i></label>
 									<input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escribe tu Email aqui" onChange={hanndleEvent} />
-									<div id="emailHelp" className="form-text">Nunca compartiremos tu informacion.</div>
+									<h6>Nunca compartiremos tu informacion.</h6>
 								</div>
 								<div className="mb-3">
 									<label htmlFor="exampleInputPassword1" className="form-label">Contraseña {''}<i className="fa-solid fa-lock"></i></label>

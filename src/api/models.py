@@ -32,6 +32,8 @@ class Club(db.Model):
     ciudad = db.Column(db.String(120), unique=False, nullable=False)
     direccion = db.Column(db.String(200), unique=False, nullable=False)
     description = db.Column(db.String(300), unique=False, nullable=False)
+    email = db.Column(db.String(200), unique=False, nullable=False)
+    phone = db.Column(db.BigInteger, unique=False, nullable=False)
     id_user = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     place = db.relationship("Place", backref="club", lazy=True)
 
@@ -47,6 +49,8 @@ class Club(db.Model):
             "estado": self.estado,
             "direccion": self.direccion,
             "description": self.description,
+            "email": self.email,
+            "phone": self.phone,
             "id_user": self.id_user
            
     }
@@ -67,27 +71,26 @@ class Place(db.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "tpe": self.type,
+            "type": self.type,
             "description": self.description,
+            "id_club": self.id_club,
            
     }
 #modelo de imagenes
 class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), unique=True, nullable=False)
-    route = db.Column(db.String(150), unique=False, nullable=False)
-    description = db.Column(db.String(300), unique=False, nullable=False)
+    img_url  = db.Column(db.String(150), unique=False, nullable=False)
     id_place= db.Column(db.Integer, db.ForeignKey("place.id"), nullable=False)
 
 
     def __repr__(self):
-        return f'<Image {self.name}>'
+        return f'<Image {self.img_url}>'
 
     def serialize(self):
         return {
             "id": self.id,
-            "name": self.name,
-            "route": self.route,
-            "description": self.description,
+            "img_url": self.img_url,
+            "id_place": self.id_place
+ 
            
     }

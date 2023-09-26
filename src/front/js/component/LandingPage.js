@@ -9,7 +9,7 @@ export const LandingPage = () => {
   return (
     <>
       <div className="back-landing ">
-      <nav className="navbar sticky-lg-top border-bottom border-body bg-black " data-bs-theme="dark">
+        <nav className="navbar sticky-lg-top border-bottom border-body bg-black " data-bs-theme="dark">
           <div className="container">
             <span className="navbar-brand mb-0">
               <img
@@ -19,28 +19,24 @@ export const LandingPage = () => {
                 height="100px"
               />
             </span>
-            
             <div className="ml-auto ">
-					
-					<div className="d-flex align-items-center gap-2 ">
-					<Link to="/register">
-						<button type="submit" className="btn btn-success mb-2 navbtn fw-bolder">Necesitas un entrenador</button>
-					</Link>
-					<Link to="/register">
-						<button type="submit" className="btn btn-success mb-2 navbtn fw-bolder">Inicia Sesion / Registrate</button>
-					</Link>
-					<Link to="/register">
-						<button type="submit" className="btn btn-success mb-2 navbtn fw-bolder">Eres un club</button>
-					</Link>
-					</div>
-				</div>
+
+              <div className="d-flex align-items-center gap-2 ">
+                <Link to="/login">
+                  <button type="submit" className="btn btn-success mb-2 navbtn fw-bolder">Inicia Sesion / Registrate</button>
+                </Link>
+                <Link to="/clubs">
+                  <button type="submit" className="btn btn-success mb-2 navbtn fw-bolder" >Eres un club</button>
+                </Link>
+              </div>
+            </div>
           </div>
         </nav>
         <div className="container">
-            <h1 className="textslide display-3 text-white fw-bold">
-              Busca el mejor lugar donde jugar con tus amigos
-            </h1>
-            <h2 className="text-white fw-bolder">Utiliza el buscador</h2>
+          <h1 className="textslide display-3 text-white fw-bold">
+            Busca el mejor lugar donde jugar con tus amigos
+          </h1>
+          <h2 className="text-white fw-bolder">Utiliza el buscador</h2>
           <div className="row">
             <div className="">
               <div className="card p-5 border-0  rounded-3 my-5 d-flex flex-row justify-content-center align-items-center gap-4">
@@ -62,26 +58,10 @@ export const LandingPage = () => {
                     placeholder="Elige tu deporte favorito"
                     id="floatingCity"
                   />
-                  <label htmlFor="flotaintInput"  
+                  <label htmlFor="flotaintInput"
                     aria-label="Default select example"  >Horario</label>
-                    
+
                 </div>
-                {/* <div className="form-floating ">
-                  <select
-                    className="form-select mb-2"
-                    aria-label="Default select example"
-                  >
-                    <option defaultValue>Elige un deporte</option>
-                    <option value="1">Padel</option>
-                    <option value="2">Futbol</option>
-                    <option value="3">Bolas Criollas</option>
-                    <option value="4">Futbol Sala</option>
-                    <option value="5">Spinning</option>
-                    <option value="6">Crossfit</option>
-                    <option value="7">Tennis</option>
-                    <option value="8">Squash</option>
-                  </select>
-                </div>  */}
                 <button type="submit" className="boton-main  btn btn-success btn-lg mb-2">Buscar</button>
               </div>
             </div>
@@ -105,7 +85,7 @@ export const LandingPage = () => {
                 />
                 <div className="card-body ">
                   <div className="card-text text-center mb-2">
-                  Cancha nombre y direccion.
+                    Cancha nombre y direccion.
                   </div>
                   <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
                     Reserva este campo
@@ -123,7 +103,7 @@ export const LandingPage = () => {
                 />
                 <div className="card-body ">
                   <div className="card-text text-center mb-2">
-                  Cancha nombre y direccion.
+                    Cancha nombre y direccion.
                   </div>
                   <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
                     Reserva este campo
@@ -141,7 +121,7 @@ export const LandingPage = () => {
                 />
                 <div className="card-body ">
                   <div className="card-text text-center mb-2">
-                  Cancha nombre y direccion..
+                    Cancha nombre y direccion..
                   </div>
                   <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
                     Reserva este campo

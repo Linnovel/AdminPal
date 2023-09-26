@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logopadel from "../../img/logopadel.png";
 import padelmodelo from "../../img/padelmodelo.png";
@@ -17,17 +18,22 @@ const registerValue = {
 export const Register = () => {
   const { store, actions } = useContext(Context);
   const [register, setRegister] = useState(registerValue);
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setRegister({ ...register, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = async () => {
-    const result = await actions.registerUser(setRegister);
+  const handleSubmit = () => {
+    const result = actions.registerUser(register);
+    alert("Registro Exitoso!")
+    navigate("/login")
+    return
   };
 
   return (
     <>
+
       <div className="back-landing3">
         <nav
           className="navbar  border-bottom border-body bg-black "
@@ -35,21 +41,21 @@ export const Register = () => {
         >
           <div className="container">
             <span className="navbar-brand mb-0">
-				<Link to="/">
-              <img
-                src={logopadel}
-                className="img-fluid"
-                width="100"
-                height="100px"
-				/>
-				</Link>
+              <Link to="/">
+                <img
+                  src={logopadel}
+                  className="img-fluid"
+                  width="100"
+                  height="100px"
+                />
+              </Link>
             </span>
           </div>
         </nav>
         <div className="container ">
-          <div className="row">
-            <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-              <div className="card p-5  border-0 shadow rounded-3 my-5">
+          <div className="row ">
+            <div className="col-sm-9 col-md-7 col-lg-5  ancho-form">
+              <div className="card p-5  border-0 shadow rounded-3 my-2 form  ">
                 <h2 className="text-center">
                   Registro de Usuario {""}
                   <i className="fa-solid fa-user"></i>
@@ -60,28 +66,26 @@ export const Register = () => {
                       Nombre
                     </label>
                     <input
-                      type="name"
+                      type="text"
                       name="name"
                       className="form-control"
                       aria-describedby="emailHelp"
                       placeholder="Escribe tu nombre aqui"
                       onChange={handleChange}
                     />
-                    <div id="emailHelp"></div>
                   </div>
                   <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">
                       Apellido
                     </label>
                     <input
-                      type="apellido"
-                      name="apellido"
+                      type="text"
+                      name="last_name"
                       className="form-control"
                       aria-describedby="emailHelp"
                       placeholder="Escribe tu apellido aqui"
                       onChange={handleChange}
                     />
-                    <div id="emailHelp"></div>
                   </div>
                   <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">
@@ -91,14 +95,10 @@ export const Register = () => {
                       type="email"
                       name="email"
                       className="form-control"
-                      id="exampleInputEmail1"
                       aria-describedby="emailHelp"
                       placeholder="Escribe tu Email aqui"
                       onChange={handleChange}
                     />
-                    <div id="emailHelp" className="form-text">
-                      We'll never share your email with anyone else.
-                    </div>
                   </div>
                   <div className="mb-3">
                     <label
@@ -111,7 +111,6 @@ export const Register = () => {
                       type="password"
                       name="password"
                       className="form-control"
-                      id="exampleInputPassword1"
                       placeholder="Escribe tu contraseña aqui"
                       onChange={handleChange}
                     />

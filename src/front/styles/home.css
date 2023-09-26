@@ -16,6 +16,7 @@
   height: 740px;
 }
 
+
 .second-bg {
   background-image: url("https://st4.depositphotos.com/1424188/30935/i/450/depositphotos_309357508-stock-photo-paddle-tennis-player-man-light.jpg");
   background-repeat: no-repeat;
@@ -72,3 +73,46 @@
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+.ancho-form{
+  width: 580px;
+  
+}
+
+.img{
+  width: 240px;
+  height: 260px;
+}
+.ancho{
+  width: 93%;
+}
+
+
+.form {
+
+  background: rgba(43, 42, 42, 0.8); 
+  backdrop-filter: blur(12px);
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  color: #f8f3f3;
+
+  }
+
+  nav,
+  .offcanvas {
+    background-color: #1e293b;
+  }
+  .navbar-toggler {
+    border: none;
+  }
+  .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-nav > li:hover {
+      background-color: #0dcaf0;
+    }
+  }
+

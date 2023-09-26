@@ -5,10 +5,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			token: "",
 			userData: {},
 			clubData: {},
-			clubslist: []
+			clubslist: [],
+			placeslist: [],
+			placeData: {},
+			imageData: [],
+			imagesList: [],
+			dataUser: {}
+
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
+			// Usuarios
 			login: async (user) => {
 				try {
 					const store = getStore()
@@ -27,11 +33,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error loading message from backend", error)
 				}
 			},
-			registerUser: async (dataClub) => {
+			registerUser: async (userData) => {
 				try {
 					const store = getStore()
 					const response = await fetch(`${store.backendUrl}/api/user`, {
-						body: JSON.stringify(dataClub),
+						body: JSON.stringify(userData),
 						method: "POST",
 						headers: {
 							"content-type": "application/json",
@@ -69,6 +75,52 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error)
 				}
 			},
+			getUserIdData: async (id) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/user/${id}`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
+					const data = await response.json();
+					if (response.status === 401) {
+						alert("No autorizado");
+						return;
+					}
+					//console.log(data);
+					setStore({ dataUser: data });
+
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			editUser: async (id_user, dataUser) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/user/${id_user}`, {
+						body: JSON.stringify(dataUser),
+						method: "PUT",
+						headers: {
+							"content-type": "application/json",
+							"Authorization": `Bearer ${store.token}`,
+						},
+					})//fin del fetch
+
+					const data = await response.json();
+					if (response.status !== 201) {
+						return false;
+					} else {
+						setStore({ UserData: data });
+						return true;
+					}
+				} catch (error) {
+					console.log(error)
+				}
+
+			},
+
+			//clubs
 			registerClub: async (dataClub) => {
 				try {
 					const store = getStore()
@@ -86,6 +138,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (response.status !== 201) {
 						return false;
 					} else {
+						setStore({ clubData: data });
 						return true;
 					}
 				} catch (error) {
@@ -109,6 +162,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (response.status !== 201) {
 						return false;
 					} else {
+						setStore({ clubData: data });
 						return true;
 					}
 				} catch (error) {
@@ -143,9 +197,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 							Authorization: `Bearer ${store.token}`,
 						},
 					});
-					const data = await response.json();
-					setStore({ clubslist: data });
-					//console.log(store.clubslist);
+					if (response.status === 401) {
+						alert("No autorizado");
+						return;
+					}
+					if (response.status === 404) {
+						alert("La lista de Clubs esta vacia");
+						return;
+					}
+					if (response.status === 200) {
+						const data = await response.json();
+						setStore({ clubslist: data });
+						return data.length;
+
+					}
 
 
 				} catch (error) {
@@ -172,15 +237,199 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error)
 				}
 			},
+			//cierre de sesion
 			logout: () => {
 
 				setStore({ token: "" });
+			},
+			//lugares
+			registerPlace: async (id_club, dataPlace) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/place/${id_club}`, {
+						body: JSON.stringify(dataPlace),
+						method: "POST",
+						headers: {
+							"content-type": "application/json",
+							"Authorization": `Bearer ${store.token}`,
+						},
+
+					})//fin del fetch
+
+					const data = await response.json();
+					if (response.status !== 201) {
+						return false;
+					} else {
+						setStore({ placeData: data });
+						return true;
+					}
+				} catch (error) {
+					console.log(error)
+				}
+
+			},
+			getPlaces: async (id_club) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/club/place/${id_club}`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
+					if (response.status === 401) {
+						alert("No autorizado");
+						return;
+					}
+					if (response.status === 200) {
+						const data = await response.json();
+						setStore({ placeslist: data });
+						return data.length;
+
+					}
+
+
+
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			getPlaceData: async (id) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/place/${id}`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
+					const data = await response.json();
+					if (response.status === 401) {
+						alert("No autorizado");
+						return;
+					}
+					setStore({ placeData: data });
+
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			editPlace: async (id, dataPlace) => {
+
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/place/${id}`, {
+						body: JSON.stringify(dataPlace),
+						method: "PUT",
+						headers: {
+							"content-type": "application/json",
+							"Authorization": `Bearer ${store.token}`,
+						},
+					})//fin del fetch
+
+					const data = await response.json();
+					if (response.status !== 201) {
+						return false;
+					} else {
+						setStore({ placeData: data });
+						return true;
+					}
+				} catch (error) {
+					console.log(error)
+				}
+
+			},
+			deletePlace: async (id) => {
+				try {
+					const store = getStore();
+					const response = await fetch(`${store.backendUrl}/api/place/${id}`, {
+						method: "DELETE",
+						headers: {
+							"Content-Type": "application/json",
+							"Authorization": `Bearer ${store.token}`,
+						},
+					});
+					const data = await response.json();
+					if (response.status !== 201) {
+						return false;
+					} else {
+						return true;
+					}
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			//imagenes
+			registerImage: async (id_place, image) => {
+				try {
+					//console.log(image)
+					const store = getStore()
+					const formData = new FormData()
+					formData.append("image", image.image[0])
+					const response = await fetch(`${store.backendUrl}/api/image/${id_place}`, {
+						body: formData,
+						method: "POST",
+						headers: {
+							"Authorization": `Bearer ${store.token}`,
+						},
+
+					})//fin del fetch
+
+					const data = await response.json();
+					if (response.status !== 201) {
+						return false;
+					} else {
+						return true;
+					}
+				} catch (error) {
+					console.log(error)
+				}
+
+			},
+			getImage: async (id_place) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/image/place/${id_place}`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
+					const data = await response.json();
+					if (response.status === 401) {
+						alert("No autorizado");
+						return;
+					}
+					setStore({ imageData: data });
+
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			getAllImage: async (id_place) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/place/image/${id_place}`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
+					const data = await response.json();
+					if (response.status === 401) {
+						alert("No autorizado");
+						return;
+					}
+					setStore({ imagesList: data });
+
+				} catch (error) {
+					console.log(error)
+				}
 			},
 
 
 
 
-			//
+
+
+
+			//************ */
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
