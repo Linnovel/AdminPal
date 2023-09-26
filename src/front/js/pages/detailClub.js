@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { Panel } from "../component/panel";
+
 
 
 
@@ -39,7 +39,7 @@ export const DetailClub = () => {
 
     return (
         <>
-            <Panel />
+
             <div className="back-landing3 container-fluid">
                 <div className="row">
                     <div className="card col-sm-9 col-md-7 col-lg-5 mx-auto mt-5 form d-flex justify-content-center">

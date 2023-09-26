@@ -10,29 +10,6 @@ export const LandingPage = () => {
   return (
     <>
       <div className="back-landing ">
-        <nav className="navbar sticky-lg-top border-bottom border-body bg-black " data-bs-theme="dark">
-          <div className="container">
-            <span className="navbar-brand mb-0">
-              <img
-                src={logopadel}
-                className="img-fluid"
-                width="100"
-                height="100px"
-              />
-            </span>
-            <div className="ml-auto ">
-
-              <div className="d-flex align-items-center gap-2 ">
-                <Link to="/login">
-                  <button type="submit" className="btn btn-success mb-2 navbtn fw-bolder">Inicia Sesion / Registrate</button>
-                </Link>
-                <Link to="/clubs">
-                  <button type="submit" className="btn btn-success mb-2 navbtn fw-bolder" >Eres un club</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </nav>
         <div className="container">
           <h1 className="textslide display-3 text-white fw-bold">
             Busca el mejor lugar donde jugar con tus amigos
@@ -128,7 +105,7 @@ export const LandingPage = () => {
                   <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
                     Reserva este campo
                   </button>
-                  
+
                 </div>
               </div>
             </div>
@@ -150,18 +127,18 @@ export const LandingPage = () => {
                       <div className="fw-bold">Registrate</div>
                     </Link>
                     <div className="container p-2">
-                    <div className="row">
-                      <div className="col-4">
-                        Padel <i className="fa-solid fa-table-tennis-paddle-ball"></i>
-                      </div>
-                      <div className="col-4">
-                        Futbol <i className="fa-solid fa-futbol"></i>
-                      </div>
-                      <div className="col-4">
-                        Basketball <i className="fa-solid fa-basketball"></i>
+                      <div className="row">
+                        <div className="col-4">
+                          Padel <i className="fa-solid fa-table-tennis-paddle-ball"></i>
+                        </div>
+                        <div className="col-4">
+                          Futbol <i className="fa-solid fa-futbol"></i>
+                        </div>
+                        <div className="col-4">
+                          Basketball <i className="fa-solid fa-basketball"></i>
+                        </div>
                       </div>
                     </div>
-                  </div>
                   </div>
                 </div>
               </div>
@@ -169,7 +146,7 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

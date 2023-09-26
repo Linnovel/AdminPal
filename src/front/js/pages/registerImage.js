@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { ImageForm } from "../component/imageForm";
-import { Panel } from "../component/panel";
+
 
 const initialValue = {
     "image": '',
@@ -47,7 +47,6 @@ export const RegisterImage = () => {
 
     return (
         <>
-            <Panel />
 
             <div className="container-fluid back-landing3 ">
                 <ImageForm hanndleEvent={hanndleEvent} place={store.placeData.name} submit={() => handleSubmit(id_place)} title="Cargar Imagen" />

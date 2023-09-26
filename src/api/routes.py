@@ -446,5 +446,8 @@ def delete_image_by_id(id):
 @jwt_required()
 def get_private_data():
     user = get_jwt_identity()
-    return jsonify({"data": user}), 200
+    current_user = User.query.get(user["id"])
+    if not current_user:
+        return jsonify({"error": "user not found"}), 404
+    return jsonify(current_user.serialize()), 200
 

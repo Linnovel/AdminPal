@@ -34,23 +34,6 @@ export const Register = () => {
     <>
 
       <div className="back-landing3">
-        <nav
-          className="navbar  border-bottom border-body bg-black "
-          data-bs-theme="dark"
-        >
-          <div className="container">
-            <span className="navbar-brand mb-0">
-              <Link to="/">
-                <img
-                  src={logopadel}
-                  className="img-fluid"
-                  width="100"
-                  height="100px"
-                />
-              </Link>
-            </span>
-          </div>
-        </nav>
         <div className="container ">
           <div className="row ">
             <div className="col-sm-9 col-md-7 col-lg-5  ancho-form">

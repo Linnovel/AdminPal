@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import { Panel } from "../component/panel";
+
 
 
 
@@ -38,12 +38,10 @@ export const ClubList = () => {
     }, [store.token]);
 
     return (
-
-
         <>
-            <Panel />
+
             <div className="back-landing3">
-                <div className=" container ">
+                <div className=" container-fluid ">
                     <div className=" row d-flex justify-content-center">
                         <ul className="list-group col-8  mt-5">
 

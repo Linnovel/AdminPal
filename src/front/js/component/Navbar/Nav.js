@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import NavbarRegistros from "./NavbarRegistros";
+import { Panel } from "../panel";
 
 const Nav = () => {
   const location = useLocation();
@@ -12,8 +13,9 @@ const Nav = () => {
       {navbarPath.includes(location.pathname) ? (
         <Navbar />
       ) : (
-        <NavbarRegistros />
-      )}
+        <Panel />
+      )
+      }
     </>
   );
 };

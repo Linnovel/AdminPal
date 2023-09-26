@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { Panel } from "../component/panel";
+
 
 
 
@@ -41,7 +41,7 @@ export const DetailPlace = () => {
     }, [store.token]);
     return (
         <>
-            <Panel />
+
             <div className="back-landing3">
                 <div className="container-fluid row">
                     <div className="card col-sm-9 col-md-7 col-lg-5 mx-auto mt-5 form">

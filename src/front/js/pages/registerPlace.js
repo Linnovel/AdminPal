@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PlaceForm } from "../component/placeForm";
-import { Panel } from "../component/panel";
+
 
 
 const initialValue = {
@@ -53,7 +53,7 @@ export const RegisterPlace = () => {
 
     return (
         <>
-            <Panel />
+
             <div className="back-landing3">
                 <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id_club)} title="Guardar" />
                 <button onClick={() => Submit(id_club)}>ver mi lista de lugares</button>

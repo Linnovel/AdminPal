@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ClubForm } from "../component/clubForm";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import { Panel } from "../component/panel";
+
 
 
 export const EditClub = () => {
@@ -50,7 +50,7 @@ export const EditClub = () => {
 
     return (
         <>
-            <Panel />
+
             <div className="back-landing3">
                 <ClubForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id)} name={store.clubData.name} email={store.clubData.email}
                     phone={store.clubData.phone}

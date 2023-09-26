@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import { Panel } from "../component/panel";
+
 
 
 
@@ -10,9 +10,9 @@ export const EditUser = () => {
     const navigate = useNavigate();
 
     const userValue = {
-        "name": `${store.dataUser.name}`,
-        "last_name": `${store.dataUser.last_name}`,
-        "email": `${store.dataUser.email}`,
+        "name": `${store.userData.name}`,
+        "last_name": `${store.userData.last_name}`,
+        "email": `${store.userData.email}`,
         "password": ""
     }
 
@@ -37,13 +37,13 @@ export const EditUser = () => {
             return;
         }
         actions.getUserData();
-        actions.getUserIdData(store.userData.id);
+        //actions.getUserIdData(store.userData.id);
     }, [store.token]);
 
-
+    console.log(store.userData)
     return (
         <>
-            <Panel />
+
             <div className="back-landing3">
                 <div className="container ">
                     <div className="row ">
@@ -53,24 +53,24 @@ export const EditUser = () => {
                                 <form>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputName" className="form-label" >Nombre</label>
-                                        <input type="text" name="name" defaultValue={store.dataUser.name} className="form-control" onChange={handleChange} />
+                                        <input type="text" name="name" defaultValue={store.userData.name} className="form-control" onChange={handleChange} />
                                         <div id="emailHelp" ></div>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label" >Apellido</label>
-                                        <input type="text" name="last_name" defaultValue={store.dataUser.last_name} className="form-control" onChange={handleChange} />
+                                        <input type="text" name="last_name" defaultValue={store.userData.last_name} className="form-control" onChange={handleChange} />
                                         <div id="emailHelp"></div>
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputEmail1" className="form-label" >Correo Electronico</label>
-                                        <input type="email" name="email" defaultValue={store.dataUser.email} className="form-control" id="exampleInputEmail1" onChange={handleChange} />
+                                        <input type="email" name="email" defaultValue={store.userData.email} className="form-control" id="exampleInputEmail1" onChange={handleChange} />
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
                                         <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Escribe tu contraseña aqui" onChange={handleChange} />
                                     </div>
                                 </form>
-                                <button type="button" className="btn btn-primary" onClick={() => handleSubmit(store.dataUser.id)}>Actualizar</button>
+                                <button type="button" className="btn btn-primary" onClick={() => handleSubmit(store.userData.id)}>Actualizar</button>
                             </div>
                         </div>
                     </div>

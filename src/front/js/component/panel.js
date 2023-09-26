@@ -29,6 +29,7 @@ export const Panel = () => {
         navigate("/");
     }
     //validamos que exista un token, si no existe lo enviamos a login
+    /*
     useEffect(() => {
         if (store.token === "" || !store.token) {
             alert("No autenticado")
@@ -37,7 +38,7 @@ export const Panel = () => {
         }
         actions.getUserData();
     }, [store.token]);
-
+*/
     return (
         <nav className="navbar navbar-expand-lg bg-black border-bottom border-body " data-bs-theme="dark">
             <span className="d-flex justify-content-start">

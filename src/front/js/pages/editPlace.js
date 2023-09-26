@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PlaceForm } from "../component/placeForm";
-import { Panel } from "../component/panel";
+
 
 
 export const EditPlace = () => {
@@ -47,7 +47,7 @@ export const EditPlace = () => {
     return (
         <>
 
-            <Panel />
+
             <div className="back-landing3">
                 <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id, store.placeData.id_club)} name={store.placeData.name} description={store.placeData.description}
                     type={store.placeData.type} title={"Editar Lugar"} />

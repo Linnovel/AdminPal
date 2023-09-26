@@ -69,27 +69,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return;
 					}
 					//console.log(data);
-					setStore({ userData: data.data });
-
-				} catch (error) {
-					console.log(error)
-				}
-			},
-			getUserIdData: async (id) => {
-				try {
-					const store = getStore()
-					const response = await fetch(`${store.backendUrl}/api/user/${id}`, {
-						headers: {
-							Authorization: `Bearer ${store.token}`,
-						},
-					});
-					const data = await response.json();
-					if (response.status === 401) {
-						alert("No autorizado");
-						return;
-					}
-					//console.log(data);
-					setStore({ dataUser: data });
+					setStore({ userData: data });
 
 				} catch (error) {
 					console.log(error)

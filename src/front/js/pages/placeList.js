@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { Panel } from "../component/panel";
+
 
 
 export const PlaceList = () => {
@@ -43,7 +43,7 @@ export const PlaceList = () => {
 
     return (
         <>
-            <Panel />
+
             <div className="back-landing3">
                 <div className=" container ">
                     <div className=" row d-flex justify-content-center">
