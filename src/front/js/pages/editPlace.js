@@ -6,21 +6,20 @@ import { PlaceForm } from "../component/placeForm";
 import { Panel } from "../component/panel";
 
 
-const initialValue = {
-    "name": '',
-    "description": '',
-    "type": '',
-    "img": ''
-
-}
-
-export const RegisterPlace = () => {
-
+export const EditPlace = () => {
     const { store, actions } = useContext(Context)
     const navigate = useNavigate();
-    const [dataPlace, setDataPlace] = useState(initialValue)
     const params = useParams();
-    const id_club = parseInt(params.id_club);
+    const id = parseInt(params.id);
+
+    //cargamos los valores inicales
+    const initialValue = {
+        "name": `${store.placeData.name}`,
+        "type": `${store.placeData.type}`,
+        "description": `${store.placeData.description}`
+    }
+
+    const [dataPlace, setDataPlace] = useState(initialValue)
 
     //capturamos el valor de los inputs 
     const hanndleEvent = (event) => {
@@ -28,39 +27,33 @@ export const RegisterPlace = () => {
     }
 
     //enviamos el valor
-    const handleSubmit = async (id) => {
-        const response = await actions.registerPlace(id, dataPlace);
-        if (response) {
-            alert("Area registrada");
-            navigate(`/image/${store.placeData.id}`);
-        }
+    const handleSubmit = async (id, id_club) => {
+        const editado = await actions.editPlace(id, dataPlace);
+        alert("Lugar Editado")
+        navigate(`/placelist/${id_club}`);
 
-    }
-    const Submit = (id) => {
-        navigate(`/placelist/${id}`);
     }
 
 
     //validamos que exista un token, si no existe lo enviamos a login
     useEffect(() => {
         if (store.token === "" || !store.token) {
-            alert("No autenticado")
             navigate("/login");
             return;
         }
-        actions.getUserData();
+        actions.getPlaceData(id);
     }, [store.token]);
 
     return (
         <>
+
             <Panel />
             <div className="back-landing3">
-                <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id_club)} title="Guardar" />
-                <button onClick={() => Submit(id_club)}>ver mi lista de lugares</button>
+                <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id, store.placeData.id_club)} name={store.placeData.name} description={store.placeData.description}
+                    type={store.placeData.type} title={"Editar Lugar"} />
             </div>
         </>
 
     );
 };
 
-export default RegisterPlace;

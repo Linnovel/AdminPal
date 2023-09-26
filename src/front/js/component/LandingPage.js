@@ -10,6 +10,29 @@ export const LandingPage = () => {
   return (
     <>
       <div className="back-landing ">
+        <nav className="navbar sticky-lg-top border-bottom border-body bg-black " data-bs-theme="dark">
+          <div className="container">
+            <span className="navbar-brand mb-0">
+              <img
+                src={logopadel}
+                className="img-fluid"
+                width="100"
+                height="100px"
+              />
+            </span>
+            <div className="ml-auto ">
+
+              <div className="d-flex align-items-center gap-2 ">
+                <Link to="/login">
+                  <button type="submit" className="btn btn-success mb-2 navbtn fw-bolder">Inicia Sesion / Registrate</button>
+                </Link>
+                <Link to="/clubs">
+                  <button type="submit" className="btn btn-success mb-2 navbtn fw-bolder" >Eres un club</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
         <div className="container">
           <h1 className="textslide display-3 text-white fw-bold">
             Busca el mejor lugar donde jugar con tus amigos
@@ -26,27 +49,22 @@ export const LandingPage = () => {
                     placeholder="Ciudad"
                     id="floatingCity"
                   />
-                  <label htmlFor="flotaintInput">Direccion, Ciudad, Club</label>
+
+                  <label htmlFor="flotaintInput" >Direccion, Ciudad, Club</label>
                 </div>
-                <div className="form-floating mb-3 col-12 col-lg-4 ">
-                  <select
-                    className="form-select"
-                    id="floatingSelect"
-                    aria-label="Floating label select example"
-                  >
-                    <option selected>Deportes</option>
-                    <option value="1">Padel</option>
-                    <option value="2">Tennis</option>
-                    <option value="3">Futbol</option>
-                  </select>
-                  <label for="floatingSelect">Elige el deporte</label>
+                <div className="form-floating mb-2 col-12 col-lg-4 ">
+                  <input
+                    type="text"
+                    name="ciudad"
+                    className="form-control w-100"
+                    placeholder="Elige tu deporte favorito"
+                    id="floatingCity"
+                  />
+                  <label htmlFor="flotaintInput"
+                    aria-label="Default select example"  >Horario</label>
+
                 </div>
-                <button
-                  type="submit"
-                  className="boton-main  btn btn-success btn-lg mb-2"
-                >
-                  Buscar
-                </button>
+                <button type="submit" className="boton-main  btn btn-success btn-lg mb-2">Buscar</button>
               </div>
             </div>
           </div>

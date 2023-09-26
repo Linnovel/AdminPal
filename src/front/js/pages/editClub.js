@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ClubForm } from "../component/clubForm";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-
+import { Panel } from "../component/panel";
 
 
 export const EditClub = () => {
@@ -13,23 +13,15 @@ export const EditClub = () => {
     const id = parseInt(params.id);
 
 
-    //validamos que exista un token, si no existe lo enviamos a login
-    useEffect(() => {
-        if (store.token === "" || !store.token) {
-            navigate("/login");
-            return;
-        }
-        actions.getClubData(id);
-        actions.getUserData();
-    }, [store.token]);
-
     //cargamos los valores inicales
     const initialValue = {
         "name": `${store.clubData.name}`,
         "description": `${store.clubData.description}`,
         "ciudad": `${store.clubData.ciudad}`,
         "estado": `${store.clubData.estado}`,
-        "direccion": `${store.clubData.direccion}`
+        "direccion": `${store.clubData.direccion}`,
+        "email": `${store.clubData.email}`,
+        "phone": `${store.clubData.phone}`
     }
     const [dataClub, setDataClub] = useState(initialValue)
 
@@ -46,10 +38,25 @@ export const EditClub = () => {
     }
 
 
+    //validamos que exista un token, si no existe lo enviamos a login
+    useEffect(() => {
+        if (store.token === "" || !store.token) {
+            navigate("/login");
+            return;
+        }
+        actions.getClubData(id);
+        actions.getUserData();
+    }, [store.token]);
+
     return (
         <>
-            <ClubForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id)} name={store.clubData.name} descripcion={store.clubData.description}
-                estado={store.clubData.estado} ciudad={store.clubData.ciudad} direccion={store.clubData.direccion} title={"Editar Club"} />
+            <Panel />
+            <div className="back-landing3">
+                <ClubForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id)} name={store.clubData.name} email={store.clubData.email}
+                    phone={store.clubData.phone}
+                    descripcion={store.clubData.description}
+                    estado={store.clubData.estado} ciudad={store.clubData.ciudad} direccion={store.clubData.direccion} title={"Editar Club"} />
+            </div>
         </>
     );
 };
