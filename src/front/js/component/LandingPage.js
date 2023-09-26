@@ -2,7 +2,8 @@ import React from "react";
 import logopadel from "../../img/logopadel.png";
 import "../../styles/home.css";
 import { Link } from "react-router-dom";
-
+import padelpal from "../../img/padelpal.png";
+import Footer from "./Footer";
 
 
 export const LandingPage = () => {
@@ -40,7 +41,7 @@ export const LandingPage = () => {
           <div className="row">
             <div className="">
               <div className="card p-5 border-0  rounded-3 my-5 d-flex flex-row justify-content-center align-items-center gap-4">
-                <div className="form-floating mb-2 col-12 col-lg-4">
+                <div className="form-floating mb-3 col-12 col-lg-4">
                   <input
                     type="text"
                     name="ciudad"
@@ -48,6 +49,7 @@ export const LandingPage = () => {
                     placeholder="Ciudad"
                     id="floatingCity"
                   />
+
                   <label htmlFor="flotaintInput" >Direccion, Ciudad, Club</label>
                 </div>
                 <div className="form-floating mb-2 col-12 col-lg-4 ">
@@ -126,6 +128,7 @@ export const LandingPage = () => {
                   <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
                     Reserva este campo
                   </button>
+                  
                 </div>
               </div>
             </div>
@@ -146,6 +149,19 @@ export const LandingPage = () => {
                     <Link to="/register">
                       <div className="fw-bold">Registrate</div>
                     </Link>
+                    <div className="container p-2">
+                    <div className="row">
+                      <div className="col-4">
+                        Padel <i className="fa-solid fa-table-tennis-paddle-ball"></i>
+                      </div>
+                      <div className="col-4">
+                        Futbol <i className="fa-solid fa-futbol"></i>
+                      </div>
+                      <div className="col-4">
+                        Basketball <i className="fa-solid fa-basketball"></i>
+                      </div>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -153,61 +169,7 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
-      <footer className="text-center text-white bg-black border-top border-body ">
-        <div className="container pt-4">
-          <section className="mb-4">
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-google"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-github"></i>
-            </a>
-          </section>
-        </div>
-        <div className="text-center text-white p-3">© 2023 Copyright:</div>
-      </footer>
+      <Footer/>
     </>
   );
 };

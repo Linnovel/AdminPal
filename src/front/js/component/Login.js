@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { useNavigate } from "react-router-dom";
+import padelpal from "../../img/padelpal.png";
+import {toast} from "react-toastify"
 
 
 const loginUser = {
@@ -25,15 +27,14 @@ export const Login = () => {
 
 	const handleSubmit = async () => {
 
-		if (await actions.login(login) == false) {
-			alert("Datos Incorrectos")
-			navigate("/login");
-			return;
-		}
 
-		navigate("/clublist");
-
-
+		const result = await actions.login(login);
+    if(result){
+      navigate("/clublist");
+      toast.success("Bienvenido!")
+      return;
+    }
+    toast.error("Credenciales invalidas!")
 	}
 
 
@@ -47,7 +48,6 @@ export const Login = () => {
 							<h2 className="text-center fw-semibold">Accede a tu Cuenta</h2>
 							<form>
 								<div className="mb-3">
-
 									<label htmlFor="exampleInputEmail1" className="form-label" >Correo Electronico {''}<i className="fa-solid fa-at"></i></label>
 									<input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escribe tu Email aqui" onChange={hanndleEvent} />
 									<h6>Nunca compartiremos tu informacion.</h6>
@@ -65,7 +65,64 @@ export const Login = () => {
 					</div>
 				</div>
 			</div>
+			<footer className="text-center text-white bg-black border-top border-body ">
+        <div className="container pt-4">
+          <section className="mb-4">
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-google"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-github"></i>
+            </a>
+          </section>
+        </div>
+        <div className="text-center text-white p-3">© 2023 Copyright:</div>
+      </footer>
 		</div>
+		
+		
 	);
 
 };

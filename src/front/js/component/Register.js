@@ -1,8 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logopadel from "../../img/logopadel.png";
-import padelmodelo from "../../img/padelmodelo.png";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 
@@ -23,6 +21,7 @@ export const Register = () => {
   const handleChange = (event) => {
     setRegister({ ...register, [event.target.name]: event.target.value });
   };
+
 
   const handleSubmit = () => {
     const result = actions.registerUser(register);

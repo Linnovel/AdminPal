@@ -88,7 +88,7 @@ def create_user():
 
     except Exception as error:
         db.session.rollback()
-        return jsonify(error), 500
+        return jsonify(error.args), 500
 
 # edit user
 @api.route('/user/<int:id>', methods=['PUT'])
