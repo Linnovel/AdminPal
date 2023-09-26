@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { useNavigate } from "react-router-dom";
-import logopadel from "../../img/logopadel.png";
+import padelpal from "../../img/padelpal.png";
+import {toast} from "react-toastify"
 
 const loginUser = {
   email: "",
@@ -26,23 +27,25 @@ export const Login = () => {
 	const handleSubmit = async () => {
 
 		const result = await actions.login(login);
-		navigate("/clublist");
-		return;
+    if(result){
+      navigate("/clublist");
+      toast.success("Bienvenido!")
+      return;
+    }
+    toast.error("Credenciales invalidas!")
 
 	}
 
 
 	return (
-		<div>
+		<div className="login-bg">
 			<div className="container ">
-
 				<div className="row">
 					<div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-						<div className="card p-5  border-0 shadow rounded-3 my-5 ">
-							<h2 className="text-center">Accede a tu usuario</h2>
+						<div className="card-login card p-5  border-0 shadow rounded-3 my-5 ">
+							<h2 className="text-center ">Accede a tu usuario</h2>
 							<form>
 								<div className="mb-3">
-
 									<label htmlFor="exampleInputEmail1" className="form-label" >Correo Electronico {''}<i className="fa-solid fa-at"></i></label>
 									<input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escribe tu Email aqui" onChange={hanndleEvent} />
 									<div id="emailHelp" className="form-text">Nunca compartiremos tu informacion.</div>
@@ -60,7 +63,64 @@ export const Login = () => {
 					</div>
 				</div>
 			</div>
+			<footer className="text-center text-white bg-black border-top border-body ">
+        <div className="container pt-4">
+          <section className="mb-4">
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-facebook-f"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-twitter"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-google"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a
+              className="btn btn-link btn-floating btn-lg text-white m-1"
+              href="#!"
+              role="button"
+              data-mdb-ripple-color="white"
+            >
+              <i className="fab fa-github"></i>
+            </a>
+          </section>
+        </div>
+        <div className="text-center text-white p-3">© 2023 Copyright:</div>
+      </footer>
 		</div>
+		
+		
 	);
 
 };

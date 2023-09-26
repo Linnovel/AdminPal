@@ -53,7 +53,7 @@ def create_user():
 
     except Exception as error:
         db.session.rollback()
-        return jsonify(error), 500
+        return jsonify(error.args), 500
 
 #validamos al usuario y le asignamos un token
 @api.route('/login', methods=['POST'])
