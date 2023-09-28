@@ -451,3 +451,13 @@ def get_private_data():
         return jsonify({"error": "user not found"}), 404
     return jsonify(current_user.serialize()), 200
 
+#####
+@api.route("/search", methods=["POST"])
+def get_dates():
+    data= request.get_json()
+    ciudad=data.get("ciudad", None)+"%"#concatenamos para que no distinga entre mayusculas y minuscula
+    current_club = Club.query.filter(Club.ciudad.ilike(ciudad)).all() #filtramos la buusqueda
+    if not current_club:
+        return jsonify({"error": "club not found"}), 404
+    serialized_club = [club.serialize() for club in current_club]
+    return jsonify(serialized_club), 200

@@ -4,6 +4,8 @@ import { ClubForm } from "../component/clubForm";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../component/Footer";
+import { toast } from "react-toastify"
+
 
 
 export const EditClub = () => {
@@ -32,8 +34,36 @@ export const EditClub = () => {
 
     //enviamos el valor
     const handleSubmit = (id_club) => {
+        if (dataClub.name == "") {
+            toast.error("El nombre es necesario para crear tu club")
+            return
+        }
+        if (dataClub.email == "") {
+            toast.error("El email es necesario para crear tu club")
+            return
+        }
+        if (dataClub.estado == "") {
+            toast.error("El estado es necesario para crear tu club")
+            return
+        }
+        if (dataClub.ciudad == "") {
+            toast.error("La ciudads necesaria para crear tu club")
+            return
+        }
+        if (dataClub.direccion == "") {
+            toast.error("La direccion es necesaria para crear tu club")
+            return
+        }
+        if (dataClub.telefono == "") {
+            toast.error("el telefono es necesario para crear tu club")
+            return
+        }
+        if (dataClub.description == "") {
+            toast.error("Debes introducir una descripcion para crear tu club")
+            return
+        }
         actions.editClub(id_club, dataClub);
-        alert("Club Editado")
+        toast.success("Club Editado!")
         navigate("/clubList");
     }
 
@@ -41,6 +71,7 @@ export const EditClub = () => {
     //validamos que exista un token, si no existe lo enviamos a login
     useEffect(() => {
         if (store.token === "" || !store.token) {
+            toast.error("No autenticado")
             navigate("/login");
             return;
         }

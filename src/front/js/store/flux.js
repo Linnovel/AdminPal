@@ -191,6 +191,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return data.length;
 
 					}
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			getclubsCity: async (cityClub) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/search`, {
+						body: JSON.stringify(cityClub),
+						method: "POST",
+						headers: {
+							"content-type": "application/json",
+						},
+					});
+					if (response.status === 401) {
+						alert("No autorizado");
+						return;
+					}
+					if (response.status === 404) {
+						alert("La lista de Clubs esta vacia");
+						return;
+					}
+					if (response.status === 200) {
+						const data = await response.json();
+						setStore({ clubslist: data });
+						return data.length;
+
+					}
 
 
 				} catch (error) {

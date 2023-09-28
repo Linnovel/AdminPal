@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { ImageForm } from "../component/imageForm";
 import Footer from "../component/Footer";
+import { toast } from "react-toastify"
+
 
 const initialValue = {
     "image": '',
@@ -25,8 +27,12 @@ export const RegisterImage = () => {
 
     //enviamos el valor
     const handleSubmit = async (id) => {
+        if (dataImage.image == "") {
+            toast.error("Debe seleccionar una imagenb")
+            return
+        }
         const image = await actions.registerImage(id, dataImage);
-        alert("Imagen Cargada");
+        toast.success("Imagen Cargada");
         navigate("/clublist");
 
     }
@@ -35,12 +41,12 @@ export const RegisterImage = () => {
     //validamos que exista un token, si no existe lo enviamos a login
     useEffect(() => {
         if (store.token === "" || !store.token) {
-            alert("No autenticado")
+            toast.error("No autenticado")
             navigate("/login");
             return;
         }
         actions.getUserData();
-        actions.getPlaceData(id_place);
+        //actions.getPlaceData(id_place);
         actions.getAllImage(id_place);
     }, [store.token]);
 

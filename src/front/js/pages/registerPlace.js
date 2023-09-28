@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PlaceForm } from "../component/placeForm";
 import Footer from "../component/Footer";
+import { toast } from "react-toastify"
+
 
 
 const initialValue = {
@@ -29,9 +31,21 @@ export const RegisterPlace = () => {
 
     //enviamos el valor
     const handleSubmit = async (id) => {
+        if (dataPlace.name == "") {
+            toast.error("El nombre del Lugar o Area del Club necesario")
+            return
+        }
+        if (dataPlace.description == "") {
+            toast.error("Debe ingresar una descripcion del Lugar o Area del Club")
+            return
+        }
+        if (dataPlace.type == 0) {
+            toast.error("El tipo Lugar o Area del Club es necesario")
+            return
+        }
         const response = await actions.registerPlace(id, dataPlace);
         if (response) {
-            alert("Area registrada");
+            toast.success("Lugar del Club registrado!");
             navigate(`/image/${store.placeData.id}`);
         }
 
@@ -44,7 +58,7 @@ export const RegisterPlace = () => {
     //validamos que exista un token, si no existe lo enviamos a login
     useEffect(() => {
         if (store.token === "" || !store.token) {
-            alert("No autenticado")
+            toast.error("No autenticado")
             navigate("/login");
             return;
         }
