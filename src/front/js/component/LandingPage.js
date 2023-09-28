@@ -1,12 +1,30 @@
-import React from "react";
-import logopadel from "../../img/logopadel.png";
+import React, { useState, useContext, useEffect } from "react";
+import { Context } from "../store/appContext";
 import "../../styles/home.css";
-import { Link } from "react-router-dom";
-import padelpal from "../../img/padelpal.png";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 
+const initialValue = {
+  ciudad: ""
+}
 
 export const LandingPage = () => {
+
+  const { store, actions } = useContext(Context);
+  const [ciudad, setCiudad] = useState(initialValue);
+  const navigate = useNavigate();
+
+
+  const handleChange = (event) => {
+    setCiudad({ ...ciudad, [event.target.name]: event.target.value });
+  };
+
+  const submit = async () => {
+    const clubs = await actions.getclubsCity(ciudad);
+    navigate("/clubsearch");
+
+  }
+
   return (
     <>
       <div className="back-landing ">
@@ -25,23 +43,12 @@ export const LandingPage = () => {
                     className="form-control w-100"
                     placeholder="Ciudad"
                     id="floatingCity"
-                  />
+                    onChange={handleChange}
 
-                  <label htmlFor="flotaintInput" >Direccion, Ciudad, Club</label>
-                </div>
-                <div className="form-floating mb-2 col-12 col-lg-4 ">
-                  <input
-                    type="text"
-                    name="ciudad"
-                    className="form-control w-100"
-                    placeholder="Elige tu deporte favorito"
-                    id="floatingCity"
                   />
-                  <label htmlFor="flotaintInput"
-                    aria-label="Default select example"  >Horario</label>
-
+                  <label htmlFor="flotaintInput" >Ciudad</label>
                 </div>
-                <button type="submit" className="boton-main  btn btn-success btn-lg mb-2">Buscar</button>
+                <button type="submit" onClick={submit} className="boton-main  btn btn-success btn-lg mb-2">Buscar</button>
               </div>
             </div>
           </div>

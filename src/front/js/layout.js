@@ -17,16 +17,13 @@ import { EditPlace } from "./pages/editPlace";
 import { RegisterImage } from "./pages/registerImage";
 import LandingPage from "./component/LandingPage";
 import { Panel } from "./component/panel";
-import { Home } from "./pages/home";
 import injectContext from "./store/appContext";
-import { Footer } from "./component/Footer";
 import ReservasCanchas from "./component/ReservasCanchas";
-import Navbar from "./component/Navbar/Navbar";
-import NavbarRegistros from "./component/Navbar/NavbarRegistros";
 import Nav from "./component/Navbar/Nav";
 import Entrenadores from "./component/Entrenadores";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ClubsSearch } from "./pages/clubsSearch";
 
 
 //create your first component
@@ -38,11 +35,11 @@ const Layout = () => {
   if (!process.env.BACKEND_URL || process.env.BACKEND_URL == "")
     return <BackendURL />;
 
-    return (
-        <div>
-            <BrowserRouter basename={basename}>
-                <ScrollToTop>
-                   <ToastContainer
+  return (
+    <div>
+      <BrowserRouter basename={basename}>
+        <ScrollToTop>
+          <ToastContainer
             position="top-center"
             autoClose={5000}
             hideProgressBar={false}
@@ -57,30 +54,31 @@ const Layout = () => {
           <>
             <Nav />
           </>
-                    <Routes>
-                        <Route element={<LandingPage />} path="/" />
-                        <Route element={<ReservasCanchas />} path="/reservascanchas" />
-                        <Route element={<Login />} path="/login" />
-                        <Route element={<Register />} path="/register" />
-                        <Route element={<RegisterUser />} path="/registerUser" />
-                        <Route element={<EditUser />} path="/userEdit" />
-                        <Route element={<RegisterClub />} path="/clubs" />
-                        <Route element={<ClubList />} path="/clublist" />
-                        <Route element={<DetailClub />} path="/detailClub/:id" />
-                        <Route element={<EditClub />} path="/editClub/:id" />
-                        <Route element={<RegisterPlace />} path="/registerPlace/:id_club" />
-                        <Route element={<PlaceList />} path="/placelist/:id_club" />
-                        <Route element={<DetailPlace />} path="/detailPlace/:id" />
-                        <Route element={<EditPlace />} path="/editplace/:id" />
-                        <Route element={<Panel />} path="/panel" />
-                        <Route element={<RegisterImage />} path="/image/:id_place" />
-                        <Route element={<Entrenadores />} path="/entrenadores" />
-                        <Route element={<h1>Not found!</h1>} />
-                    </Routes>
-                </ScrollToTop>
-            </BrowserRouter>
-        </div>
-    );
+          <Routes>
+            <Route element={<LandingPage />} path="/" />
+            <Route element={<ReservasCanchas />} path="/reservascanchas" />
+            <Route element={<Login />} path="/login" />
+            <Route element={<Register />} path="/register" />
+            <Route element={<RegisterUser />} path="/registerUser" />
+            <Route element={<EditUser />} path="/userEdit" />
+            <Route element={<RegisterClub />} path="/clubs" />
+            <Route element={<ClubList />} path="/clublist" />
+            <Route element={<DetailClub />} path="/detailClub/:id" />
+            <Route element={<EditClub />} path="/editClub/:id" />
+            <Route element={<RegisterPlace />} path="/registerPlace/:id_club" />
+            <Route element={<PlaceList />} path="/placelist/:id_club" />
+            <Route element={<DetailPlace />} path="/detailPlace/:id" />
+            <Route element={<EditPlace />} path="/editplace/:id" />
+            <Route element={<Panel />} path="/panel" />
+            <Route element={<RegisterImage />} path="/image/:id_place" />
+            <Route element={<Entrenadores />} path="/entrenadores" />
+            <Route element={<ClubsSearch />} path="/clubsearch" />
+            <Route element={<h1>Not found!</h1>} />
+          </Routes>
+        </ScrollToTop>
+      </BrowserRouter>
+    </div>
+  );
 
 };
 

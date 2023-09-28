@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PlaceForm } from "../component/placeForm";
+import { toast } from "react-toastify"
 
 
 
@@ -28,8 +29,20 @@ export const EditPlace = () => {
 
     //enviamos el valor
     const handleSubmit = async (id, id_club) => {
+        if (dataPlace.name == "") {
+            toast.error("El nombre del Lugar o Area del Club necesario")
+            return
+        }
+        if (dataPlace.description == "") {
+            toast.error("Debe ingresar una descripcion del Lugar o Area del Club")
+            return
+        }
+        if (dataPlace.type == 0) {
+            toast.error("El tipo Lugar o Area del Club es necesario")
+            return
+        }
         const editado = await actions.editPlace(id, dataPlace);
-        alert("Lugar Editado")
+        toast.success("Lugar Editado!")
         navigate(`/placelist/${id_club}`);
 
     }
@@ -38,6 +51,7 @@ export const EditPlace = () => {
     //validamos que exista un token, si no existe lo enviamos a login
     useEffect(() => {
         if (store.token === "" || !store.token) {
+            toast.error("No autenticado")
             navigate("/login");
             return;
         }
