@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PlaceForm } from "../component/placeForm";
-
+import Footer from "../component/Footer";
 
 
 export const EditPlace = () => {
@@ -48,9 +48,13 @@ export const EditPlace = () => {
         <>
 
 
-            <div className="back-landing3">
+            <div className="list-c">
                 <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id, store.placeData.id_club)} name={store.placeData.name} description={store.placeData.description}
                     type={store.placeData.type} title={"Editar Lugar"} />
+            </div>
+            <div className="fix">
+
+            <Footer />
             </div>
         </>
 

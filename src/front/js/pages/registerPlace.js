@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PlaceForm } from "../component/placeForm";
-
+import Footer from "../component/Footer";
 
 
 const initialValue = {
@@ -54,9 +54,11 @@ export const RegisterPlace = () => {
     return (
         <>
 
-            <div className="back-landing3">
+            <div className="list-c">
                 <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id_club)} title="Guardar" />
-                <button onClick={() => Submit(id_club)}>ver mi lista de lugares</button>
+            </div>
+            <div className="fix">
+            <Footer />
             </div>
         </>
 

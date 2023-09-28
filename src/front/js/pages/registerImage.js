@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { ImageForm } from "../component/imageForm";
-
+import Footer from "../component/Footer";
 
 const initialValue = {
     "image": '',
@@ -48,7 +48,7 @@ export const RegisterImage = () => {
     return (
         <>
 
-            <div className="container-fluid back-landing3 ">
+            <div className="container-fluid list-c ">
                 <ImageForm hanndleEvent={hanndleEvent} place={store.placeData.name} submit={() => handleSubmit(id_place)} title="Cargar Imagen" />
 
                 <div className="d-flex overflow-x-scroll">
@@ -63,6 +63,9 @@ export const RegisterImage = () => {
                         })}
                 </div>
             </div>
+            
+            <Footer/>
+            
 
 
 

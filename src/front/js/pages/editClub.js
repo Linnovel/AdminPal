@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { ClubForm } from "../component/clubForm";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-
+import Footer from "../component/Footer";
 
 
 export const EditClub = () => {
@@ -57,6 +57,7 @@ export const EditClub = () => {
                     descripcion={store.clubData.description}
                     estado={store.clubData.estado} ciudad={store.clubData.ciudad} direccion={store.clubData.direccion} title={"Editar Club"} />
             </div>
+            <Footer />
         </>
     );
 };

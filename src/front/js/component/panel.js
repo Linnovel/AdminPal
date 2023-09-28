@@ -41,16 +41,16 @@ export const Panel = () => {
 */
     return (
         <nav className="navbar navbar-expand-lg bg-black border-bottom border-body " data-bs-theme="dark">
-            <span className="d-flex justify-content-start">
+            <span className="">
                 <img
                     src={logopadel}
                     className="img-fluid"
-                    width="70"
-                    height="70px"
+                    width="125px"
+                    height="125px"
                 />
-                <h6 className="text-light">{store.userData.email}</h6>
             </span>
             <div className="container-fluid">
+                <p className="text-light fw-bolder mb-0 fs-1"> {store.userData.name}</p>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -63,12 +63,12 @@ export const Panel = () => {
                 <section
                     className="offcanvas offcanvas-start  bg-black"
                     id="menuLateral"
-                    tabindex="-1"
+                    tabIndex="-1"
                 >
                     <div className="offcanvas-header" data-bs-theme="dark">
                         <h5 className="offcanvas-title text-info">CLUBS</h5>
                         <button
-                            className="btn-close"
+                            className="btn-close "
                             type="button"
                             aria-label="Close"
                             data-bs-dismiss="offcanvas"
@@ -80,7 +80,7 @@ export const Panel = () => {
                     >
                         <ul className="navbar-nav fs-5 justify-content-evenly">
                             <li className="nav-item p-3 py-md-1">
-                                <button className="nav-link offcanvas-title text-info fw-bold" onClick={goToregisterClub}>Registra un Club</button>
+                                <button className="nav-link offcanvas-title text-info fw-bold " onClick={goToregisterClub}>Registra un Club</button>
                             </li>
                             <li className="nav-item p-3 py-md-1">
                                 <button className="nav-link offcanvas-title text-info fw-bold" onClick={SubmitListclubs}>Clubs Registrados </button>
@@ -89,7 +89,7 @@ export const Panel = () => {
                                 <button className="nav-link offcanvas-title text-info fw-bold" onClick={SubmitUserData}>Mis Datos </button>
                             </li>
                             <li className="nav-item p-3 py-md-1">
-                                <button className="nav-link offcanvas-title text-info fw-bold" onClick={Logout}>Cerrar Sesion </button>
+                                <button className="nav-link offcanvas-title text-info fw-bold" onClick={Logout}>Cerrar Sesion <i className="fa-solid fa-right-from-bracket "></i></button>
                             </li>
                         </ul>
                         <div className="d-lg-none align-self-center py-3">

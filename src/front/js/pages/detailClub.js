@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Footer from "../component/Footer";
 
 
 
@@ -40,11 +41,11 @@ export const DetailClub = () => {
     return (
         <>
 
-            <div className="back-landing3 container-fluid">
+            <div className="list-c container-fluid">
                 <div className="row">
                     <div className="card col-sm-9 col-md-7 col-lg-5 mx-auto mt-5 form d-flex justify-content-center">
                         <div className="card-body ">
-                            <h3 className="card-title d-flex justify-content-center">{store.clubData.name}</h3>
+                            <h3 className="card-title d-flex justify-content-center fw-bold">{store.clubData.name}</h3>
                             <p className="card-text fs-5">Ciudad:{" "}{store.clubData.ciudad}</p>
                             <p className="card-text fs-5">Estado:{" "}{store.clubData.estado}</p>
                             <p className="card-text fs-5">Direccion:{" "}{store.clubData.direccion}</p>
@@ -57,6 +58,9 @@ export const DetailClub = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="fix">
+            <Footer />
             </div>
         </>
     );

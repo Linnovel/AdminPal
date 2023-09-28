@@ -12,7 +12,7 @@ const Nav = () => {
     <>
       {navbarPath.includes(location.pathname) ? (
         <Navbar />
-      ) : (
+       ) :  (
         <Panel />
       )
       }

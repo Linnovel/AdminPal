@@ -16,33 +16,33 @@ export const ClubForm = ({ submit, hanndleEvent, name, email, phone, descripcion
                             <div className="row">
                                 <div className="mb-3 col-6">
                                     <label className="form-label" ><h6>Nombre</h6></label>
-                                    <input defaultValue={name} type="text" name="name" className="form-control" onChange={hanndleEvent} />
+                                    <input defaultValue={name} type="text" name="name" className="form-control" placeholder="Nombre del club" onChange={hanndleEvent} />
                                 </div>
                                 <div className="mb-3 col-6">
                                     <label className="form-label" ><h6>Email</h6></label>
-                                    <input defaultValue={email} type="email" name="email" className="form-control" onChange={hanndleEvent} />
+                                    <input defaultValue={email} type="email" name="email" className="form-control" placeholder="Email" onChange={hanndleEvent} />
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="mb-3 col-6">
                                     <label className="form-label" ><h6>Estado</h6></label>
-                                    <input type="text" name="estado" className="form-control" defaultValue={estado} onChange={hanndleEvent} />
+                                    <input type="text" name="estado" className="form-control" defaultValue={estado} placeholder="Estado de la ciudad" onChange={hanndleEvent} />
                                 </div>
                                 <div className="mb-3 col-6">
                                     <label className="form-label" ><h6>Ciudad</h6></label>
-                                    <input type="text" name="ciudad" className="form-control" defaultValue={ciudad} onChange={hanndleEvent} />
+                                    <input type="text" name="ciudad" className="form-control" defaultValue={ciudad} placeholder="Ciudad" onChange={hanndleEvent} />
                                 </div>
                             </div>
 
                             <div className="row">
                                 <div className="mb-3 col-6">
                                     <label className="form-label" ><h6>Telefono</h6></label>
-                                    <input defaultValue={phone} type="text" name="phone" className="form-control" onChange={hanndleEvent} />
+                                    <input defaultValue={phone} type="text" name="phone" className="form-control" placeholder="Numero de Telefono" onChange={hanndleEvent} />
                                 </div>
                                 <div className="mb-3 col-6">
                                     <label className="form-label" ><h6>Coloque una descripcion</h6></label>
                                     <div className="form-floating">
-                                        <textarea className="form-control" name="description" defaultValue={descripcion} onChange={hanndleEvent} ></textarea>
+                                        <textarea className="form-control" name="description" defaultValue={descripcion} placeholder="Descripcion" onChange={hanndleEvent} ></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@ export const ClubForm = ({ submit, hanndleEvent, name, email, phone, descripcion
                             <div className="mb-3 col-12">
                                 <label className="form-label" ><h6>Direccion</h6></label>
                                 <div className="form-floating">
-                                    <textarea className="form-control" name="direccion" defaultValue={direccion} onChange={hanndleEvent} ></textarea>
+                                    <textarea className="form-control" name="direccion" defaultValue={direccion} onChange={hanndleEvent} placeholder="Direccion" ></textarea>
                                 </div>
                             </div>
                         </form>

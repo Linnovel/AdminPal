@@ -45,7 +45,6 @@
 .back-landing3 {
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: top;
   background: cover;
   background-color: black;
 }
@@ -99,7 +98,7 @@
 
   nav,
   .offcanvas {
-    background-color: #1e293b;
+    background-color: #00c221;
   }
   .navbar-toggler {
     border: none;
@@ -111,7 +110,7 @@
 
   @media (max-width: 768px) {
     .navbar-nav > li:hover {
-      background-color: #0dcaf0;
+      background-color: #00c221;
     }
   }
 
@@ -148,4 +147,15 @@
   height: 840px;
 }
 
+.fix {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
 
+.list-c {
+  background-color: black;
+  height: 1240px;
+}

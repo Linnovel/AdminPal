@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import Footer from "../component/Footer";
 
 
 
@@ -42,7 +42,7 @@ export const DetailPlace = () => {
     return (
         <>
 
-            <div className="back-landing3">
+            <div className="list-c">
                 <div className="container-fluid row">
                     <div className="card col-sm-9 col-md-7 col-lg-5 mx-auto mt-5 form">
                         <img src={store.imageData.img_url} className="card-img-top mt-2" alt="..." />
@@ -58,6 +58,9 @@ export const DetailPlace = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="fix">
+            <Footer />
             </div>
         </>
     );

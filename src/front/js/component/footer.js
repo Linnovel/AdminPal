@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 const Footer = () => {
 	return (<>
-	<footer className="text-center text-white bg-black border-top border-body ">
-        <div className="container pt-4">
+	<footer className="text-center text-white bg-black border-top border-body fixed-bottom">
+        <div className="container pt-4 fixed-bottom">
           <section className="mb-4">
             <a
               className="btn btn-link btn-floating btn-lg text-white m-1"

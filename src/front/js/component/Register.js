@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 
 const registerValue = {
   name: "",
-  apellido: "",
+  last_name: "",
   email: "",
   password: "",
 };
@@ -33,12 +33,12 @@ export const Register = () => {
   return (
     <>
 
-      <div className="back-landing3">
-        <div className="container ">
-          <div className="row ">
-            <div className="col-sm-9 col-md-7 col-lg-5  ancho-form">
-              <div className="card p-5  border-0 shadow rounded-3 my-2 form  ">
-                <h2 className="text-center">
+      <div className="back-landing3 ">
+        <div className="container  ">
+          <div className="row d-flex justify-content-center">
+            <div className="col-sm-9 col-md-7 col-lg-5  ">
+              <div className="card p-5  border-0 shadow rounded-3 my-2 form ">
+                <h2 className="text-center ">
                   Registro de Usuario {""}
                   <i className="fa-solid fa-user"></i>
                 </h2>
