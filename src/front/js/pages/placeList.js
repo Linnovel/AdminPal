@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import { toast } from "react-toastify"
 
 export const PlaceList = () => {
   const { store, actions } = useContext(Context);
@@ -27,7 +27,7 @@ export const PlaceList = () => {
   //validamos que exista un token, si no existe lo enviamos a login
   useEffect(() => {
     if (store.token === "" || !store.token) {
-      alert("No autenticado");
+      toast.error("No autenticado");
       navigate("/login");
       return;
     }
@@ -68,8 +68,7 @@ export const PlaceList = () => {
           </div>
         </div>
       </div>
-      <div className="fix">
-      </div>
+      
     </>
   );
 };

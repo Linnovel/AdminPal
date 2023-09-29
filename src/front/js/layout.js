@@ -26,6 +26,9 @@ import "react-toastify/dist/ReactToastify.css";
 import { ClubsSearch } from "./pages/clubsSearch";
 import ContactUs from "./component/ContactUs";
 import Footer from "./component/Footer";
+import { ClubImage } from "./component/cardClubImage";
+import { PlaceReserv } from "./component/cardPlaceReserv";
+import { PlaceListReserv } from "./pages/placeListReserv";
 
 //create your first component
 const Layout = () => {
@@ -75,6 +78,9 @@ const Layout = () => {
             <Route element={<RegisterImage />} path="/image/:id_place" />
             <Route element={<Entrenadores />} path="/entrenadores" />
             <Route element={<ClubsSearch />} path="/clubsearch" />
+            <Route element={<ClubImage />} path="/clubimage" />
+            <Route element={<PlaceReserv />} path="/placeReserv/:id_place" />
+            <Route element={<PlaceListReserv />} path="/placeListReserv/:id_club" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
