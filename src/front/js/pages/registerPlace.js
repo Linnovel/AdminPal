@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PlaceForm } from "../component/placeForm";
-import Footer from "../component/Footer";
 import { toast } from "react-toastify"
 
 
@@ -72,7 +71,6 @@ export const RegisterPlace = () => {
                 <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id_club)} title="Guardar" />
             </div>
             <div className="fix">
-            <Footer />
             </div>
         </>
 

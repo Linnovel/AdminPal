@@ -60,7 +60,6 @@ export const DetailClub = () => {
                 </div>
             </div>
             <div className="fix">
-            <Footer />
             </div>
         </>
     );

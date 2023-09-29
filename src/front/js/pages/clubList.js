@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import Footer from "../component/Footer";
 import { elementType } from "prop-types";
 
 export const ClubList = () => {
@@ -57,7 +56,7 @@ export const ClubList = () => {
                         onClick={() => handleSubmit(element.id)}
                         >
                       {element.name}
-                      {" -- "}
+                      {" - "}
                       {element.estado} {element.ciudad} 
                     </li>
                   );
@@ -70,8 +69,7 @@ export const ClubList = () => {
         </div>
             
         <div className="fix">
-        <Footer />
-      </div>
+        </div>
     </>
   );
 };

@@ -69,7 +69,6 @@ export const EditPlace = () => {
             </div>
             <div className="fix">
 
-            <Footer />
             </div>
         </>
 

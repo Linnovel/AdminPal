@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link, useNavigate } from "react-router-dom";
-import Footer from "./Footer";
 
 const initialValue = {
   ciudad: ""
@@ -25,6 +24,9 @@ export const LandingPage = () => {
 
   }
 
+
+
+
   return (
     <>
       <div className="back-landing ">
@@ -32,23 +34,23 @@ export const LandingPage = () => {
           <h1 className="textslide display-3 text-white fw-bold">
             Busca el mejor lugar donde jugar con tus amigos
           </h1>
-          <h2 className="text-white fw-bolder">Utiliza el buscador</h2>
+          <h2 className="text-white fw-semibold">Busca en tu ciudad para encontrar los mejores lugares</h2>
           <div className="row">
             <div className="">
-              <div className="card p-5 border-0  rounded-3 my-5 d-flex flex-row justify-content-center align-items-center gap-4">
+              <div className="card p-5 border-0  rounded-3 my-5 d-flex flex-row justify-content-center align-items-center gap-4 form">
                 <div className="form-floating mb-3 col-12 col-lg-4">
                   <input
                     type="text"
                     name="ciudad"
-                    className="form-control w-100"
+                    className="form-control "
                     placeholder="Ciudad"
                     id="floatingCity"
                     onChange={handleChange}
 
                   />
-                  <label htmlFor="flotaintInput" >Ciudad</label>
+                  <label htmlFor="flotaintInput gap-2" >Ciudad</label>
                 </div>
-                <button type="submit" onClick={submit} className="boton-main  btn btn-success btn-lg mb-2">Buscar</button>
+                <button type="submit" onClick={submit} className="boton-main  btn btn-success btn-lg mb-3">Buscar</button>
               </div>
             </div>
           </div>
@@ -62,7 +64,7 @@ export const LandingPage = () => {
             </h3>
             <h4 className="text-white fw-bolder">Reserva ya!</h4>
             <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5">
-              <div className="card shadow p-3 mb-5 bg-body-tertiary rounded ">
+              <div className="card shadow p-3 mb-5 bg-body-tertiary rounded form">
                 <img
                   src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
                   className="img-fluid"
@@ -80,7 +82,7 @@ export const LandingPage = () => {
               </div>
             </div>
             <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5 ">
-              <div className="card shadow p-3 mb-5  rounded ">
+              <div className="card shadow p-3 mb-5  rounded form">
                 <img
                   src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
                   className="img-fluid"
@@ -129,7 +131,7 @@ export const LandingPage = () => {
                     Queremos que experimentes al maximo tu mejor momento del dia
                   </div>
                   <div className="card-text text-center fw-light display-5 text-white">
-                    Empieza ya a recibir estos beneficios.
+                    Empieza a recibir estos beneficios.
                     <Link to="/register">
                       <div className="fw-bold">Registrate</div>
                     </Link>
@@ -153,8 +155,9 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </>
+
+      
+         </>
   );
 };
 

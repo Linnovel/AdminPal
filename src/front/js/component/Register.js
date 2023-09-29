@@ -33,7 +33,7 @@ export const Register = () => {
   return (
     <>
 
-      <div className="back-landing3 ">
+      <div className="back-landing-register ">
         <div className="container  ">
           <div className="row d-flex justify-content-center">
             <div className="col-sm-9 col-md-7 col-lg-5  ">
@@ -116,61 +116,7 @@ export const Register = () => {
           </div>
         </div>
       </div>
-      <footer className="text-center text-white bg-black border-top border-body ">
-        <div className="container pt-4">
-          <section className="mb-4">
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-twitter"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-google"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-linkedin"></i>
-            </a>
-            <a
-              className="btn btn-link btn-floating btn-lg text-white m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="white"
-            >
-              <i className="fab fa-github"></i>
-            </a>
-          </section>
-        </div>
-        <div className="text-center text-white p-3">© 2023 Copyright:</div>
-      </footer>
+      
     </>
   );
 };

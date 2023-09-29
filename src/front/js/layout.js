@@ -24,7 +24,8 @@ import Entrenadores from "./component/Entrenadores";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ClubsSearch } from "./pages/clubsSearch";
-
+import ContactUs from "./component/ContactUs";
+import Footer from "./component/Footer";
 
 //create your first component
 const Layout = () => {
@@ -55,6 +56,7 @@ const Layout = () => {
             <Nav />
           </>
           <Routes>
+            <Route element={<ContactUs/>} path="/contactUs"/>
             <Route element={<LandingPage />} path="/" />
             <Route element={<ReservasCanchas />} path="/reservascanchas" />
             <Route element={<Login />} path="/login" />
@@ -76,6 +78,7 @@ const Layout = () => {
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
+        <Footer />
       </BrowserRouter>
     </div>
   );

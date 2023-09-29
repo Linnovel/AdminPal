@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Footer from "../component/Footer";
+
 
 export const PlaceList = () => {
   const { store, actions } = useContext(Context);
@@ -69,7 +69,6 @@ export const PlaceList = () => {
         </div>
       </div>
       <div className="fix">
-        <Footer />
       </div>
     </>
   );

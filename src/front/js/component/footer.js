@@ -1,9 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
+
 
 const Footer = () => {
 	return (<>
-	<footer className="text-center text-white bg-black border-top border-body fixed-bottom">
-        <div className="container pt-4 fixed-bottom">
+	<footer className="text-center text-white bg-black border-top border-body ">
+        <div className="container pt-4">
           <section className="mb-4">
             <a
               className="btn btn-link btn-floating btn-lg text-white m-1"
