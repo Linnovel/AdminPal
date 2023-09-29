@@ -88,7 +88,6 @@ export const EditClub = () => {
                     descripcion={store.clubData.description}
                     estado={store.clubData.estado} ciudad={store.clubData.ciudad} direccion={store.clubData.direccion} title={"Editar Club"} />
             </div>
-            <Footer />
         </>
     );
 };

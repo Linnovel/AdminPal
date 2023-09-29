@@ -61,9 +61,7 @@ export const DetailClub = () => {
                     </div>
                 </div>
             </div>
-            <div className="fix">
-                <Footer />
-            </div>
+            
         </>
     );
 };

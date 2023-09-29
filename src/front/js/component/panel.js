@@ -28,6 +28,8 @@ export const Panel = () => {
         actions.logout();
         navigate("/");
     }
+
+
     //validamos que exista un token, si no existe lo enviamos a login
     /*
     useEffect(() => {
@@ -41,16 +43,18 @@ export const Panel = () => {
 */
     return (
         <nav className="navbar navbar-expand-lg bg-black border-bottom border-body " data-bs-theme="dark">
-            <span className="">
+            <span className="navbar-brand mb-0">
+                <Link to="/">
                 <img
                     src={logopadel}
                     className="img-fluid"
-                    width="125px"
+                    width="125"
                     height="125px"
-                />
+                    />
+                    </Link>
             </span>
             <div className="container-fluid">
-                <p className="text-light fw-bolder mb-0 fs-1"> {store.userData.name}</p>
+                <p className="text-light fw-light mb-0 fs-1">Bienvenido {store.userData.name}</p>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -76,28 +80,22 @@ export const Panel = () => {
                     </div>
 
                     <div
-                        className="offcanvas-body d-flex flex-column justify-content-between px-0"
+                        className="d-flex justify-content-end align-items-center gap-2"
                     >
                         <ul className="navbar-nav fs-5 justify-content-evenly">
                             <li className="nav-item p-3 py-md-1">
-                                <button className="nav-link offcanvas-title text-info fw-bold " onClick={goToregisterClub}>Registra un Club</button>
+                                <button className="btn offcanvas-title text-info fw-bold  fs-4 " onClick={goToregisterClub}>Registra un Club</button>
                             </li>
                             <li className="nav-item p-3 py-md-1">
-                                <button className="nav-link offcanvas-title text-info fw-bold" onClick={SubmitListclubs}>Clubs Registrados </button>
+                                <button className="btn offcanvas-title text-info fw-bold  fs-4" onClick={SubmitListclubs}>Clubs Registrados </button>
                             </li>
                             <li className="nav-item p-3 py-md-1">
-                                <button className="nav-link offcanvas-title text-info fw-bold" onClick={SubmitUserData}>Mis Datos </button>
+                                <button className="btn offcanvas-title text-info fw-bold  fs-4" onClick={SubmitUserData}>Mis Datos </button>
                             </li>
                             <li className="nav-item p-3 py-md-1">
-                                <button className="nav-link offcanvas-title text-info fw-bold" onClick={Logout}>Cerrar Sesion <i className="fa-solid fa-right-from-bracket "></i></button>
+                                <button className="btn offcanvas-title text-info fw-bold  fs-4" onClick={Logout}>Cerrar Sesion <i className="fa-solid fa-right-from-bracket "></i></button>
                             </li>
                         </ul>
-                        <div className="d-lg-none align-self-center py-3">
-                            <a ><i className="bi bi-twitter px-2 text-info fs-2"></i></a>
-                            <a ><i className="bi bi-facebook px-2 text-info fs-2"></i></a>
-                            <a ><i className="bi bi-github px-2 text-info fs-2"></i></a>
-                            <a ><i className="bi bi-whatsapp px-2 text-info fs-2"></i></a>
-                        </div>
                     </div>
                 </section>
             </div>

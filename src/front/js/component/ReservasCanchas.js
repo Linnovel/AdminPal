@@ -1,11 +1,6 @@
 import React, { useContext, useState } from "react";
-import logopadel from "../../img/logopadel.png";
-import { Link } from "react-router-dom";
 import "../../styles/home.css";
-import DatePicker from "react-multi-date-picker";
-import { Context } from "../store/appContext";
 import Calendar from "./Calendar";
-import Footer from "./Footer";
 
 export const ReservasCanchas = () => {
   return (
@@ -41,7 +36,7 @@ export const ReservasCanchas = () => {
                   <div
                     className="modal fade"
                     id="exampleModal"
-                    tabindex="-1"
+                    tabIndex="-1"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
                   >
@@ -74,7 +69,7 @@ export const ReservasCanchas = () => {
                         </div>
                         <div className="mb-3  my-2 p-2">
                           <label
-                            for="formGroupExampleInput"
+                            htmlFor="formGroupExampleInput"
                             className="form-label"
                           >
                             Example label
@@ -88,7 +83,7 @@ export const ReservasCanchas = () => {
                         </div>
                         <div className="mb-3  my-2 p-2">
                           <label
-                            for="formGroupExampleInput2"
+                            htmlFor="formGroupExampleInput2"
                             className="form-label"
                           >
                             Another label
@@ -118,58 +113,9 @@ export const ReservasCanchas = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5 ">
-              <div className="card shadow p-3 mb-5  rounded ">
-                <img
-                  src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
-                  className="img-fluid"
-                  width="1000px"
-                  height="1000px"
-                />
-                <div className="card-body ">
-                  <div className="card-text text-center mb-2">
-                    Cancha nombre y direccion.
-                  </div>
-                  <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success ">
-                    Reserva este campo
-                  </button>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5">
-              <div className="card shadow p-3 mb-5 bg-body-tertiary rounded ">
-                <img
-                  src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
-                  className="img-fluid"
-                  width="1000px"
-                  height="1000px"
-                />
-                <div className="card-body ">
-                  <div className="card-text text-center mb-2">
-                    Cancha nombre y direccion..
-                  </div>
-                  <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
-                    Reserva este campo
-                  </button>
-                </div>
-              </div>
-            </div> */}
-            {/* <div className="col-6 ">
-              <div className="card shadow p-3 mb-5 bg-body-tertiary rounded ">
-                <h3>Elige la fecha que deseas</h3>
-                <DatePicker
-                  className="text-center mb-2 p-5"
-                  placeholder="Calendario"
-                />
-                <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
-                  Confirma
-                </button>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
-  <Footer/>
     </>
   );
 };

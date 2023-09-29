@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { ImageForm } from "../component/imageForm";
-import Footer from "../component/Footer";
 import { toast } from "react-toastify"
 
 
@@ -69,14 +68,6 @@ export const RegisterImage = () => {
                         })}
                 </div>
             </div>
-            
-            <Footer/>
-            
-
-
-
-
-
         </>
 
     );

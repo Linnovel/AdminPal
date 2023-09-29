@@ -1,7 +1,9 @@
 import React from "react";
-import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 const Entrenadores = () => {
+
+  
   return (
     <>
       <div className="landing-entrenadores">
@@ -58,12 +60,13 @@ const Entrenadores = () => {
             </div>
           </div>
         </div>
+        <Link to="/ContactUs" >
+
         <button className="btn btn-warning fw-bold fs-2 d-grid gap-2 col-4 mx-auto p-3 my-2 mb-2 ">
           Reserva tu cupo hoy
         </button>
+        </Link>
       </div>
-
-      <Footer />
     </>
   );
 };

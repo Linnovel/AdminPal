@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { ClubForm } from "../component/clubForm";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import Footer from "../component/Footer";
 import { toast } from "react-toastify"
 
 
@@ -84,8 +83,7 @@ export const RegisterClub = () => {
             <div className="back-landing3">
                 <ClubForm submit={handleSubmit} hanndleEvent={hanndleEvent} title={"Registra tu Club"} />
             </div>
-            <Footer className="fixed-bottom"/>
-        </>
+                   </>
     );
 };
 

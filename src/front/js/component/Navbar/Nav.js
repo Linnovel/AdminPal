@@ -5,7 +5,10 @@ import NavbarRegistros from "./NavbarRegistros";
 import { Panel } from "../panel";
 import { Context } from "../../store/appContext";
 
+
+
 const Nav = () => {
+  
   const location = useLocation();
   const navbarPath = ["/"];
   const { store } = useContext(Context)

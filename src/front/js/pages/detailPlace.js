@@ -60,7 +60,6 @@ export const DetailPlace = () => {
                 </div>
             </div>
             <div className="fix">
-            <Footer />
             </div>
         </>
     );

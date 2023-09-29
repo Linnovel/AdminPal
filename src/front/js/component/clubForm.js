@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Context } from "../store/appContext";
-import { useNavigate } from "react-router-dom";
+
 
 
 export const ClubForm = ({ submit, hanndleEvent, name, email, phone, descripcion, estado, ciudad, direccion, title }) => {

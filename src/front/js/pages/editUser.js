@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import Footer from "../component/Footer";
+
 
 
 
@@ -76,8 +76,7 @@ export const EditUser = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
-        </>
+            </>
     );
 };
 

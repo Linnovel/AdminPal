@@ -49,6 +49,21 @@
   background-color: black;
 }
 
+.back-landing-login {
+  background-image: url("https://st4.depositphotos.com/1424188/30935/i/450/depositphotos_309357508-stock-photo-paddle-tennis-player-man-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background: cover;
+  background-color: black;
+}
+
+.back-landing-register {
+  background-image: url("https://st4.depositphotos.com/1424188/30935/i/450/depositphotos_309357508-stock-photo-paddle-tennis-player-man-light.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background: cover;
+  background-color: black;
+}
 
 
 
@@ -96,23 +111,7 @@
 
   }
 
-  nav,
-  .offcanvas {
-    background-color: #00c221;
-  }
-  .navbar-toggler {
-    border: none;
-  }
-  .navbar-toggler:focus {
-    outline: none;
-    box-shadow: none;
-  }
 
-  @media (max-width: 768px) {
-    .navbar-nav > li:hover {
-      background-color: #00c221;
-    }
-  }
 
 
 .login-bg {
