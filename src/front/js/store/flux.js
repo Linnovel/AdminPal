@@ -10,7 +10,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			placeData: {},
 			imageData: [],
 			imagesList: [],
-			dataUser: {}
+			dataUser: {},
+			clubImage: {}
 
 		},
 		actions: {
@@ -276,6 +277,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
+			getPlacesClubCity: async (id_club) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/club/public/${id_club}`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
+					if (response.status === 401) {
+						alert("No autorizado");
+						return;
+					}
+					if (response.status === 200) {
+						const data = await response.json();
+						//setStore({ clubImage: data });
+						return data;
+
+					}
+				} catch (error) {
+					console.log(error)
+				}
+			},
 			getPlaces: async (id_club) => {
 				try {
 					const store = getStore()
@@ -406,6 +429,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return;
 					}
 					setStore({ imageData: data });
+					return data;
 
 				} catch (error) {
 					console.log(error)

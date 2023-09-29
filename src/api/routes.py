@@ -2,7 +2,7 @@
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Club, Place, Image
+from api.models import db, User, Club, Place, Image, Reserva
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -265,13 +265,12 @@ def get_place():
 
 # GET place by id by club
 @api.route('/club/place/<int:id_club>', methods=['GET'])
-@jwt_required()
 def get_place_by_id_club(id_club):
-    token = get_jwt_identity()
     current_place = Place.query.filter_by(id_club=id_club).all() #devuelve un arreglo de objetos
     if not current_place:
         return jsonify({"error": "place not found"}), 404
     return  jsonify([place.serialize() for place in current_place]), 200 #serializamos el arreglo de objetos
+
 
 # GET by id
 @api.route('/place/<int:id>', methods=['GET'])
@@ -451,7 +450,7 @@ def get_private_data():
         return jsonify({"error": "user not found"}), 404
     return jsonify(current_user.serialize()), 200
 
-#####
+#####buscamos  club por ciudad
 @api.route("/search", methods=["POST"])
 def get_dates():
     data= request.get_json()
@@ -461,3 +460,62 @@ def get_dates():
         return jsonify({"error": "club not found"}), 404
     serialized_club = [club.serialize() for club in current_club]
     return jsonify(serialized_club), 200
+
+
+# GET place by id by club public
+@api.route('/club/public/<int:id_club>', methods=['GET'])
+def get_place_by_id_club_public(id_club):
+    current_place = Place.query.filter_by(id_club=id_club).first() #devuelve un arreglo de objetos
+    if not current_place:
+        return jsonify({"error": "place not found"}), 404 
+    current_image = Image.query.filter_by(id_place=current_place.id).first()
+    if not current_image:
+        return jsonify({"error": "image not found"}), 404
+    return  jsonify(current_image.serialize()), 200 #serializamos el arreglo de objetos
+
+#####hacemos la reserva
+@api.route("/reserva/<int:id>", methods=["POST"])
+#jwt_required()
+def create_reserv(id):
+    data= request.get_json()
+    fecha=data.get("fecha", None)
+    time=data.get("time", None)
+    #user_data=get_jwt_identity()
+    #user_id=user_data["id"]
+    user_id=1
+    is_not_avalaible=Reserva.query.filter_by(fecha=fecha, time=time, id_place=id).first()
+    if is_not_avalaible:
+        return jsonify({"error": "Cancha ocupada"}), 404
+       
+    try:
+        new_reserv = Reserva(fecha=fecha, time=time, id_place=id, id_user=user_id)
+        db.session.add(new_reserv)
+        db.session.commit()
+
+        return jsonify(new_reserv.serialize()), 201
+
+    except Exception as error:
+        db.session.rollback()
+        return jsonify(error), 500
+    
+
+# delete a image
+@api.route('/reserva/<int:id>', methods=['DELETE'])
+def delete_reserva_by_id(id):
+    reserv_to_delete = Reserva.query.get(id)
+
+    if not  reserv_to_delete:
+        return jsonify({"error": "reserv not found"}), 404
+
+    try:
+        db.session.delete( reserv_to_delete)
+        db.session.commit()
+        return jsonify("reserv deleted successfully"), 200
+
+    except Exception as error:
+        db.session.rollback()
+        return error, 500
+
+    
+
+  

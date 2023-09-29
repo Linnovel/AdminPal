@@ -11,6 +11,7 @@ class User(db.Model):
     last_name= db.Column(db.String(100), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
     club= db.relationship("Club", backref="user", lazy=True)
+    reservas= db.relationship("Reserva", backref="user", lazy=True)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -62,6 +63,7 @@ class Place(db.Model):
     description = db.Column(db.String(300), unique=False, nullable=False)
     id_club= db.Column(db.Integer, db.ForeignKey("club.id"), nullable=False)
     image=db.relationship("Image", backref="place", lazy=True)
+    reserva=db.relationship("Reserva", backref="place", lazy=True)
 
 
     def __repr__(self):
@@ -92,5 +94,26 @@ class Image(db.Model):
             "img_url": self.img_url,
             "id_place": self.id_place
  
-           
+    }
+
+#modelo de reservas
+class Reserva(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    fecha  = db.Column(db.Date, unique=False, nullable=False)
+    time= db.Column(db.String(10), unique=False, nullable=False)
+    id_place= db.Column(db.Integer, db.ForeignKey("place.id"), nullable=False)
+    id_user = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+
+
+    def __repr__(self):
+        return f'<Reserva {self.fecha}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "fecha": self.fecha,
+            "time": self.time,
+            "id_place": self.id_place,
+            "id_user": self.id_user
+         
     }

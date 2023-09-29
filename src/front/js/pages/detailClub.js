@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Footer from "../component/Footer";
+import { toast } from "react-toastify"
 
 
 
@@ -30,6 +31,7 @@ export const DetailClub = () => {
     //validamos que exista un token, si no existe lo enviamos a login
     useEffect(() => {
         if (store.token === "" || !store.token) {
+            toast.error("No autenticado");
             navigate("/login");
             return;
         }
@@ -60,7 +62,7 @@ export const DetailClub = () => {
                 </div>
             </div>
             <div className="fix">
-            <Footer />
+                <Footer />
             </div>
         </>
     );
