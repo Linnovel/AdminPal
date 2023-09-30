@@ -1,25 +1,30 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 
-const initialDate = [{
-  date : "",
-}]
 
-const Calendar = () => {
 
-  const [getDate, setGetDate] = useState(initialDate)
+const Calendar = ({id}) => {
+const {store, actions} = useContext(Context)
+  const [getDate, setGetDate] = useState();
 
   const handleDate = (event) => {
-setGetDate({...getDate, [event.target.name]: event.target.value})
-    console.log(setGetDate);
+setGetDate(event.target.value)
    
   }
+
+  const handleSubmit=() => {
+    const [date, time] = getDate.split("T")
+    actions.createReservation(id, date, time)
+  }
+
+  
+  
 
     return (
       <div>
         <form>
-            <input type="datetime-local" id="date" name="date" className="form-control" placeholder="dd-mm-yyyy" value="date" onChange={handleDate}/>
-            <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success my-2" >
+            <input type="datetime-local" id="date" name="date" className="form-control" placeholder="dd-mm-yyyy"  onChange={handleDate}/>
+            <button type="button" className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success my-2" onClick={handleSubmit}>
                   Confirma
                 </button>
         </form>

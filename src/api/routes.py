@@ -475,17 +475,16 @@ def get_place_by_id_club_public(id_club):
 
 #####hacemos la reserva
 @api.route("/reserva/<int:id>", methods=["POST"])
-#jwt_required()
+@jwt_required()
 def create_reserv(id):
     data= request.get_json()
     fecha=data.get("fecha", None)
     time=data.get("time", None)
-    #user_data=get_jwt_identity()
-    #user_id=user_data["id"]
-    user_id=1
+    user_data=get_jwt_identity()
+    user_id=user_data["id"]
     is_not_avalaible=Reserva.query.filter_by(fecha=fecha, time=time, id_place=id).first()
     if is_not_avalaible:
-        return jsonify({"error": "Cancha ocupada"}), 404
+        return jsonify({"error": "Cancha ocupada"}), 400
        
     try:
         new_reserv = Reserva(fecha=fecha, time=time, id_place=id, id_user=user_id)
@@ -518,4 +517,3 @@ def delete_reserva_by_id(id):
 
     
 
-  

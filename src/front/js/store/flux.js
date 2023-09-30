@@ -455,6 +455,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 
+			createReservation : async (id, date, time) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/reserva/${id}`, {
+						headers : {
+							Authorization: `Bearer ${store.token}`,
+							"Content-Type": "application/json",
+						},
+						method:"POST", body:`{"fecha":"${date}", "time":"${time}" }`
+					})
+
+				} catch (error) {
+					console.log(error)
+				} 
+			},
+
 
 
 

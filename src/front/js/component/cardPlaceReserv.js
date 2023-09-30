@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-
+import Calendar from "./Calendar";
 
 
 export const PlaceReserv = ({ name, type, description, id_place, index }) => {
@@ -15,7 +15,6 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
         const image = await actions.getImage(id)
         setImg(image)
     }
-    console.log("aqui: " + img)
     const submitReserv = (id_place) => {
 
     }
@@ -31,7 +30,7 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
             <div key={index} className="col-3 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5">
                 <div className="card shadow p-3 mb-5 bg-body-tertiary rounded ">
                     <img
-                        src={img.img_url}
+                        src={img ? img?.img_url : "https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"}
                         className="img-fluid"
                         width="1000px"
                         height="1000px"
@@ -46,9 +45,50 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
                         <div className="card-text text-start mb-2">
                             {description}
                         </div>
-                        <button onClick={() => submitReserv(id_place)} className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
-                            Reservar este Espacio
-                        </button>
+                        <button
+                    type="button"
+                    className="cart-1 cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success "
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Reserva esta cancha
+                  </button>
+
+                  <div
+                    className="modal fade"
+                    id="exampleModal"
+                    tabIndex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div className="modal-dialog">
+                      <div className="modal-content">
+                        <div className="modal-header">
+                          <h1
+                            className="modal-title fs-5"
+                            id="exampleModalLabel"
+                          >
+                            Modal title
+                          </h1>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div className="modal-body">
+                          
+                            <div className="card shadow p-3 mb-5 bg-body-tertiary rounded ">
+                              <h4 className="text-center">Calendario</h4>
+                              <Calendar 
+                                id={id_place}
+                              />
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
                     </div>
                 </div>

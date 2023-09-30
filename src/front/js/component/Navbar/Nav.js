@@ -11,6 +11,7 @@ const Nav = () => {
   
   const location = useLocation();
   const navbarPath = ["/"];
+  const registerPath = ["/login", "/register", "/entrenadores", "/ContactUs"]
   const { store } = useContext(Context)
 
   return (
@@ -20,7 +21,7 @@ const Nav = () => {
           <Panel />
           :
           <Navbar />
-      ) : location.pathname == "/login" || location.pathname == "/register" ? (
+      ) : registerPath.includes(location.pathname) ? (
         <NavbarRegistros />
       ) :
         <Panel />
