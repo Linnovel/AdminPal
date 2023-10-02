@@ -10,6 +10,7 @@ class User(db.Model):
     name = db.Column(db.String(100), unique=False, nullable=False)
     last_name= db.Column(db.String(100), unique=False, nullable=False)
     is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    is_club = db.Column(db.Boolean(), unique=False, nullable=True)
     club= db.relationship("Club", backref="user", lazy=True)
     reservas= db.relationship("Reserva", backref="user", lazy=True)
 
@@ -21,7 +22,8 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "name": self.name,
-            "last_name": self.last_name
+            "last_name": self.last_name,
+            "is_club": self.is_club
             # do not serialize the password, its a security breach
         }
 

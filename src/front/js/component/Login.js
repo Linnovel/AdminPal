@@ -25,6 +25,15 @@ export const Login = () => {
   }
 
   const handleSubmit = async () => {
+
+    if (login.email == "") {
+      toast.error("Debe introdducir su Email")
+      return
+    }
+    if (login.password == "") {
+      toast.error("Debe introducir su Contraseña")
+      return
+    }
     const result = await actions.login(login);
     if (result) {
       navigate("/clublist");
@@ -59,7 +68,7 @@ export const Login = () => {
           </div>
         </div>
       </div>
-      
+
     </div>
 
 

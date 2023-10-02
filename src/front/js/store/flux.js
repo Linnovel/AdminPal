@@ -11,7 +11,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			imageData: [],
 			imagesList: [],
 			dataUser: {},
-			clubImage: {}
+			clubImage: {},
+			listReserv: []
 
 		},
 		actions: {
@@ -46,6 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})//fin del fetch
 
 					const data = await response.json();
+
 					if (response.status !== 201) {
 						return false;
 					} else {
@@ -66,8 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const data = await response.json();
 					if (response.status === 401) {
-						alert("No autorizado");
-						return;
+						return false;
 					}
 					//console.log(data);
 					setStore({ userData: data });
@@ -161,7 +162,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const data = await response.json();
 					if (response.status === 401) {
-						alert("No autorizado");
+						toast.error("No autorizado");
 						return;
 					}
 					setStore({ clubData: data });
@@ -179,12 +180,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 					});
 					if (response.status === 401) {
-						alert("No autorizado");
-						return;
+						return false;
 					}
 					if (response.status === 404) {
-						alert("La lista de Clubs esta vacia");
-						return;
+						return false;
 					}
 					if (response.status === 200) {
 						const data = await response.json();
@@ -207,12 +206,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 					});
 					if (response.status === 401) {
-						alert("No autorizado");
-						return;
+						return false;
 					}
 					if (response.status === 404) {
-						alert("La lista de Clubs esta vacia");
-						return;
+						return false;
 					}
 					if (response.status === 200) {
 						const data = await response.json();
@@ -286,8 +283,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 					});
 					if (response.status === 401) {
-						alert("No autorizado");
-						return;
+						return false;
 					}
 					if (response.status === 200) {
 						const data = await response.json();
@@ -308,8 +304,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 					});
 					if (response.status === 401) {
-						alert("No autorizado");
-						return;
+						return false;
 					}
 					if (response.status === 200) {
 						const data = await response.json();
@@ -334,8 +329,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const data = await response.json();
 					if (response.status === 401) {
-						alert("No autorizado");
-						return;
+						return false;
 					}
 					setStore({ placeData: data });
 
@@ -425,8 +419,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const data = await response.json();
 					if (response.status === 401) {
-						alert("No autorizado");
-						return;
+						return false;
 					}
 					setStore({ imageData: data });
 					return data;
@@ -445,8 +438,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const data = await response.json();
 					if (response.status === 401) {
-						alert("No autorizado");
-						return;
+						return false;
 					}
 					setStore({ imagesList: data });
 
@@ -454,28 +446,118 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error)
 				}
 			},
-
-			createReservation : async (id, date, time) => {
+			deleteImage: async (id) => {
+				try {
+					const store = getStore();
+					const response = await fetch(`${store.backendUrl}/api/image/${id}`, {
+						method: "DELETE",
+						headers: {
+							"Content-Type": "application/json",
+							"Authorization": `Bearer ${store.token}`,
+						},
+					});
+					const data = await response.json();
+					if (response.status !== 200) {
+						return false;
+					} else {
+						return true;
+					}
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			//reservaciones
+			createReservation: async (id, date, time) => {
 				try {
 					const store = getStore()
 					const response = await fetch(`${store.backendUrl}/api/reserva/${id}`, {
-						headers : {
+						headers: {
 							Authorization: `Bearer ${store.token}`,
 							"Content-Type": "application/json",
 						},
-						method:"POST", body:`{"fecha":"${date}", "time":"${time}" }`
+						method: "POST", body: `{"fecha":"${date}", "time":"${time}" }`
 					})
+					const data = await response.json();
+					if (response.status !== 200) {
+						return false;
+					} else {
+						return true;
+					}
 
 				} catch (error) {
 					console.log(error)
-				} 
+				}
 			},
+			getReservClient: async () => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/lista/reserva/`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
 
+					if (response.status === 401) {
+						return false;
+					}
+					if (response.status === 404) {
+						return false;
+					}
+					if (response.status === 200) {
+						const data = await response.json();
+						setStore({ listReserv: data });
+						return data;
 
+					}
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			getReservPlace: async (id) => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/lista/reserva/place/${id}`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
 
+					if (response.status === 401) {
+						return false;
+					}
+					if (response.status === 404) {
+						return false;
+					}
+					if (response.status === 200) {
+						const data = await response.json();
+						setStore({ listReserv: data });
+						return data;
 
-
-
+					}
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			deleteReserva: async (id) => {
+				try {
+					const store = getStore();
+					const response = await fetch(`${store.backendUrl}/api/reserva/${id}`, {
+						method: "DELETE",
+						headers: {
+							"Content-Type": "application/json",
+							"Authorization": `Bearer ${store.token}`,
+						},
+					});
+					const data = await response.json();
+					if (response.status !== 200) {
+						return false;
+					} else {
+						return true;
+					}
+				} catch (error) {
+					console.log(error)
+				}
+			},
 
 			//************ */
 			exampleFunction: () => {

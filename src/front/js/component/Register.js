@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
+import { toast } from "react-toastify"
 
 const registerValue = {
   name: "",
@@ -23,11 +24,34 @@ export const Register = () => {
   };
 
 
-  const handleSubmit = () => {
-    const result = actions.registerUser(register);
-    alert("Registro Exitoso!")
-    navigate("/login")
-    return
+  const handleSubmit = async () => {
+    if (register.name == "") {
+      toast.error("El nombre es necesario para registrarte")
+      return
+    }
+    if (register.last_name == "") {
+      toast.error("El Apellido es necesario para registrarte")
+      return
+    }
+    if (register.email == "") {
+      toast.error("El email es necesario para registrarte ")
+      return
+    }
+    if (register.password == "") {
+      toast.error("El password es necesario para registrarte")
+      return
+    }
+    const result = await actions.registerUser(register);
+    if (result) {
+      toast.success("Registro Exitoso!")
+      navigate("/login");
+      return
+    } else {
+      toast.error("Ocurrio un Error!")
+      navigate("/login");
+      return
+    }
+
   };
 
   return (
@@ -116,7 +140,7 @@ export const Register = () => {
           </div>
         </div>
       </div>
-      
+
     </>
   );
 };

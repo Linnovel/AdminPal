@@ -27,13 +27,21 @@ export const RegisterImage = () => {
     //enviamos el valor
     const handleSubmit = async (id) => {
         if (dataImage.image == "") {
-            toast.error("Debe seleccionar una imagenb")
+            toast.error("Debe seleccionar una imagen jpg")
             return
         }
         const image = await actions.registerImage(id, dataImage);
         toast.success("Imagen Cargada");
         navigate("/clublist");
 
+    }
+    const deleteImage = async (id) => {
+        const imageDeleted = await actions.deleteImage(id)
+        console.log("AQUI:  " + imageDeleted)
+        if (imageDeleted) {
+            navigate(`/clublist`);
+        }
+        return
     }
 
 
@@ -44,8 +52,8 @@ export const RegisterImage = () => {
             navigate("/login");
             return;
         }
+
         actions.getUserData();
-        //actions.getPlaceData(id_place);
         actions.getAllImage(id_place);
     }, [store.token]);
 
@@ -62,6 +70,7 @@ export const RegisterImage = () => {
                             return (
                                 <div key={index} className="card col-sm-9 col-md-7 col-lg-5 mx-auto mt-5 img mb-5">
                                     <img src={image.img_url} className="card-img-top img mt-2 rounded mx-auto d-block" alt="..." />
+                                    <button href="#" className="btn btn-danger" onClick={() => deleteImage(image.id)}>Eliminar</button>
                                 </div>
 
                             );

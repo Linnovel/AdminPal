@@ -2,7 +2,6 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Footer from "../component/Footer";
 import { toast } from "react-toastify"
 
 
@@ -19,10 +18,20 @@ export const DetailClub = () => {
     const SubmitEdit = (id_club) => {
         navigate(`/editClub/${id_club}`)
     }
-    const deleteClub = (id_club) => {
+    const deleteClub = async (id_club) => {
         confirm("¿Esta seguro de eliminar este Club?")
-        actions.deleteClub(id_club);
-        navigate("/clubList");
+        const deleteClub = await actions.deleteClub(id_club);
+
+        if (deleteClub) {
+            toast.success("Club eliminado")
+            navigate("/clubList");
+            return
+        } else {
+            toast.error("Error al Eliminar")
+            navigate("/clubList");
+            return
+        }
+
     }
     const cargarLugar = (id_club) => {
         navigate(`/placelist/${id_club}`);
@@ -36,8 +45,6 @@ export const DetailClub = () => {
             return;
         }
         actions.getClubData(id);
-        // actions.getPlaces(id);
-        //actions.getImage(store.placeData.id_club);
     }, [store.token]);
 
     return (
@@ -61,7 +68,7 @@ export const DetailClub = () => {
                     </div>
                 </div>
             </div>
-            
+
         </>
     );
 };
