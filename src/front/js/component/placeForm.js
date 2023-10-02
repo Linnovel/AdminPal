@@ -12,7 +12,7 @@ export const PlaceForm = ({ club, hanndleEvent, submit, name, type, description,
                 <div className="row">
                     <div className="col-sm-9 col-md-7 col-lg-5 mx-auto ancho-form">
                         <div className="card p-5  border-0 shadow rounded-3 my-2 form">
-                            <h2 className="text-center">Lugar dentro del Club: {club}</h2>
+                            <h2 className="text-center fs-5">Espacio dentro del Club: {club}</h2>
                             <form>
                                 <div className="row">
                                     <div className="mb-3 col-6">

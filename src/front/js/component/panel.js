@@ -78,28 +78,21 @@ export const Panel = () => {
                         <ul className="navbar-nav fs-5 justify-content-evenly">
                             {store.userData.is_club ? (
                                 <li className="nav-item p-3 py-md-1">
-                                    <button className="btn offcanvas-title text-info fw-bold  fs-4 " onClick={goToregisterClub}>Registra un Club</button>
+                                    <button className="btn offcanvas-title text-info fw-bold  fs-5 " onClick={goToregisterClub}>Registra un Club</button>
                                 </li>
                             ) : ""}
                             {store.userData.is_club ? (
                                 <li className="nav-item p-3 py-md-1">
-                                    <button className="btn offcanvas-title text-info fw-bold  fs-4" onClick={SubmitListclubs}>Clubs Registrados </button>
+                                    <button className="btn offcanvas-title text-info fw-bold  fs-5" onClick={SubmitListclubs}>Clubs Registrados </button>
                                 </li>
                             ) : ""}
                             <li className="nav-item p-3 py-md-1">
-
-                                <button className="btn offcanvas-title text-info fw-bold  fs-5 " onClick={goToregisterClub}>Registra un Club</button>
-                            </li>
-                            <li className="nav-item p-3 py-md-1">
-                                <button className="btn offcanvas-title text-info fw-bold  fs-5" onClick={SubmitListclubs}>Clubs Registrados </button>
-                            </li>
-                            <li className="nav-item p-3 py-md-1">
                                 <button className="btn offcanvas-title text-info fw-bold  fs-5" onClick={SubmitUserData}>Mis Datos </button>
 
-                                <button className="btn offcanvas-title text-info fw-bold  fs-4" onClick={SubmitUserData}>Mis Datos </button>
+
                             </li>
                             <li className="nav-item p-3 py-md-1">
-                                <button className="btn offcanvas-title text-info fw-bold  fs-4" onClick={SubmitReserv}>Mis Reservas </button>
+                                <button className="btn offcanvas-title text-info fw-bold  fs-5" onClick={SubmitReserv}>Mis Reservas </button>
 
                             </li>
                             <li className="nav-item p-3 py-md-1">
