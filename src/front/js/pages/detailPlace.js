@@ -12,16 +12,17 @@ export const DetailPlace = () => {
     const params = useParams();
     const id = parseInt(params.id);
 
-
-
+    const SubmitReservs = (id) => {
+        navigate(`/reservclub/${id}`)
+    }
 
 
     const SubmitEdit = (id) => {
         navigate(`/editplace/${id}`)
     }
-    const deletePlace = (id_club) => {
-        confirm("¿Esta seguro de eliminar este Lugar?" + id)
-        const eliminado = actions.deletePlace(id);
+    const deletePlace = async (id_club) => {
+        confirm("¿Esta seguro de eliminar este Lugar?")
+        const eliminado = await actions.deletePlace(id);
         if (eliminado) {
             navigate(`/placelist/${id_club}`);
         }
@@ -54,6 +55,7 @@ export const DetailPlace = () => {
                                 <button href="#" className="btn btn-warning" onClick={() => SubmitEdit(id)}>Editar</button>
                                 <button href="#" className="btn btn-danger" onClick={() => deletePlace(id, store.placeData.id_club)} >Eliminar</button>
                                 <button href="#" className="btn btn-secondary" onClick={() => cargarImagen(id)} >imagenes</button>
+                                <button href="#" className="btn btn-secondary" onClick={() => SubmitReservs(id)} >Reservas</button>
                             </div>
                         </div>
                     </div>

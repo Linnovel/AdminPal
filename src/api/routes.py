@@ -41,7 +41,7 @@ def user_login():
         return jsonify({"error":"Password incorrecto"}), 401
    
     #se crea el token
-    token_data={"id": user_exist.id, "email": user_exist.email}
+    token_data={"id": user_exist.id, "email": user_exist.email, "is_club": user_exist.is_club}
     token= create_access_token(token_data)
     return jsonify({"token": token}), 200
 
@@ -473,6 +473,45 @@ def get_place_by_id_club_public(id_club):
         return jsonify({"error": "image not found"}), 404
     return  jsonify(current_image.serialize()), 200 #serializamos el arreglo de objetos
 
+
+# delete a image
+@api.route('/reserva/<int:id>', methods=['DELETE'])
+def delete_reserva_by_id(id):
+    reserv_to_delete = Reserva.query.get(id)
+
+    if not  reserv_to_delete:
+        return jsonify({"error": "reserv not found"}), 404
+
+    try:
+        db.session.delete( reserv_to_delete)
+        db.session.commit()
+        return jsonify("reserv deleted successfully"), 200
+
+    except Exception as error:
+        db.session.rollback()
+        return error, 500
+
+
+########### Endpoints para Reserva###################
+# GET all reservs by user
+@api.route('/lista/reserva', methods=['GET'])
+@jwt_required()
+def get_reserv_user():
+   user_data=get_jwt_identity()
+   id=user_data["id"]
+
+   reservs = Reserva.query.filter_by(id_user=id).all()
+   serialized_reserv = [reserv.serialize() for reserv in reservs]
+   return jsonify(serialized_reserv), 200
+
+# GET all reservs by place
+@api.route('/lista/reserva/place/<int:id>', methods=['GET'])
+@jwt_required()
+def get_reserv_place(id):
+   reservs = Reserva.query.filter_by(id_place=id).all()
+   serialized_reserv = [reserv.serialize() for reserv in reservs]
+   return jsonify(serialized_reserv), 200
+
 #####hacemos la reserva
 @api.route("/reserva/<int:id>", methods=["POST"])
 @jwt_required()
@@ -496,24 +535,3 @@ def create_reserv(id):
     except Exception as error:
         db.session.rollback()
         return jsonify(error), 500
-    
-
-# delete a image
-@api.route('/reserva/<int:id>', methods=['DELETE'])
-def delete_reserva_by_id(id):
-    reserv_to_delete = Reserva.query.get(id)
-
-    if not  reserv_to_delete:
-        return jsonify({"error": "reserv not found"}), 404
-
-    try:
-        db.session.delete( reserv_to_delete)
-        db.session.commit()
-        return jsonify("reserv deleted successfully"), 200
-
-    except Exception as error:
-        db.session.rollback()
-        return error, 500
-
-    
-

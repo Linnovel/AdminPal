@@ -7,7 +7,6 @@ import Register from "./component/Register";
 import { EditUser } from "./pages/editUser";
 import { ClubList } from "./pages/clubList";
 import { RegisterClub } from "./pages/registerClub";
-import { RegisterUser } from "./pages/registerUser";
 import { EditClub } from "./pages/editClub";
 import { DetailClub } from "./pages/detailClub";
 import RegisterPlace from "./pages/registerPlace";
@@ -29,6 +28,8 @@ import Footer from "./component/Footer";
 import { ClubImage } from "./component/cardClubImage";
 import { PlaceReserv } from "./component/cardPlaceReserv";
 import { PlaceListReserv } from "./pages/placeListReserv";
+import { ReservClient } from "./pages/reservUsersClient";
+import { ReservClub } from "./pages/reservUsersClub";
 
 //create your first component
 const Layout = () => {
@@ -46,6 +47,8 @@ const Layout = () => {
           <ToastContainer
             position="top-center"
             autoClose={2000}
+            autoClose={1000}
+
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick
@@ -59,12 +62,11 @@ const Layout = () => {
             <Nav />
           </>
           <Routes>
-            <Route element={<ContactUs/>} path="/contactUs"/>
+            <Route element={<ContactUs />} path="/contactUs" />
             <Route element={<LandingPage />} path="/" />
             <Route element={<ReservasCanchas />} path="/reservascanchas" />
             <Route element={<Login />} path="/login" />
             <Route element={<Register />} path="/register" />
-            <Route element={<RegisterUser />} path="/registerUser" />
             <Route element={<EditUser />} path="/userEdit" />
             <Route element={<RegisterClub />} path="/clubs" />
             <Route element={<ClubList />} path="/clublist" />
@@ -81,6 +83,8 @@ const Layout = () => {
             <Route element={<ClubImage />} path="/clubimage" />
             <Route element={<PlaceReserv />} path="/placeReserv/:id_place" />
             <Route element={<PlaceListReserv />} path="/placeListReserv/:id_club" />
+            <Route element={<ReservClient />} path="/reservclient/" />
+            <Route element={<ReservClub />} path="/reservclub/:id" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
