@@ -39,9 +39,15 @@ export const PlaceList = () => {
   return (
     <>
       <div className="list-c">
-        <div className=" container ">
-          <div className=" row d-flex justify-content-center">
-            <ul className="list-group col-12  mt-5 mb-2 p-2">
+        <div className="container">
+          <div className="row d-flex justify-content-center">
+          <div className="card col-sm-12 col-md-7 col-lg-5 mx-auto form my-2 mb-2 p-2">
+            <div className="card-body">
+              <h2 className="card-title fw-bold text-center">Registra tus canchas</h2>
+            <ul  className="list-group col-12  mt-5 mb-2 p-2">
+              <li className="list-group-item d-flex justify-content-between  fw-bold">
+                {store.placeslist.length} Espacios registrados
+              </li>
               {
                 store.placeslist.map((element, index) => {
                   return (
@@ -55,17 +61,16 @@ export const PlaceList = () => {
                   );
                 }) //fin del map
               }
-              <li className="list-group-item d-flex justify-content-between text-bg-info fw-bold">
-                {store.placeslist.length} Cantidad de Lugares Registrados
-              </li>
             </ul>
+            </div>
+            </div>
+          </div>
             <button
-              className="btn btn-warning mb-2 my-2 p-2"
+              className="btn btn-primary mb-2 my-2 p-2 d-grid mx-auto "
               onClick={() => registerPlace(id_club)}
             >
               Registra un Lugar de Club
             </button>
-          </div>
         </div>
       </div>
       

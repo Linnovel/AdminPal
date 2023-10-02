@@ -49,9 +49,6 @@ export const PlaceListReserv = () => {
                     </div>
                 </div>
             </div>
-            <div className="fix">
-                <Footer />
-            </div>
         </>
     );
 };

@@ -53,7 +53,7 @@ export const Login = () => {
                 <div className="mb-3">
                   <label htmlFor="exampleInputEmail1" className="form-label" >Correo Electronico {''}<i className="fa-solid fa-at"></i></label>
                   <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Escribe tu Email aqui" onChange={hanndleEvent} />
-                  <h6>Nunca compartiremos tu informacion.</h6>
+                  <h6 className="my-2">Nunca compartiremos tu informacion.</h6>
                 </div>
                 <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">Contraseña {''}<i className="fa-solid fa-lock"></i></label>

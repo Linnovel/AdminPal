@@ -29,7 +29,7 @@ const Navbar = () => {
             <Link to="/register">
               <button  className="btn offcanvas-title text-info fw-bold  fs-5">Inicia Sesion / Registrate</button>
             </Link>
-            <Link to="/clubs">
+            <Link to="/ContactUs">
               <button  className="btn offcanvas-title text-info fw-bold  fs-5">Eres un club</button>
             </Link>
 

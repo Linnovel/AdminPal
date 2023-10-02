@@ -38,7 +38,7 @@ export const LandingPage = () => {
           <div className="row">
             <div className="">
               <div className="card p-5 border-0  rounded-3 my-5 d-flex flex-row justify-content-center align-items-center gap-4 form">
-                <div className="form-floating mb-3 col-12 col-lg-4">
+                <div className=" mb-3 col-12 col-lg-4">
                   <input
                     type="text"
                     name="ciudad"
@@ -48,7 +48,6 @@ export const LandingPage = () => {
                     onChange={handleChange}
 
                   />
-                  <label htmlFor="flotaintInput gap-2" >Ciudad</label>
                 </div>
                 <button type="submit" onClick={submit} className="boton-main  btn btn-success btn-lg mb-3">Buscar</button>
               </div>
@@ -63,8 +62,8 @@ export const LandingPage = () => {
               Las instalaciones mas buscadas
             </h3>
             <h4 className="text-white fw-bolder">Reserva ya!</h4>
-            <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5">
-              <div className="card shadow p-3 mb-5 bg-body-tertiary rounded form">
+            <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5 ">
+              <div className="card shadow p-3 mb-5  rounded form">
                 <img
                   src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
                   className="img-fluid"
@@ -99,8 +98,8 @@ export const LandingPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5">
-              <div className="card shadow p-3 mb-5 bg-body-tertiary rounded ">
+            <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5 ">
+              <div className="card shadow p-3 mb-5  rounded form">
                 <img
                   src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
                   className="img-fluid"
@@ -109,12 +108,11 @@ export const LandingPage = () => {
                 />
                 <div className="card-body ">
                   <div className="card-text text-center mb-2">
-                    Cancha nombre y direccion..
+                    Cancha nombre y direccion.
                   </div>
                   <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
                     Reserva este campo
                   </button>
-
                 </div>
               </div>
             </div>
