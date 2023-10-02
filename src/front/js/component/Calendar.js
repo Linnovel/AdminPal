@@ -42,7 +42,7 @@ const Calendar = ({ id }) => {
     <div>
       <form>
         <input type="datetime-local" id="date" name="date" className="form-control" placeholder="dd-mm-yyyy" onChange={handleDate} />
-        <button type="button" className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success my-2" onClick={handleSubmit}>
+        <button type="button" data-bs-dismiss="modal" className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success my-2" onClick={handleSubmit}>
           Confirma
         </button>
       </form>

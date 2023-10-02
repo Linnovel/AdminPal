@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { elementType } from "prop-types";
 import { toast } from "react-toastify"
+import { Reserva } from "../component/reserva";
 
 export const ReservClient = () => {
     const { store, actions } = useContext(Context);
@@ -50,16 +51,8 @@ export const ReservClient = () => {
                                 {
                                     store.listReserv.map((element, index) => {
                                         return (
-                                            <li
-                                                className="list-group-item text-white form fw-semibold"
-                                                key={element.id}
-
-                                            >
-                                                {element.fecha}
-                                                {"----"}
-                                                {element.time}
-                                                <button onClick={() => deleteReserv(element.id)}>cancelar</button>
-                                            </li>
+                                            <Reserva fecha={element.fecha}
+                                                time={element.time} id={element.id} />
                                         );
                                     }) //fin del map
                                 }

@@ -30,6 +30,7 @@ import { PlaceReserv } from "./component/cardPlaceReserv";
 import { PlaceListReserv } from "./pages/placeListReserv";
 import { ReservClient } from "./pages/reservUsersClient";
 import { ReservClub } from "./pages/reservUsersClub";
+import { Reserva } from "./component/reserva";
 
 //create your first component
 const Layout = () => {
@@ -46,9 +47,7 @@ const Layout = () => {
         <ScrollToTop>
           <ToastContainer
             position="top-center"
-            autoClose={2000}
             autoClose={1000}
-
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick
@@ -85,6 +84,7 @@ const Layout = () => {
             <Route element={<PlaceListReserv />} path="/placeListReserv/:id_club" />
             <Route element={<ReservClient />} path="/reservclient/" />
             <Route element={<ReservClub />} path="/reservclub/:id" />
+            <Route element={<Reserva />} path="/reserva" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
