@@ -68,7 +68,7 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
                             className="modal-title fs-5"
                             id="exampleModalLabel"
                           >
-                            Modal title
+                            Haz tu reservacion aqui.
                           </h1>
                           <button
                             type="button"
