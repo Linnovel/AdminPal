@@ -39,19 +39,18 @@ export const ClubList = () => {
     <div className="list-c">
         <div className=" container ">
             <h2 className="text-center text-white  p-2 fw-bold"> Registra tu Club</h2>
-
             <div className="card col-sm-12 col-md-7 col-lg-5 mx-auto form">
             <div className="card-body">
-            <h5 className="card-title fw-bold text-center"> Club registrados</h5>
-            <ul className="list-group list-group-flush text-white">
-              <li className="list-group-item text-white form fw-semibold">
+            <h5 className="card-title fw-bold text-center mb-2"> Club registrados</h5>
+            <ul className="list-group col-12 mt-5 mb-2 p-2">
+              <li className="list-group-item d-flex justify-content-between text-white form fw-bold">
                {store.clubslist.length} Lista de clubs 
               </li>
               {
                   store.clubslist.map((element, index) => {
                       return (
                         <li
-                        className="list-group-item text-white form fw-semibold"
+                        className="list-group-item list-group-item-action  form fw-semibold form"
                         key={element.id}
                         onClick={() => handleSubmit(element.id)}
                         >
