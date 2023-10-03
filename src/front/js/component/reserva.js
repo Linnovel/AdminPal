@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom";
 
 
 
 export const Reserva = ({ fecha, time, id }) => {
+    const { store, actions } = useContext(Context);
+    const navigate = useNavigate();
 
     let fechaF = new Date(fecha);
     const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
@@ -15,13 +18,25 @@ export const Reserva = ({ fecha, time, id }) => {
     const anio = fechaF.getFullYear();
 
     const fechaFormateada = `${diaSemana} ${dia} de ${mes} ${anio}`
+
+
+    const deleteReserv = async (id) => {
+        const eliminado = await actions.deleteReserva(id);
+        if (eliminado) {
+            navigate(`/`);
+        }
+    };
+
+
+
     return (
 
         <li className="list-group-item text-white form fw-semibold">
             {fechaFormateada}
             {"----"}
             {time}
-            <button onClick={() => deleteReserv(element.id)}>cancelar</button>
+            {" "}
+            <button class="btn btn-danger" onClick={() => deleteReserv(id)}>cancelar</button>
         </li >
 
 

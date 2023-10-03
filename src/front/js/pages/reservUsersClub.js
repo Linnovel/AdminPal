@@ -14,15 +14,6 @@ export const ReservClub = () => {
 
 
 
-    const deleteReserv = async (id) => {
-        confirm("¿Esta seguro de eliminar esta Reserva?")
-        const eliminado = await actions.deleteReserva(id);
-        if (eliminado) {
-            navigate(`/`);
-        }
-    };
-
-
 
 
     //validamos que exista un token, si no existe lo enviamos a login
@@ -54,7 +45,9 @@ export const ReservClub = () => {
                                     store.listReserv.map((element, index) => {
                                         return (
                                             <Reserva fecha={element.fecha}
-                                                time={element.time} id={element.id} />
+                                                time={element.time} id={element.id}
+
+                                            />
                                         );
                                     }) //fin del map
                                 }
