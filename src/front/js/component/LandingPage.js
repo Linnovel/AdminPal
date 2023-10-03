@@ -28,7 +28,7 @@ export const LandingPage = () => {
 
 
   useEffect(() => {
-
+    actions.getUserData();
     actions.getPlaceAll();
   }, [store.token]);
 

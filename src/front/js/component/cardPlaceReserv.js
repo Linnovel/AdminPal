@@ -46,7 +46,7 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
             >
-              Reserva esta cancha
+              Reserva este espacio
             </button>
             <div
               className="modal fade"
