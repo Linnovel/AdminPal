@@ -37,7 +37,6 @@ export const RegisterImage = () => {
     }
     const deleteImage = async (id) => {
         const imageDeleted = await actions.deleteImage(id)
-        console.log("AQUI:  " + imageDeleted)
         if (imageDeleted) {
             navigate(`/clublist`);
         }

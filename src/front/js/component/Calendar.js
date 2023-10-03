@@ -15,23 +15,18 @@ const Calendar = ({ id }) => {
 
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (store.token === "" || !store.token) {
       navigate("/login");
       toast.error("No autenticado")
       return;
     }
     const [date, time] = getDate.split("T")
-    const reserva = actions.createReservation(id, date, time)
+    const reserva = await actions.createReservation(id, date, time)
     if (reserva) {
       navigate("/");
       toast.success("Espacio Reservado")
       return;
-    } else {
-      navigate("/");
-      toast.error("Ocurrio un error al hacer la reserva")
-      return;
-
     }
 
   }

@@ -21,9 +21,10 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
     <>
       <div
         key={index}
-        className="col-3 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5"
+        className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5
+         d-flex flex-row justify-content-center align-items-center  "
       >
-        <div className="card shadow p-3 mb-5 bg-body-tertiary rounded ">
+        <div className="card shadow p-3 mb-5  rounded ">
           <img
             src={
               img

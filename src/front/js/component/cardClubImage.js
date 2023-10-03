@@ -31,7 +31,8 @@ export const ClubImage = ({ name, estado, ciudad, id, index }) => {
         <>
 
 
-            <div key={index} className="col-3 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5">
+            <div key={index} className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5
+         d-flex flex-row justify-content-center align-items-center ">
                 <div className="card shadow p-3 mb-5 bg-body-tertiary rounded ">
                     <img
                         src={img ? img.img_url : "https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"}

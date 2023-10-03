@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -91,6 +93,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const data = await response.json();
 					if (response.status !== 201) {
+						setStore({ UserData: {} });
 						return false;
 					} else {
 						setStore({ UserData: data });
@@ -118,6 +121,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const data = await response.json();
 					if (response.status !== 201) {
+						setStore({ clubData: {} });
 						return false;
 					} else {
 						setStore({ clubData: data });
@@ -142,6 +146,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const data = await response.json();
 					if (response.status !== 201) {
+						setStore({ clubData: {} });
 						return false;
 					} else {
 						setStore({ clubData: data });
@@ -162,6 +167,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const data = await response.json();
 					if (response.status === 401) {
+						setStore({ clubData: {} });
 						toast.error("No autorizado");
 						return;
 					}
@@ -180,9 +186,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 					});
 					if (response.status === 401) {
+						setStore({ clubslist: [] });
 						return false;
 					}
 					if (response.status === 404) {
+						setStore({ clubslist: [] });
 						return false;
 					}
 					if (response.status === 200) {
@@ -206,9 +214,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 					});
 					if (response.status === 401) {
+						setStore({ clubslist: [] });
 						return false;
 					}
 					if (response.status === 404) {
+						setStore({ clubslist: [] });
 						return false;
 					}
 					if (response.status === 200) {
@@ -234,7 +244,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						},
 					});
 					const data = await response.json();
-					if (response.status !== 201) {
+					if (response.status !== 200) {
 						return false;
 					} else {
 						return true;
@@ -264,6 +274,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const data = await response.json();
 					if (response.status !== 201) {
+						setStore({ placeData: {} });
 						return false;
 					} else {
 						setStore({ placeData: data });
@@ -282,12 +293,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 							Authorization: `Bearer ${store.token}`,
 						},
 					});
-					if (response.status === 401) {
+					if (response.status === 404) {
 						return false;
 					}
 					if (response.status === 200) {
 						const data = await response.json();
-						//setStore({ clubImage: data });
+
 						return data;
 
 					}
@@ -299,6 +310,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try {
 					const store = getStore()
 					const response = await fetch(`${store.backendUrl}/api/club/place/${id_club}`, {
+						headers: {
+							Authorization: `Bearer ${store.token}`,
+						},
+					});
+					if (response.status === 404) {
+						setStore({ placeslist: [] });
+						return false;
+					}
+					if (response.status === 200) {
+						const data = await response.json();
+						setStore({ placeslist: data });
+						return data.length;
+
+					}
+
+
+
+				} catch (error) {
+					console.log(error)
+				}
+			},
+			getPlaceAll: async () => {
+				try {
+					const store = getStore()
+					const response = await fetch(`${store.backendUrl}/api/place/`, {
 						headers: {
 							Authorization: `Bearer ${store.token}`,
 						},
@@ -329,6 +365,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const data = await response.json();
 					if (response.status === 401) {
+						setStore({ placeData: {} });
 						return false;
 					}
 					setStore({ placeData: data });
@@ -352,6 +389,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					const data = await response.json();
 					if (response.status !== 201) {
+						setStore({ placeData: {} });
 						return false;
 					} else {
 						setStore({ placeData: data });
@@ -438,6 +476,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 					const data = await response.json();
 					if (response.status === 401) {
+						setStore({ imagesList: [] });
 						return false;
 					}
 					setStore({ imagesList: data });
@@ -478,9 +517,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 						method: "POST", body: `{"fecha":"${date}", "time":"${time}" }`
 					})
 					const data = await response.json();
-					if (response.status !== 200) {
+					if (response.status == 409) {
+						toast.error("cancha ocupada")
 						return false;
-					} else {
+					}
+					else if (response.status !== 201) {
+						toast.error("Ocurrio un error al hacer la reserva")
+						return false;
+					}
+					else {
 						return true;
 					}
 
@@ -498,9 +543,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 
 					if (response.status === 401) {
+						setStore({ listReserv: [] });
 						return false;
 					}
 					if (response.status === 404) {
+						setStore({ listReserv: [] });
 						return false;
 					}
 					if (response.status === 200) {
@@ -523,9 +570,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 
 					if (response.status === 401) {
+						setStore({ listReserv: [] });
 						return false;
 					}
 					if (response.status === 404) {
+						setStore({ listReserv: [] });
 						return false;
 					}
 					if (response.status === 200) {

@@ -35,6 +35,10 @@ export const PlaceListReserv = () => {
             <div className="list-c">
                 <div className=" container ">
                     <div className=" row d-flex justify-content-center">
+                        <div className="card-body text-light">
+                            <h2 className=" fw-bold text-center ">Espacios del Club</h2>
+                            <h4> {store.placeslist.length} Espacios registrados</h4>
+                        </div>
                         {
                             store.placeslist.map((element, index) => {
                                 return (

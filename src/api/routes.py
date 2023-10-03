@@ -523,7 +523,7 @@ def create_reserv(id):
     user_id=user_data["id"]
     is_not_avalaible=Reserva.query.filter_by(fecha=fecha, time=time, id_place=id).first()
     if is_not_avalaible:
-        return jsonify({"error": "Cancha ocupada"}), 400
+        return jsonify({"error": "Cancha ocupada"}), 409
        
     try:
         new_reserv = Reserva(fecha=fecha, time=time, id_place=id, id_user=user_id)

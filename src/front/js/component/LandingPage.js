@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link, useNavigate } from "react-router-dom";
+import { PlaceReserv } from "../component/cardPlaceReserv";
 
 const initialValue = {
   ciudad: ""
@@ -26,6 +27,10 @@ export const LandingPage = () => {
 
 
 
+  useEffect(() => {
+
+    actions.getPlaceAll();
+  }, [store.token]);
 
   return (
     <>
@@ -55,70 +60,31 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
-      <div className="second-bg">
+      <div className="second">
         <div className="container ">
           <div className="row">
             <h3 className="display-4 text-white fw-bold">
               Las instalaciones mas buscadas
             </h3>
             <h4 className="text-white fw-bolder">Reserva ya!</h4>
-            <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5 ">
-              <div className="card shadow p-3 mb-5  rounded form">
-                <img
-                  src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
-                  className="img-fluid"
-                  width="1000px"
-                  height="1000px"
-                />
-                <div className="card-body ">
-                  <div className="card-text text-center mb-2">
-                    Cancha nombre y direccion.
-                  </div>
-                  <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
-                    Reserva este campo
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5 ">
-              <div className="card shadow p-3 mb-5  rounded form">
-                <img
-                  src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
-                  className="img-fluid"
-                  width="1000px"
-                  height="1000px"
-                />
-                <div className="card-body ">
-                  <div className="card-text text-center mb-2">
-                    Cancha nombre y direccion.
-                  </div>
-                  <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
-                    Reserva este campo
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5 ">
-              <div className="card shadow p-3 mb-5  rounded form">
-                <img
-                  src="https://cdn-magento2-media.head.com/wysiwyg/padel-court_6.jpg"
-                  className="img-fluid"
-                  width="1000px"
-                  height="1000px"
-                />
-                <div className="card-body ">
-                  <div className="card-text text-center mb-2">
-                    Cancha nombre y direccion.
-                  </div>
-                  <button className="cart-1 btn cart-2 d-grid gap-2 col-6 mx-auto fw-bolder btn btn-success">
-                    Reserva este campo
-                  </button>
-                </div>
-              </div>
+
+            <div className="d-flex overflow-x-scroll  ">
+              {
+                store.placeslist.map((element, index) => {
+                  return (
+
+                    <PlaceReserv name={element.name} type={element.type}
+                      description={element.description}
+                      id_place={element.id} index={index} />
+                  )
+                }) //fin del map
+              }
             </div>
           </div>
         </div>
       </div>
+
+
       <div className="final-bg">
         <div className="container ">
           <div className="row">
@@ -154,8 +120,8 @@ export const LandingPage = () => {
         </div>
       </div>
 
-      
-         </>
+
+    </>
   );
 };
 
