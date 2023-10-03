@@ -1,6 +1,7 @@
 """
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
+from api.mail import FlaskEmail
 from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Club, Place, Image, Reserva
 from api.utils import generate_sitemap, APIException
@@ -84,6 +85,15 @@ def create_user():
         new_user = User(name=name, last_name=last_name, email=email, password=hashed_password, is_active=True)
         db.session.add(new_user)
         db.session.commit()
+        body = f"""
+            
+                Bienvenido a la pagina {name}, si deseas administrar tu club a traves de nuestra aplicacion
+                contactate con nosotros a traves de este correo o este numero de telefono xxx-xxx-xxx.
+            
+            """
+        FlaskEmail.send_mail(email, subject="Bienvenido a la Admin Pal", body=body)
+
+
         return jsonify(new_user.serialize()), 201
 
     except Exception as error:
@@ -529,9 +539,14 @@ def create_reserv(id):
         new_reserv = Reserva(fecha=fecha, time=time, id_place=id, id_user=user_id)
         db.session.add(new_reserv)
         db.session.commit()
+        place = Place.query.filter_by(id=id).first()
+        club = Club.query.filter_by(id=place.id_club).first()
+        body = f"reserva creada en {place.name} - {club.name} - {club.ciudad} - {club.estado}  dia {fecha} a las {time}"
+        FlaskEmail.send_mail(user_data["email"], "reserva", body)
 
         return jsonify(new_reserv.serialize()), 201
 
     except Exception as error:
         db.session.rollback()
         return jsonify(error), 500
+
