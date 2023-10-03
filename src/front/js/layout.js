@@ -31,6 +31,7 @@ import { PlaceListReserv } from "./pages/placeListReserv";
 import { ReservClient } from "./pages/reservUsersClient";
 import { ReservClub } from "./pages/reservUsersClub";
 import { Reserva } from "./component/reserva";
+import AboutUs from "./component/AboutUs";
 
 //create your first component
 const Layout = () => {
@@ -62,6 +63,7 @@ const Layout = () => {
           </>
           <Routes>
             <Route element={<ContactUs />} path="/contactUs" />
+            <Route element={<AboutUs />} path="/aboutUs" />
             <Route element={<LandingPage />} path="/" />
             <Route element={<ReservasCanchas />} path="/reservascanchas" />
             <Route element={<Login />} path="/login" />

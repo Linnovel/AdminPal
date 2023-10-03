@@ -30,7 +30,7 @@ export const ReservasCanchas = () => {
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
-                    Reserva esta cancha
+                    Reserva este espacio
                   </button>
 
                   <div
