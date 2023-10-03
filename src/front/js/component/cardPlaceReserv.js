@@ -11,7 +11,7 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
 
   const getImage = async (id) => {
     const image = await actions.getImage(id);
-    
+
     setImg(image);
   };
 
