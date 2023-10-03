@@ -11,13 +11,13 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
 
   const getImage = async (id) => {
     const image = await actions.getImage(id);
-    
+    console.log(image)
     setImg(image);
   };
 
   useEffect(() => {
     getImage(id_place);
-  }, [store.token]);
+  }, [store.token,id_place]);
   return (
     <>
       <div

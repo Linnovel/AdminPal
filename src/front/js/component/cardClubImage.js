@@ -24,7 +24,7 @@ export const ClubImage = ({ name, estado, ciudad, id, index }) => {
     useEffect(() => {
         getImage(id)
 
-    }, [store.token]);
+    }, [store.token,id]);
 
 
     return (
