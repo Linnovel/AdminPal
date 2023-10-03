@@ -36,7 +36,7 @@ export const Login = () => {
     }
     const result = await actions.login(login);
     if (result) {
-      navigate("/clublist");
+      navigate("/");
       toast.success("Bienvenido!")
       return;
     }
