@@ -2,8 +2,6 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Footer from "../component/Footer";
-import { toast } from "react-toastify"
 import { PlaceReserv } from "../component/cardPlaceReserv";
 
 

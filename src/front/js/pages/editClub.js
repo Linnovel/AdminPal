@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { ClubForm } from "../component/clubForm";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import Footer from "../component/Footer";
 import { toast } from "react-toastify"
 
 
