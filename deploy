@@ -1,0 +1,44 @@
+* [33madd10ce[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m deploy-ultimo
+*   [33m628b38e[m Merge branch 'main' of https://github.com/Linnovel/admin-project
+[32m|[m[33m\[m  
+[32m|[m * [33mb8c7660[m Update Pipfile
+[32m|[m * [33m5375d55[m Rename footer.js to Footer.js
+* [33m|[m [33m14d9b8e[m deploy
+[33m|[m[33m/[m  
+* [33m573dfbf[m deploy-test
+* [33mbfe4cdc[m test-deploy
+* [33m3d751d5[m prueba-deploy
+* [33mf2f0416[m Update render.yaml
+*   [33mf1ed4b3[m Merge pull request #7 from Linnovel/dev
+[34m|[m[35m\[m  
+[34m|[m *   [33m3759204[m Merge pull request #6 from Linnovel/deploy
+[34m|[m [36m|[m[1;31m\[m  
+[34m|[m [36m|[m * [33me972291[m[33m ([m[1;31morigin/deploy[m[33m, [m[1;32mdeploy[m[33m)[m listo-deploy
+[34m|[m [36m|[m * [33m0a700ec[m listo para deploy
+[34m|[m * [1;31m|[m [33m46101c3[m haciendo responsive y corrigieno errores
+[34m|[m [1;31m|[m[1;31m/[m  
+[34m|[m *   [33m9362c9e[m new-commit
+[34m|[m [1;32m|[m[1;33m\[m  
+[34m|[m [1;32m|[m * [33m23116e5[m[33m ([m[1;32mui-update[m[33m)[m ui-update
+[34m|[m * [1;33m|[m [33m2f0bc61[m cmabiado formato de fechas
+[34m|[m * [1;33m|[m [33mee0e55b[m corrigiendo errores del merge
+[34m|[m * [1;33m|[m   [33mfae79ce[m Merge pull request #5 from Linnovel/ui-update
+[34m|[m [1;34m|[m[1;35m\[m [1;33m\[m  
+[34m|[m [1;34m|[m * [1;33m\[m   [33m743737c[m[33m ([m[1;31morigin/ui-update[m[33m)[m Merge branch 'dev' into ui-update
+[34m|[m [1;34m|[m [1;33m|[m[1;34m\[m [1;33m\[m  
+[34m|[m [1;34m|[m [1;33m|[m[1;34m/[m [1;33m/[m  
+[34m|[m [1;34m|[m[1;34m/[m[1;33m|[m [1;33m/[m   
+[34m|[m [1;34m|[m [1;33m|[m[1;33m/[m    
+[34m|[m * [1;33m|[m [33m65a4c20[m cambiado alert por toast listas de reservas y tipo de usuarios
+[34m|[m [31m|[m * [33ma9e6c2c[m navbar landing page y estilos
+[34m|[m [31m|[m[31m/[m  
+[34m|[m * [33m5fe019e[m sistema de reservas 2.0
+[34m|[m *   [33mae66bf3[m Merge pull request #4 from Linnovel/reservas
+[34m|[m [32m|[m[33m\[m  
+[34m|[m [32m|[m *   [33m1dfe1c2[m[33m ([m[1;31morigin/reservas[m[33m)[m Merge branch 'dev' into reservas
+[34m|[m [32m|[m [34m|[m[32m\[m  
+[34m|[m [32m|[m [34m|[m[32m/[m  
+[34m|[m [32m|[m[32m/[m[34m|[m   
+[34m|[m * [34m|[m [33mb12250f[m vsitas de club y espacios para reservar
+[34m|[m [35m|[m * [33m6e4cd49[m[33m ([m[1;32mreservas[m[33m)[m sistema de reservas
+[34m|[m [35m|[m[35m/[m  

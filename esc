@@ -1,0 +1,63 @@
+[33madd10ce[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m deploy-ultimo
+[33m628b38e[m Merge branch 'main' of https://github.com/Linnovel/admin-project
+[33m14d9b8e[m deploy
+[33mb8c7660[m Update Pipfile
+[33m5375d55[m Rename footer.js to Footer.js
+[33m573dfbf[m deploy-test
+[33mbfe4cdc[m test-deploy
+[33m3d751d5[m prueba-deploy
+[33mf2f0416[m Update render.yaml
+[33mf1ed4b3[m Merge pull request #7 from Linnovel/dev
+[33m3759204[m Merge pull request #6 from Linnovel/deploy
+[33me972291[m[33m ([m[1;31morigin/deploy[m[33m, [m[1;32mdeploy[m[33m)[m listo-deploy
+[33m0a700ec[m listo para deploy
+[33m46101c3[m haciendo responsive y corrigieno errores
+[33m9362c9e[m new-commit
+[33m23116e5[m[33m ([m[1;32mui-update[m[33m)[m ui-update
+[33m2f0bc61[m cmabiado formato de fechas
+[33mee0e55b[m corrigiendo errores del merge
+[33mfae79ce[m Merge pull request #5 from Linnovel/ui-update
+[33m743737c[m[33m ([m[1;31morigin/ui-update[m[33m)[m Merge branch 'dev' into ui-update
+[33ma9e6c2c[m navbar landing page y estilos
+[33m65a4c20[m cambiado alert por toast listas de reservas y tipo de usuarios
+[33m5fe019e[m sistema de reservas 2.0
+[33mae66bf3[m Merge pull request #4 from Linnovel/reservas
+[33m1dfe1c2[m[33m ([m[1;31morigin/reservas[m[33m)[m Merge branch 'dev' into reservas
+[33m6e4cd49[m[33m ([m[1;32mreservas[m[33m)[m sistema de reservas
+[33mb12250f[m vsitas de club y espacios para reservar
+[33m928cb3c[m Merge branch 'dev' of https://github.com/Linnovel/admin-project into dev
+[33m04072e8[m actualizacion estilos, registro, login
+[33m466579b[m endpoint de clubs poor ciudad y validaciones de formulario
+[33mf0473be[m solucionando conflictos del merge
+[33m65400bf[m Merge pull request #3 from Linnovel/place-modul
+[33me70aae1[m[33m ([m[1;31morigin/place-modul[m[33m)[m Merge branch 'dev' into place-modul
+[33m214e13d[m actulizacion dev
+[33m6b4e9ce[m segundo lote de modificaciones
+[33meb5bcea[m fix merge
+[33mff40475[m Merge pull request #2 from Linnovel/backend-login
+[33m8997d31[m[33m ([m[1;31morigin/backend-login[m[33m)[m Merge branch 'dev' into backend-login
+[33me5f08dc[m cargando modlo de clubs
+[33m5a106ff[m Merge pull request #1 from Linnovel/reservas-canchas-view
+[33m24ad155[m[33m ([m[1;31morigin/reservas-canchas-view[m[33m, [m[1;32mreservas-canchas-view[m[33m)[m reservas canchas
+[33m8f43143[m[33m ([m[1;31morigin/landing-page[m[33m, [m[1;32mlanding-page[m[33m)[m falta arreglar barra de busqueda para que sea responsive
+[33m4b568c3[m fix merge
+[33mf64faa5[m fix merge
+[33m836690c[m fix working branch
+[33m9a70f7c[m[33m ([m[1;32mregistro-cancha[m[33m)[m landing-page
+[33m25b0fd6[m guardando los cambios antes de revertir
+[33me7d0bb3[m guardando cambios localdes depues del pull
+[33me82b089[m prueba-primer-commit
+[33me973f90[m subiendo endpoint login
+[33m0edb8f2[m[33m ([m[1;31morigin/front/register[m[33m, [m[1;31morigin/backend-register[m[33m, [m[1;32mfront/register[m[33m, [m[1;32mbackend-register[m[33m)[m Update .gitignore
+[33mb755811[m Merge pull request #231 from leomuzicarvalho/overhaul-project-setup
+[33mbd55d28[m add migrations folder to .gitignore / add shortcut command to downgrade migrations / add new CLI to flask to help students persisting example data in their database / update documentation with information for new functionalities
+[33m63ea242[m Update render.yaml
+[33ma1d58d9[m Update app.py
+[33m2d9bf3f[m Update .env.example
+[33m17047b5[m Update reset_migrations.bash
+[33m1d90416[m Merge pull request #179 from dotfortun/patch-1
+[33m8101446[m Made container creation not DIAF if invalid code is committed.
+[33m9805118[m Merge pull request #167 from Tozzigh/patch-7
+[33mad848e7[m Updated .env.example to enable correctly DEBUG mode in Flask
+[33mb2778ae[m Update settings.json
+[33me48e97f[m Merge pull request #138 from Lorenagubaira/react-flask-hello
