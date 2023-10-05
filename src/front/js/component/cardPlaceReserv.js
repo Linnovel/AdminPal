@@ -17,7 +17,7 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
 
   useEffect(() => {
     getImage(id_place);
-  }, [store.token]);
+  }, [store.token,id_place]);
   return (
     <>
       <div
