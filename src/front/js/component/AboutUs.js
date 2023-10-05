@@ -1,6 +1,7 @@
 import React from "react";
 import padelpal from "../../img/padelpal.png";
-
+import jose from "../../img/jose.jpg";
+import Luis from "../../img/Luis.png";
 
 const AboutUs = () => {
   return (
@@ -83,7 +84,7 @@ const AboutUs = () => {
         <div className="row">
           <div className="col">
             <div className="card">
-              <img src="" className="card-img-top" alt="..." />
+              <img src={jose} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">Jose Carlos Perdomo   Herrera
                 </h5>
@@ -93,7 +94,7 @@ const AboutUs = () => {
           </div>
           <div className="col">
             <div className="card">
-              <img src="" className="card-img-top" alt="..." />
+              <img src={Luis} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">Luis Linares</h5>
                 <p className="card-text">Diseñador Grafico.</p>
