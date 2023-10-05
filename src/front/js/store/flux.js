@@ -450,6 +450,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getImage: async (id_place) => {
 				try {
 					const store = getStore()
+
 					const response = await fetch(`${store.backendUrl}/api/image/place/${id_place}`, {
 						headers: {
 							Authorization: `Bearer ${store.token}`,
@@ -460,12 +461,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 						return false;
 					}
 					setStore({ imageData: data });
+
 					return data;
 
 				} catch (error) {
 					console.log(error)
 				}
 			},
+
 			getAllImage: async (id_place) => {
 				try {
 					const store = getStore()
