@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Footer from "../component/Footer";
+
 
 
 

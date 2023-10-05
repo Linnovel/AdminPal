@@ -3,7 +3,6 @@ import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { PlaceForm } from "../component/placeForm";
-import Footer from "../component/Footer";
 import { toast } from "react-toastify"
 
 

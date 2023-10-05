@@ -1,9 +1,9 @@
 import React from "react";
 
-
 const Footer = () => {
-	return (<>
-	<footer className="text-center text-white bg-black border-top border-body">
+  return (
+    <>
+      <footer className="text-center text-white bg-black border-top border-body ">
         <div className="container pt-4">
           <section className="mb-4">
             <a
@@ -58,7 +58,8 @@ const Footer = () => {
         </div>
         <div className="text-center text-white p-3">© 2023 Copyright:</div>
       </footer>
-	</>)
-}
+    </>
+  );
+};
 
 export default Footer;
