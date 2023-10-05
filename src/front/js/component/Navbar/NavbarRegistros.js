@@ -28,6 +28,7 @@ const NavbarRegistros = () => {
             <button  className="btn offcanvas-title text-info fw-bold  fs-4">Contactanos</button>
           
         </Link>
+            
 
           </div>
         </div>
