@@ -1,7 +1,6 @@
 import React from "react";
 import padelpal from "../../img/padelpal.png";
-import jose from "../../img/jose.jpg";
-import Luis from "../../img/Luis.png";
+
 
 const AboutUs = () => {
   return (
