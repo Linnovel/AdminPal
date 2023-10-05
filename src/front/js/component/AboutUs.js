@@ -1,6 +1,6 @@
 import React from "react";
 import padelpal from "../../img/padelpal.png";
-import jose from "../../img/jose.jpg";
+import jose from "../../img/jose.png";
 import Luis from "../../img/Luis.png";
 
 const AboutUs = () => {
