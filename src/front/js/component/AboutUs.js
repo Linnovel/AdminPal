@@ -1,6 +1,6 @@
 import React from "react";
 import padelpal from "../../img/padelpal.png";
-import jose from "../../img/jose.jpg";
+import jose from "../../img/jose.png";
 import Luis from "../../img/Luis.png";
 
 const AboutUs = () => {
@@ -81,37 +81,37 @@ const AboutUs = () => {
         </div>
       </section>
       <div className="container">
-    <div className="row">
-        <div className="col">
+        <div className="row">
+          <div className="col">
             <div className="card">
-                <img src={jose} className="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h5 className="card-title">Jose Carlos Perdomo   Herrera
-</h5>
-                  <p className="card-text">Padre de familia e Ingeniero en sistemas.</p>
-                </div>
+              <img src={jose} className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">Jose Carlos Perdomo   Herrera
+                </h5>
+                <p className="card-text">Padre de familia e Ingeniero en sistemas.</p>
               </div>
-        </div>
-        <div className="col">
+            </div>
+          </div>
+          <div className="col">
             <div className="card">
-                <img src={Luis} className="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h5 className="card-title">Luis Linares</h5>
-                  <p className="card-text">Diseñador Grafico.</p>
-                </div>
+              <img src={Luis} className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">Luis Linares</h5>
+                <p className="card-text">Diseñador Grafico.</p>
               </div>
-        </div>
-        <div className="col">
+            </div>
+          </div>
+          <div className="col">
             <div className="card">
-                <img src={padelpal} className="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h5 className="card-title">Stack</h5>
-                  <p className="card-text">HTML5 CSS Bootstrap Javascript React Python Flask.</p>
-                </div>
+              <img src={padelpal} className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">Stack</h5>
+                <p className="card-text">HTML5 CSS Bootstrap Javascript React Python Flask.</p>
               </div>
+            </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
     </div>
   );
 };
