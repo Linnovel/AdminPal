@@ -43,7 +43,7 @@ export const LandingPage = () => {
           <div className="row">
             <div className="">
               <div className="card p-5 border-0  rounded-3 my-5 d-flex flex-row justify-content-center align-items-center gap-4 form">
-                <div className=" mb-3 col-12 col-lg-4">
+                <div className=" mb-3 col-md-12 col-lg-4">
                   <input
                     type="text"
                     name="ciudad"
