@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className="navbar shadow-sm  shadow p-3  "
+        className="navbar shadow  shadow p-3  "
         data-bs-theme="dark"
       >
         <div className="container">
