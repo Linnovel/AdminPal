@@ -7,7 +7,7 @@ import Register from "./component/Register";
 import { EditUser } from "./pages/editUser";
 import {ClubList} from "./pages/clubList";
 import { RegisterClub } from "./pages/registerClub";
-import { EditClub } from "./pages/EditClub";
+import { EditClub } from "./pages/editClub";
 import DetailClub from "./pages/detailClub";
 import RegisterPlace from "./pages/registerPlace";
 import { PlaceList } from "./pages/PlaceList";
