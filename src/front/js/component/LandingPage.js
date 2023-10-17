@@ -108,7 +108,7 @@ export const LandingPage = () => {
                       Encuentra
                     </h5>
                     <p className="card-text text-center fw-semibold">
-                      Nuestro servicio es hacer que encuentres la mejor opción
+                      Nuestro servicio es darte lo mejor.
                     </p>
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export const LandingPage = () => {
           </section>
         </div>
 
-        <p className="text-center fw-bold fs-1 text-white">
+        <p className="text-center fw-bold fs-2 text-white display-4">
           Testimonios que inspiran
         </p>
         <div className="container p-2 ">
