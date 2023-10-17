@@ -6,6 +6,7 @@ import { PlaceReserv } from "../component/cardPlaceReserv";
 import mobiledesign from "../../img/mobiledesign.png";
 import Footer from "./Footer";
 import logopadel from "../../img/logopadel.png";
+import google from "../../img/google.png";
 
 const initialValue = {
   ciudad: "",
@@ -297,10 +298,24 @@ export const LandingPage = () => {
             </div>
             <div className="col-sm-6 d-flex justify-content-flex-end">
               <img src={mobiledesign} />
-              <p className="col-sm-12 fw-bold p-2 display-4 text-white">
-                Ingresa a la comunidad con mas crecimiento en la actualidad
-                Encontraras personas de todo el mundo para compartir tus
-                experiencias.
+              <p className="col-sm-12 fw-bold p-2 display-5 text-white">
+                Ingresa a la comunidad con mas crecimiento en la actualidad.
+                <ul className="my-2 fs-4">
+                  <li className="p-2">
+                    Busca tu cancha favorita
+                  </li>
+                  <li className="p-2">
+                    Reserva el horario que desees
+                  </li>
+                  <li className="p-2">
+                    A cualquier hora y en cualquier lugar
+                  </li>
+                  <li className="p-2">
+                    Tus datos estan protedigas todo el tiempo
+                  </li>
+                  <p> Descargalo usando la aplicacion de descargas que desees</p>
+                  <img src={google}/>
+                </ul>
               </p>
             </div>
           </div>
@@ -313,6 +328,7 @@ export const LandingPage = () => {
               <div className="card-text text-center fw-bold display-4  ">
                 Si deseas ingresar tus espacios deportivos para tus clientes
               </div>
+              
               <div className="card-text text-center fw-light display-5 ">
                 Administra tu negocio desde la comodidad de tu hogar
                 <Link to="/ContactUs">
@@ -320,6 +336,46 @@ export const LandingPage = () => {
                 </Link>
                 
               </div>
+              <div className="container p-2 my-2">
+            <div className="row">
+              <div className="col">
+                <div className="card h-100 shadow">
+                  <div className="card-body">
+                    <h5 className="card-title text-center fw-bolder">
+                      Administra
+                    </h5>
+                    <p className="card-text text-center fw-semibold">
+                      Sube tus espacios deportivos.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card h-100 shadow">
+                  <div className="card-body">
+                    <h5 className="card-title text-center fw-bolder ">
+                      Ve tus reservas
+                    </h5>
+                    <p className="card-text text-center fw-semibold">
+                      Revisa quien reserva tus espacios.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card h-100 shadow">
+                  <div className="card-body">
+                    <h5 className="card-title text-center fw-bolder">
+                       Graficas
+                    </h5>
+                    <p className="card-text text-center fw-semibold ">
+                      Las mejores graficas y sistema administrativo para ti.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
             </div>
           </div>
         </div>
