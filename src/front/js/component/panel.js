@@ -47,7 +47,7 @@ export const Panel = () => {
                 </Link>
             </span>
             <div className="container-fluid">
-                <p className=" fw-light mb-0 fs-1">Bienvenido {store.userData.name}</p>
+                <p className=" fw-light mb-0 fs-1 text-white">Bienvenido {store.userData.name}</p>
                 <button
                     className="navbar-toggler"
                     type="button"
