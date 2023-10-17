@@ -10,7 +10,7 @@ import { RegisterClub } from "./pages/registerClub";
 import { EditClub } from "./pages/editClub";
 import DetailClub from "./pages/detailClub";
 import RegisterPlace from "./pages/registerPlace";
-import { PlaceList } from "./pages/PlaceList";
+import { PlaceList } from "./pages/placeList";
 import { DetailPlace } from "./pages/detailPlace";
 import { EditPlace } from "./pages/editPlace";
 import { RegisterImage } from "./pages/registerImage";
@@ -74,7 +74,7 @@ const Layout = () => {
             <Route element={<DetailClub />} path="/DetailClub/:id" />
             <Route element={<EditClub />} path="/EditClub/:id" />
             <Route element={<RegisterPlace />} path="/registerPlace/:id_club" />
-            <Route element={<PlaceList />} path="/PlaceList/:id_club" />
+            <Route element={<PlaceList />} path="/placeList/:id_club" />
             <Route element={<DetailPlace />} path="/detailPlace/:id" />
             <Route element={<EditPlace />} path="/editplace/:id" />
             <Route element={<Panel />} path="/panel" />
