@@ -22,6 +22,7 @@
 .bg-glass1 {
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -49,6 +50,7 @@
 .form {
 
   background: rgba(43, 42, 42, 0.8); 
+  backdrop-filter: blur(12px);
   font-family: 'Roboto', sans-serif;
   color: #f8f3f3;
 
@@ -63,6 +65,7 @@
 .card-login {
   background: rgba(43, 42, 42, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(12px);
   color: #f8f3f3;
 }
 
