@@ -6,6 +6,8 @@ export const ClubForm = ({ submit, hanndleEvent, name, email, phone, descripcion
 
 
     return (
+        <div className="back-landing3">
+
         <div className="container ">
             <div className="row">
                 <div className="col-sm-9 col-md-7 col-lg-5 mx-auto ancho-form">
@@ -57,6 +59,7 @@ export const ClubForm = ({ submit, hanndleEvent, name, email, phone, descripcion
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
     );

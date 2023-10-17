@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import Calendar from "./Calendar";
-import { toast } from "react-toastify";
-
 
 export const PlaceReserv = ({ name, type, description, id_place, index }) => {
   const { store, actions } = useContext(Context);
@@ -11,7 +9,6 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
   const [img, setImg] = useState([]);
 
   const getImage = async (id) => {
-
     const image = await actions.getImage(id);
     setImg(image);
   };
@@ -26,7 +23,7 @@ export const PlaceReserv = ({ name, type, description, id_place, index }) => {
         className="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-center gap-2 p-5
          d-flex flex-row justify-content-center align-items-center  "
       >
-        <div className="card shadow p-3 mb-5  rounded ">
+        <div className="card shadow-sm p-3 mb-5  rounded ">
           <img
             src={
               img

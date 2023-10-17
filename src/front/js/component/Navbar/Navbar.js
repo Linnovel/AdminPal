@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
-import padelpal from "../../../img/padelpal.png";
+import logopadel from "../../../img/logopadel.png";
 import { Link } from "react-router-dom";
 import { Context } from "../../store/appContext";
-import NavbarRegistros from "./NavbarRegistros";
-import { Panel } from "../panel";
+
 
 const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -11,13 +10,13 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className="navbar sticky-lg-top border-bottom border-body bg-black "
+        className="navbar shadow-sm  shadow p-3  "
         data-bs-theme="dark"
       >
         <div className="container">
           <span className="navbar-brand mb-0">
             <img
-              src={padelpal}
+              src={logopadel}
               className="img-fluid"
               width="125"
               height="125px"
@@ -25,11 +24,6 @@ const Navbar = () => {
           </span>
           <div className="ml-auto ">
             <div className="d-flex align-items-center gap-2 ">
-              <Link to="/AboutUs">
-                <button className="btn offcanvas-title text-info fw-bold  fs-5">
-                  Quienes somos
-                </button>
-              </Link>
               <Link to="/entrenadores">
                 <button className="btn offcanvas-title text-info fw-bold  fs-5">
                   Necesitas un entrenador

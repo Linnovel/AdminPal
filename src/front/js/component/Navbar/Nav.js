@@ -11,7 +11,7 @@ const Nav = () => {
   
   const location = useLocation();
   const navbarPath = ["/"];
-  const registerPath = ["/login", "/register", "/entrenadores", "/ContactUs", "/clubsearch", "/placeListReserv/2"]
+  const registerPath = ["/login", "/register", "/entrenadores", "/ContactUs", "/clubsearch", "/placeListReserv/2", "/AboutUs"]
   const { store } = useContext(Context)
 
   return (

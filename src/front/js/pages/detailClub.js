@@ -49,8 +49,8 @@ export const DetailClub = () => {
 
     return (
         <>
-
-            <div className="list-c container-fluid">
+    <div >
+            <div className="container-fluid">
                 <div className="row">
                     <div className="card col-sm-9 col-md-7 col-lg-5 mx-auto mt-5 form d-flex justify-content-center">
                         <div className="card-body ">
@@ -68,8 +68,9 @@ export const DetailClub = () => {
                     </div>
                 </div>
             </div>
-
+        </div>
         </>
     );
 };
 
+export default DetailClub;

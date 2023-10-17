@@ -1,17 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer
 
+from "./Footer";
 const Entrenadores = () => {
 
   
   return (
     <>
-      <div className="landing-entrenadores">
-        <h2 className="text-center text-white display-2 fw-bold ">
+      <div className=" p-3">
+        <h2 className="text-center display-2 fw-bold text-white">
           Conoce a nuestros entrenadores {""}
           <i className="fa-solid fa-table-tennis-paddle-ball"></i>
         </h2>
-        <h4 className="text-center text-white fw-bolder text-breake">
+        <h4 className="text-center fw-bolder text-breake text-white">
           Reclutamos a los entrenadores mas educados y preparados en tu
           disciplina favorita para brindarte un servicio de ultima generacioon y
           metodologias con vision de futuro
@@ -19,7 +21,7 @@ const Entrenadores = () => {
         <div className="container">
           <div className="row">
             <div className="col">
-              <div className="card h-100">
+              <div className="card h-100 shadow ">
                 <img
                   src="https://i.insider.com/6114f9063dd01000199d47ef?width=1000&format=jpeg&auto=webp"
                   className="card-img-top"
@@ -33,7 +35,7 @@ const Entrenadores = () => {
               </div>
             </div>
             <div className="col">
-              <div className="card h-100">
+              <div className="card h-100 shadow">
                 <img
                   src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2023/8/10/wayekhjulogbkd3ctt3p/alejandro-galan-padel-spain"
                   className="card-img-top"
@@ -45,7 +47,7 @@ const Entrenadores = () => {
               </div>
             </div>
             <div className="col">
-              <div className="card h-100">
+              <div className="card h-100 shadow">
                 <img
                   src="https://www.eatthis.com/wp-content/uploads/sites/4/2023/06/woman-holding-padel-racket.jpg?quality=82&strip=1"
                   className="card-img-top"
@@ -62,11 +64,12 @@ const Entrenadores = () => {
         </div>
         <Link to="/ContactUs" >
 
-        <button className="btn btn-warning fw-bold fs-2 d-grid gap-2 col-4 mx-auto p-3 my-2 mb-2 ">
+        <button className="btn btn-primary fw-bold fs-2 d-grid col-4 mx-auto p-2 my-2 rounded ">
           Reserva tu cupo hoy
         </button>
         </Link>
       </div>
+      <Footer />
     </>
   );
 };

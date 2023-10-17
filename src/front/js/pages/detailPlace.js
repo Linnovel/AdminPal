@@ -43,9 +43,9 @@ export const DetailPlace = () => {
     return (
         <>
 
-            <div className="list-c">
+            <div >
                 <div className="container-fluid row">
-                    <div className="card col-sm-9 col-md-7 col-lg-5 mx-auto mt-5 form">
+                    <div className="card col-sm-9 col-md-7 p-5 mb-2 col-lg-5 mx-auto mt-5 form">
                         <img src={store.imageData.img_url} className="card-img-top mt-2" alt="..." />
                         <div className="card-body ">
                             <h5 className="card-title">{store.placeData.name}</h5>
@@ -61,8 +61,7 @@ export const DetailPlace = () => {
                     </div>
                 </div>
             </div>
-            <div className="fix">
-            </div>
+            
         </>
     );
 };

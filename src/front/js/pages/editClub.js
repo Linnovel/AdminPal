@@ -81,7 +81,7 @@ export const EditClub = () => {
     return (
         <>
 
-            <div className="back-landing3">
+            <div >
                 <ClubForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id)} name={store.clubData.name} email={store.clubData.email}
                     phone={store.clubData.phone}
                     descripcion={store.clubData.description}

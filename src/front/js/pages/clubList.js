@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import { elementType } from "prop-types";
 import { toast } from "react-toastify"
 
 export const ClubList = () => {
@@ -35,22 +34,23 @@ export const ClubList = () => {
     actions.getClubs();
   }, [store.token]);
 
+
   return (
     <>
-      <div className="list-c">
+          <div >
         <div className=" container ">
-          <h2 className="text-center text-white  p-2 fw-bold"> Registra tu Club</h2>
+          <h2 className="text-center text-white  p-2 fw-bold"> Registra los espacios de tu club</h2>
           <div className="card col-sm-12 col-md-7 col-lg-5 mx-auto form">
             <div className="card-body">
-              <ul className="list-group list-group-flush text-white">
-                <li className="list-group-item text-white form fw-semibold">
+                <div className="list-group-item   fw-semibold text-white">
                   {store.clubslist.length} Lista de clubs
-                </li>
+                </div>
+              <ul className="list-group ">
                 {
                   store.clubslist.map((element, index) => {
                     return (
                       <li
-                        className="list-group-item text-white form fw-semibold"
+                        className="list-group-item list-group-item-secondary  fw-semibold"
                         key={element.id}
                         onClick={() => handleSubmit(element.id)}
                       >
@@ -65,10 +65,8 @@ export const ClubList = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="fix">
-      </div>
+</div>
+      
     </>
   );
 };

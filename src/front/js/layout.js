@@ -5,12 +5,12 @@ import { BackendURL } from "./component/backendURL";
 import Login from "./component/Login";
 import Register from "./component/Register";
 import { EditUser } from "./pages/editUser";
-import { ClubList } from "./pages/clubList";
+import {ClubList} from "./pages/clubList";
 import { RegisterClub } from "./pages/registerClub";
-import { EditClub } from "./pages/editClub";
-import { DetailClub } from "./pages/detailClub";
+import { EditClub } from "./pages/EditClub";
+import DetailClub from "./pages/detailClub";
 import RegisterPlace from "./pages/registerPlace";
-import { PlaceList } from "./pages/placeList";
+import { PlaceList } from "./pages/PlaceList";
 import { DetailPlace } from "./pages/detailPlace";
 import { EditPlace } from "./pages/editPlace";
 import { RegisterImage } from "./pages/registerImage";
@@ -24,11 +24,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ClubsSearch } from "./pages/clubsSearch";
 import ContactUs from "./component/ContactUs";
-import Footer from "./component/Footer";
 import { ClubImage } from "./component/cardClubImage";
 import { PlaceReserv } from "./component/cardPlaceReserv";
 import { PlaceListReserv } from "./pages/placeListReserv";
-import { ReservClient } from "./pages/reservUsersClient";
+import { ReservClient } from "./pages/ReservClient";
+import PlaceForm from "./component/placeForm";
 import { ReservClub } from "./pages/reservUsersClub";
 import { Reserva } from "./component/reserva";
 import AboutUs from "./component/AboutUs";
@@ -70,11 +70,11 @@ const Layout = () => {
             <Route element={<Register />} path="/register" />
             <Route element={<EditUser />} path="/userEdit" />
             <Route element={<RegisterClub />} path="/clubs" />
-            <Route element={<ClubList />} path="/clublist" />
-            <Route element={<DetailClub />} path="/detailClub/:id" />
-            <Route element={<EditClub />} path="/editClub/:id" />
+            <Route element={<ClubList />} path="/clubList" />
+            <Route element={<DetailClub />} path="/DetailClub/:id" />
+            <Route element={<EditClub />} path="/EditClub/:id" />
             <Route element={<RegisterPlace />} path="/registerPlace/:id_club" />
-            <Route element={<PlaceList />} path="/placelist/:id_club" />
+            <Route element={<PlaceList />} path="/PlaceList/:id_club" />
             <Route element={<DetailPlace />} path="/detailPlace/:id" />
             <Route element={<EditPlace />} path="/editplace/:id" />
             <Route element={<Panel />} path="/panel" />
@@ -84,13 +84,12 @@ const Layout = () => {
             <Route element={<ClubImage />} path="/clubimage" />
             <Route element={<PlaceReserv />} path="/placeReserv/:id_place" />
             <Route element={<PlaceListReserv />} path="/placeListReserv/:id_club" />
-            <Route element={<ReservClient />} path="/reservclient/" />
+            <Route element={<ReservClient />} path="/ReservClient/" />
             <Route element={<ReservClub />} path="/reservclub/:id" />
             <Route element={<Reserva />} path="/reserva" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
         </ScrollToTop>
-        <Footer />
       </BrowserRouter>
     </div>
   );

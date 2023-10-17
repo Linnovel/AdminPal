@@ -30,12 +30,12 @@ export const PlaceListReserv = () => {
 
     return (
         <>
-            <div className="list-c">
+            <div >
                 <div className=" container ">
                     <div className=" row d-flex justify-content-center">
                         <div className="card-body text-light">
-                            <h2 className=" fw-bold text-center ">Espacios del Club</h2>
-                            <h4 className="text-center"> {store.placeslist.length} Espacios registrados</h4>
+                            <h2 className=" fw-bold text-center text-black text-white">Espacios del Club</h2>
+                            <h4 className="text-center text-black"> {store.placeslist.length} Espacios registrados</h4>
                         </div>
                         {
                             store.placeslist.map((element, index) => {

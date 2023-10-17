@@ -2,8 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { PlaceForm } from "../component/placeForm";
 import { toast } from "react-toastify"
+import { PlaceForm } from "../component/placeForm";
 
 
 
@@ -67,11 +67,10 @@ export const RegisterPlace = () => {
     return (
         <>
 
-            <div className="list-c">
+            <div >
                 <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id_club)} title="Guardar" />
             </div>
-            <div className="fix">
-            </div>
+            
         </>
 
     );

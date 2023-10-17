@@ -8,6 +8,8 @@ export const PlaceForm = ({ club, hanndleEvent, submit, name, type, description,
 
     return (
         <>
+        <div className="back-landing3 ">
+
             <div className="container ">
                 <div className="row">
                     <div className="col-sm-9 col-md-7 col-lg-5 mx-auto ancho-form">
@@ -45,7 +47,9 @@ export const PlaceForm = ({ club, hanndleEvent, submit, name, type, description,
                     </div>
                 </div>
             </div>
+        </div>
         </>
     );
 };
 
+export default PlaceForm;

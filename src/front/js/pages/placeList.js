@@ -38,7 +38,7 @@ export const PlaceList = () => {
 
   return (
     <>
-      <div className="list-c">
+      <div >
         <div className="container">
           <div className="row d-flex justify-content-center">
           <div className="card col-sm-12 col-md-7 col-lg-5 mx-auto form my-2 mb-2 p-2">
@@ -66,7 +66,7 @@ export const PlaceList = () => {
             </div>
           </div>
             <button
-              className="btn btn-primary mb-2 my-2 p-2 d-grid mx-auto "
+              className="btn btn-primary  p-2 d-grid mx-auto "
               onClick={() => registerPlace(id_club)}
             >
               Registra un Lugar de Club

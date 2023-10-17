@@ -35,7 +35,7 @@ export const Panel = () => {
 
 
     return (
-        <nav className="navbar navbar-expand-lg bg-black border-bottom border-body " data-bs-theme="dark">
+        <nav className="navbar-registros navbar navbar-expand-lg  shadow  p-3 border-body " data-bs-theme="dark">
             <span className="navbar-brand mb-0">
                 <Link to="/">
                     <img
@@ -47,7 +47,7 @@ export const Panel = () => {
                 </Link>
             </span>
             <div className="container-fluid">
-                <p className="text-light fw-light mb-0 fs-1">Bienvenido {store.userData.name}</p>
+                <p className=" fw-light mb-0 fs-1">Bienvenido {store.userData.name}</p>
                 <button
                     className="navbar-toggler"
                     type="button"

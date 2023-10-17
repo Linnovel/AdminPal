@@ -25,15 +25,15 @@ export const ReservClient = () => {
 
     return (
         <>
-            <div className="list-c">
+            <div >
                 <div className=" container ">
-                    <h2 className="text-center text-white  p-2 fw-bold"> Reservas</h2>
+                    <h2 className="text-center   p-2 fw-bold"> Reservas</h2>
 
                     <div className="card col-sm-12 col-md-7 col-lg-5 mx-auto form">
                         <div className="card-body">
                             <h5 className="card-title fw-bold text-center"> Reservas Realizadas</h5>
-                            <ul className="list-group list-group-flush text-white">
-                                <li className="list-group-item text-white form fw-semibold">
+                            <ul className="list-group list-group-flush ">
+                                <li className="list-group-item  form fw-semibold">
                                     {store.listReserv.length} reservas
                                 </li>
                                 {
@@ -51,9 +51,9 @@ export const ReservClient = () => {
                 </div>
             </div>
 
-            <div className="fix">
-            </div>
+           
         </>
     );
 };
 
+export default ReservClient;

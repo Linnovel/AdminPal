@@ -60,7 +60,7 @@ export const RegisterImage = () => {
     return (
         <>
 
-            <div className="container-fluid list-c ">
+            <div className="container-fluid ">
                 <ImageForm hanndleEvent={hanndleEvent} place={store.placeData.name} submit={() => handleSubmit(id_place)} title="Cargar Imagen" />
 
                 <div className="d-flex overflow-x-scroll">

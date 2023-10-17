@@ -2,8 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { PlaceForm } from "../component/placeForm";
 import { toast } from "react-toastify"
+import { PlaceForm } from "../component/placeForm";
 
 
 
@@ -62,15 +62,14 @@ export const EditPlace = () => {
         <>
 
 
-            <div className="list-c">
+            <div >
                 <PlaceForm hanndleEvent={hanndleEvent} submit={() => handleSubmit(id, store.placeData.id_club)} name={store.placeData.name} description={store.placeData.description}
                     type={store.placeData.type} title={"Editar Lugar"} />
             </div>
-            <div className="fix">
-
-            </div>
+            
         </>
 
     );
 };
 
+export default EditPlace;
