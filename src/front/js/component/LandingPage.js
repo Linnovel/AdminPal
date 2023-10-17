@@ -158,20 +158,7 @@ export const LandingPage = () => {
                     <Link to="/register">
                       <div className="fw-bold">Registrate</div>
                     </Link>
-                    <div className="container p-2">
-                      <div className="row">
-                        <div className="col-4 text-white">
-                          Padel{" "}
-                          <i className="fa-solid fa-table-tennis-paddle-ball"></i>
-                        </div>
-                        <div className="col-4 text-white">
-                          Futbol <i className="fa-solid fa-futbol"></i>
-                        </div>
-                        <div className="col-4 text-white">
-                          Basket <i className="fa-solid fa-basketball "></i>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -326,11 +313,10 @@ export const LandingPage = () => {
           <div className="card p-5   shadow  my-5  ">
             <div className="card-body">
               <div className="card-text text-center fw-bold display-4  ">
-                Si deseas ingresar tus espacios deportivos para tus clientes
+                Si deseas ingresar tus espacios deportivos
               </div>
               
               <div className="card-text text-center fw-light display-5 ">
-                Administra tu negocio desde la comodidad de tu hogar
                 <Link to="/ContactUs">
                   <div className="fw-bold">Contactanos</div>
                 </Link>
@@ -342,10 +328,10 @@ export const LandingPage = () => {
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder">
-                      Administra
+                    La mejor experiencia a tu cliente
                     </h5>
                     <p className="card-text text-center fw-semibold">
-                      Sube tus espacios deportivos.
+                      Sube tus mejores espacios deportivos.
                     </p>
                   </div>
                 </div>
@@ -354,7 +340,7 @@ export const LandingPage = () => {
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder ">
-                      Ve tus reservas
+                      Acceso a las reservaciones
                     </h5>
                     <p className="card-text text-center fw-semibold">
                       Revisa quien reserva tus espacios.
@@ -366,7 +352,7 @@ export const LandingPage = () => {
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder">
-                       Graficas
+                    Accede y administra tu data
                     </h5>
                     <p className="card-text text-center fw-semibold ">
                       Las mejores graficas y sistema administrativo para ti.
