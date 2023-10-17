@@ -10,7 +10,7 @@ const NavbarRegistros = () => {
 
   return (
     <>
-    <nav className="navbar-registros navbar shadow-sm  shadow p-3  " data-bs-theme="dark">
+    <nav className="navbar-registros navbar shadow   p-3  " data-bs-theme="dark">
       <div className="container">
         <span className="navbar-brand mb-0">
           <Link to="/">
