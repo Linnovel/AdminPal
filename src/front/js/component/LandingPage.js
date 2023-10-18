@@ -45,7 +45,7 @@ export const LandingPage = () => {
       <div>
         <div className="container">
           <h1 className=" display-3 text-white fw-bold">
-            La forma mas rapida para hacer tus reservaciones
+            La forma más rapida para hacer tus reservaciones
           </h1>
           <h2 className=" fw-semibold text-white">
             Busca en tu ciudad para encontrar los mejores lugares
@@ -75,7 +75,7 @@ export const LandingPage = () => {
           </div>
           <div className="row">
             <h3 className="display-4 text-white fw-bold">
-              Las instalaciones mas buscadas del país
+              Las instalaciones más buscadas del país
             </h3>
             <h4 className=" fw-bolder text-white fs-3">Reserva ya!</h4>
 
@@ -178,7 +178,7 @@ export const LandingPage = () => {
                     className="img-fluid rounded"
                     loading="lazy"
                     src={logopadel}
-                    alt=""
+                    alt="logo-padek"
                   />
                 </div>
                 <div className="col-12 col-lg-6 col-xl-7">
@@ -189,12 +189,12 @@ export const LandingPage = () => {
                       </h2>
                       <p className="lead fs-4 fw-bolder text-secondary mb-3 text-white ">
                         AdminPal nació no solo de la necesidad de las personas
-                        en buscar un lugar seguro donde jugar sino, de ofrecer
+                        en buscar un lugar seguro donde jugar sinó, de ofrecer
                         un servicio rapido y confiable donde hacer reservaciones
                         rapidas y personalizadas de los mejores lugares del
                         país.
                         <p className="my-2">
-                          Pero quisímos más, no solo dar un servicio de
+                          Pero quisimos más, no solo dar un servicio de
                           reservación sino, ofrecer a las personas poder mostrar
                           y administrar sus espacios deportivos al publico, todo
                           en una sola pagina.
@@ -250,7 +250,7 @@ export const LandingPage = () => {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="card-text text-center">
-                    Me da los mejores y mas seguros lugares {""}
+                    Me da los mejores y espacios seguros {""}
                   </p>
                 </div>
               </div>
@@ -280,14 +280,13 @@ export const LandingPage = () => {
         </div>
         <div className="container">
           <div className="row">
-            <div className="card-text text-center fw-bold display-4 my-4 text-white mb-4">
-              Descarga nuestra app
+            <div className="card-text text-center fw-bold display-5 my-4 text-white mb-4">
+              Descarga nuestra app!
             </div>
-            <div className="col-sm-6 d-flex justify-content-flex-end">
+            <div className="col-sm-8 mx-auto d-flex justify-content-center">
               <img src={mobiledesign} />
-              <p className="col-sm-12 fw-bold p-2 display-5 text-white">
-                Ingresa a la comunidad con mas crecimiento en la actualidad.
-                <ul className="my-2 fs-4">
+              
+                <ul className="my-2 fs-4 text-white">
                   <li className="p-2">
                     Busca tu cancha favorita
                   </li>
@@ -300,20 +299,17 @@ export const LandingPage = () => {
                   <li className="p-2">
                     Tus datos estan protedigas todo el tiempo
                   </li>
-                  <p> Descargalo usando la aplicacion de descargas que desees</p>
-                  <img src={google}/>
+                  <img src={google} className="col-6"/>
                 </ul>
-              </p>
             </div>
           </div>
         </div>
       </div>
-      <div className="row">
-        <div className="col-sm-12 mx-auto">
+        <div className="col-12 mx-auto">
           <div className="card p-5   shadow  my-5  ">
             <div className="card-body">
-              <div className="card-text text-center fw-bold display-4  ">
-                Si deseas ingresar tus espacios deportivos
+              <div className="card-text text-center fw-bold display-5  ">
+                Administra tus espacios con nosotros
               </div>
               
               <div className="card-text text-center fw-light display-5 ">
@@ -355,7 +351,7 @@ export const LandingPage = () => {
                     Accede y administra tu data
                     </h5>
                     <p className="card-text text-center fw-semibold ">
-                      Las mejores graficas y sistema administrativo para ti.
+                      Las mejores graficas y sistemas administrativo para ti.
                     </p>
                   </div>
                 </div>
@@ -364,7 +360,6 @@ export const LandingPage = () => {
           </div>
             </div>
           </div>
-        </div>
       </div>
 
       <Footer />
