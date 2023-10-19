@@ -68,7 +68,7 @@ export const RegisterImage = () => {
                         store.imagesList.map((image, index) => {
                             return (
                                 <div key={index} className="card col-sm-9 col-md-7 col-lg-5 mx-auto mt-5 img mb-5">
-                                    <img src={image.img_url} className="card-img-top img mt-2 rounded mx-auto d-block" alt="..." />
+                                    <img src={image.img_url} className="card-img-top img mt-2 rounded mx-auto d-block" alt={id_place} />
                                     <button href="#" className="btn btn-danger" onClick={() => deleteImage(image.id)}>Eliminar</button>
                                 </div>
 
