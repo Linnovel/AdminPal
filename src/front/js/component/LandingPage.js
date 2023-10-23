@@ -196,7 +196,7 @@ export const LandingPage = () => {
                       </p>
                         <p className="lead fs-4 fw-bolder text-secondary mb-3 text-white  text-center">
                           Pero quisimos más, no solo dar un servicio de
-                          reservación sino, ofrecer a las personas poder mostrar
+                          reservación sinó, ofrecer a las personas poder mostrar
                           y administrar sus espacios deportivos al publico, todo
                           en una sola pagina.
                         </p>
@@ -208,8 +208,8 @@ export const LandingPage = () => {
           </section>
         </div>
 
-        <p className="text-center fw-bold fs-2 text-white display-4">
-          Testimonios que inspiran
+        <p className="text-center fw-bold  text-white display-5">
+          Testimonios que nos inspiran.
         </p>
         <div className="container p-2 ">
           <div className="row">
