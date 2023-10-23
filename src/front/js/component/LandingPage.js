@@ -3,10 +3,10 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Link, useNavigate } from "react-router-dom";
 import { PlaceReserv } from "../component/cardPlaceReserv";
-import mobiledesign from "../../img/mobiledesign.png";
+import mobiledesign2 from "../../img/mobiledesign2.png";
+import mobile from "../../img/mobile.png";
 import Footer from "./Footer";
 import logopadel from "../../img/logopadel.png";
-import google from "../../img/google.png";
 
 const initialValue = {
   ciudad: "",
@@ -48,7 +48,7 @@ export const LandingPage = () => {
             La forma más rapida para hacer tus reservaciones
           </h1>
           <h2 className=" fw-semibold text-white">
-            Busca en tu ciudad para encontrar los mejores lugares
+            Busca en tu ciudad los mejores lugares y haz tu reservación
           </h2>
           <div className="row">
             <div className="">
@@ -77,7 +77,7 @@ export const LandingPage = () => {
             <h3 className="display-4 text-white fw-bold">
               Las instalaciones más buscadas del país
             </h3>
-            <h4 className=" fw-bolder text-white fs-3">Reserva ya!</h4>
+            <h4 className=" fw-bolder text-white fs-3">Reserva ya los espacios más populares de tu zona</h4>
 
             <div className="d-flex overflow-x-scroll  ">
               {
@@ -101,7 +101,7 @@ export const LandingPage = () => {
 
           <div className="container p-2 my-2">
             <div className="row">
-              <div className="col">
+              <div className="col-lg-4 my-2">
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder">
@@ -114,7 +114,7 @@ export const LandingPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-lg-4 my-2">
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder ">
@@ -127,7 +127,7 @@ export const LandingPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-lg-4 my-2">
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder">
@@ -184,22 +184,22 @@ export const LandingPage = () => {
                 <div className="col-12 col-lg-6 col-xl-7">
                   <div className="row justify-content-xl-center">
                     <div className="col-12 col-xl-11">
-                      <h2 className="h1 mb-3  fw-bold text-white ">
+                      <h2 className="h1 mb-3  fw-bold text-white  text-center">
                       ¿Qué es AdminPal?
                       </h2>
-                      <p className="lead fs-4 fw-bolder text-secondary mb-3 text-white ">
+                      <p className="lead fs-4 fw-bolder text-secondary mb-3 text-white  text-center">
                         AdminPal nació no solo de la necesidad de las personas
                         en buscar un lugar seguro donde jugar sinó, de ofrecer
                         un servicio rapido y confiable donde hacer reservaciones
                         rapidas y personalizadas de los mejores lugares del
                         país.
-                        <p className="my-2">
+                      </p>
+                        <p className="lead fs-4 fw-bolder text-secondary mb-3 text-white  text-center">
                           Pero quisimos más, no solo dar un servicio de
                           reservación sino, ofrecer a las personas poder mostrar
                           y administrar sus espacios deportivos al publico, todo
                           en una sola pagina.
                         </p>
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -213,13 +213,13 @@ export const LandingPage = () => {
         </p>
         <div className="container p-2 ">
           <div className="row">
-            <div className="col">
-              <div className="card h-100 shadow-sm">
+            <div className="col-lg-4 my-2">
+              <div className="card h-100 shadow">
                 <img
                   src="https://i.insider.com/6114f9063dd01000199d47ef?width=1000&format=jpeg&auto=webp"
                   className="card-img-top"
                 />
-                <div className="card-body">
+                <div className="card-body shadow">
                   <h5 className="card-title text-center">Pedro Ruiz</h5>
                   <div className="d-flex justify-content-center align-items-center">
                     <i className="fa-solid fa-star "></i>
@@ -234,13 +234,13 @@ export const LandingPage = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="card h-100 shadow-sm">
+            <div className="col-lg-4 my-2 ">
+              <div className="card h-100 shadow">
                 <img
                   src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2023/8/10/wayekhjulogbkd3ctt3p/alejandro-galan-padel-spain"
                   className="card-img-top"
                 />
-                <div className="card-body ">
+                <div className="card-body shadow">
                   <h5 className="card-title text-center ">Aldo Saez </h5>
                   <div className="d-flex justify-content-center align-items-center">
                     <i className="fa-solid fa-star "></i>
@@ -250,18 +250,18 @@ export const LandingPage = () => {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="card-text text-center">
-                    Me da los mejores y espacios seguros {""}
+                    Me da los mejores espacios cerca de mi zona {""}
                   </p>
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="card h-100 shadow-sm">
+            <div className="col-lg-4 my-2">
+              <div className="card h-100 shadow">
                 <img
                   src="https://www.eatthis.com/wp-content/uploads/sites/4/2023/06/woman-holding-padel-racket.jpg?quality=82&strip=1"
                   className="card-img-top"
                 />
-                <div className="card-body">
+                <div className="card-body shadow">
                   <h5 className="card-title text-center">Luz Veronica</h5>
                   <div className="d-flex justify-content-center align-items-center">
                     <i className="fa-solid fa-star "></i>
@@ -281,32 +281,20 @@ export const LandingPage = () => {
         <div className="container">
           <div className="row">
             <div className="card-text text-center fw-bold display-5 my-4 text-white mb-4">
-              Descarga nuestra app!
+              Descarga nuestra App y haz tus reservaciones en cualquier momento del día.
             </div>
-            <div className="col-sm-8 mx-auto d-flex justify-content-center">
-              <img src={mobiledesign} />
-              
-                <ul className="my-2 fs-4 text-white">
-                  <li className="p-2">
-                    Busca tu cancha favorita
-                  </li>
-                  <li className="p-2">
-                    Reserva el horario que desees
-                  </li>
-                  <li className="p-2">
-                    A cualquier hora y en cualquier lugar
-                  </li>
-                  <li className="p-2">
-                    Tus datos estan protedigas todo el tiempo
-                  </li>
-                  <img src={google} className="col-6"/>
-                </ul>
+            <div className="col-sm-4  mx-auto d-flex justify-content-center p-2">
+              <img src={mobile} className="img-fluid "/>
             </div>
+            <div className="col-sm-4  mx-auto d-flex justify-content-center p-2">
+            <img src={mobiledesign2} className="img-fluid"/>
+            </div>
+            
           </div>
         </div>
       </div>
         <div className="col-12 mx-auto">
-          <div className="card p-5   shadow  my-5  ">
+          <div className="card p-5   shadow  my-5 ">
             <div className="card-body">
               <div className="card-text text-center fw-bold display-5  ">
                 Administra tus espacios con nosotros
@@ -320,7 +308,7 @@ export const LandingPage = () => {
               </div>
               <div className="container p-2 my-2">
             <div className="row">
-              <div className="col">
+              <div className="col-lg-4 my-2">
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder">
@@ -332,7 +320,7 @@ export const LandingPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-lg-4 my-2">
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder ">
@@ -344,7 +332,7 @@ export const LandingPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="col">
+              <div className="col-lg-4 my-2">
                 <div className="card h-100 shadow">
                   <div className="card-body">
                     <h5 className="card-title text-center fw-bolder">

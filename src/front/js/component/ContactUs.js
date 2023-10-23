@@ -13,7 +13,7 @@ const ContactUs = () => {
   <div className="container">
     <div className="row justify-content-md-center">
       <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
-        <h2 className="mb-4 display-5 text-center fw-bolder text-white">Contactanos</h2>
+        <h2 className="mb-4 display-5 text-center fw-bolder text-white ">Contactanos</h2>
         <p className=" mb-5 text-center fw-semibold fs-2 text-white">Llena el formulario debajo y nos pondremos en contacto contigo</p>
       </div>
     </div>

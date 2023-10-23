@@ -20,7 +20,7 @@ const Entrenadores = () => {
         </h4>
         <div className="container">
           <div className="row">
-            <div className="col">
+            <div className="col-lg-4 my-2 ">
               <div className="card h-100 shadow ">
                 <img
                   src="https://i.insider.com/6114f9063dd01000199d47ef?width=1000&format=jpeg&auto=webp"
@@ -34,7 +34,7 @@ const Entrenadores = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
+            <div className="col-lg-4 my-2 ">
               <div className="card h-100 shadow">
                 <img
                   src="https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2023/8/10/wayekhjulogbkd3ctt3p/alejandro-galan-padel-spain"
@@ -46,7 +46,7 @@ const Entrenadores = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
+            <div className="col-lg-4 my-2 ">
               <div className="card h-100 shadow">
                 <img
                   src="https://www.eatthis.com/wp-content/uploads/sites/4/2023/06/woman-holding-padel-racket.jpg?quality=82&strip=1"

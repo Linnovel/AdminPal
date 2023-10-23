@@ -8,6 +8,8 @@ import { Reserva } from "../component/reserva";
 export const ReservClient = () => {
     const { store, actions } = useContext(Context);
     const navigate = useNavigate();
+    
+    
 
 
 
@@ -31,7 +33,7 @@ export const ReservClient = () => {
 
                     <div className="card col-sm-12 col-md-7 col-lg-5 mx-auto form">
                         <div className="card-body">
-                            <h5 className="card-title fw-bold text-center text-white"> Reservas Realizadas</h5>
+                            <h5 className="card-title fw-bold text-center"> Reservas Realizadas</h5>
                             <ul className="list-group list-group-flush ">
                                 <li className="list-group-item  form fw-semibold">
                                     {store.listReserv.length} reservas
@@ -50,7 +52,7 @@ export const ReservClient = () => {
                     </div>
                 </div>
             </div>
-
+            
            
         </>
     );

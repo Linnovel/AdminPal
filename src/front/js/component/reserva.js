@@ -50,7 +50,7 @@ export const Reserva = ({ fecha, time, id }) => {
       {fechaFormateada}
       {"----"}
       {time}{" "}
-      <button class="btn btn-danger" onClick={() => deleteReserv(id)}>
+      <button className="btn btn-danger" onClick={() => deleteReserv(id)}>
         cancelar
       </button>
     </li>

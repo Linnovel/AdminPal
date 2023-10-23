@@ -32,7 +32,7 @@ export const ReservClub = () => {
         <>
             <div >
                 <div className=" container ">
-                    <h2 className="text-center  text-white p-2 fw-bold"> Reservas {store.placeData.name}</h2>
+                    <h2 className="text-center   p-2 fw-bold"> Reservas {store.placeData.name}</h2>
 
                     <div className="card col-sm-12 col-md-7 col-lg-5 mx-auto form">
                         <div className="card-body">
@@ -55,6 +55,7 @@ export const ReservClub = () => {
                         </div>
                     </div>
                 </div>
+                
             </div>
 
            
