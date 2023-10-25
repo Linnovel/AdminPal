@@ -10,14 +10,14 @@ const NavbarRegistros = () => {
 
   return (
     <>
-    <nav className="navbar-registros navbar shadow   p-3  " data-bs-theme="dark">
+    <nav className="navbar-registros navbar shadow " data-bs-theme="dark">
       <div className="container">
-        <span className="navbar-brand mb-0">
+        <span className="navbar-brand ">
           <Link to="/">
           <img
             src={logopadel}
             className="img-fluid"
-            width="125"
+            width="125px"
             height="125px"
             />
             </Link>
@@ -30,16 +30,12 @@ const NavbarRegistros = () => {
                 </button>
               </Link>
             <Link to="/ContactUs" >
-            <button  className="btn offcanvas-title text-info fw-bold  fs-5">Contactanos</button>
-          
+            <button  className="btn offcanvas-title text-info fw-bold p-3 fs-5">Contactanos</button>
         </Link>
-            
-
           </div>
         </div>
       </div>
     </nav>
-      
     </>
   );
 };

@@ -36,17 +36,17 @@ export const Panel = () => {
 
     return (
         <nav className="navbar-registros navbar navbar-expand-lg  shadow  p-3 border-body " data-bs-theme="dark">
-            <span className="navbar-brand mb-0">
+            <div className="container-fluid">
+            <span className="navbar-brand mb-1 p-1">
                 <Link to="/">
                     <img
                         src={logopadel}
                         className="img-fluid"
-                        width="125"
+                        width="125p"
                         height="125px"
                     />
                 </Link>
             </span>
-            <div className="container-fluid">
                 <p className=" fw-light mb-0 fs-1 text-white">Bienvenido {store.userData.name}</p>
                 <button
                     className="navbar-toggler"
@@ -63,7 +63,7 @@ export const Panel = () => {
                     tabIndex="-1"
                 >
                     <div className="offcanvas-header" data-bs-theme="dark">
-                        <h5 className="offcanvas-title text-info">CLUBS</h5>
+                        <h5 className="offcanvas-title text-info">AdminPal</h5>
                         <button
                             className="btn-close "
                             type="button"

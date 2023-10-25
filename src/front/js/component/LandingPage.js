@@ -52,7 +52,7 @@ export const LandingPage = () => {
           </h2>
           <div className="row">
             <div className="">
-              <div className="card p-5 border-0 col-12 rounded-3 my-5 d-flex flex-row justify-content-center align-items-center gap-4 bg-glass1">
+              <div className="card p-5 border-0  rounded-3 my-5 flex-row justify-content-center align-items-center gap-4 bg-glass1">
                 <div className=" mb-3 col-md-12 col-lg-4">
                   <input
                     type="text"
@@ -209,7 +209,7 @@ export const LandingPage = () => {
         </div>
 
         <p className="text-center fw-bold  text-white display-5">
-          Testimonios que nos inspiran.
+          Testimonios que nos inspiran
         </p>
         <div className="container p-2 ">
           <div className="row">
@@ -293,10 +293,12 @@ export const LandingPage = () => {
           </div>
         </div>
       </div>
-        <div className="col-12 mx-auto">
-          <div className="card p-5   shadow  my-5 ">
+      <div className="container">
+      <div className="row">
+        <div className="col-lg-12 col-sm-12 col-sm-4">
+          <div className="card p-5 shadow  my-5  bg-glass1 shadow">
             <div className="card-body">
-              <div className="card-text text-center fw-bold display-5  ">
+              <div className="card-text text-center fw-bold display-5  text-white">
                 Administra tus espacios con nosotros
               </div>
               
@@ -348,6 +350,8 @@ export const LandingPage = () => {
           </div>
             </div>
           </div>
+      </div>
+              </div>
       </div>
 
       <Footer />

@@ -10,32 +10,33 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className="navbar shadow shadow p-3  "
+        className="navbar shadow"
         data-bs-theme="dark"
       >
         <div className="container">
-          <span className="navbar-brand mb-0">
+          <span className="navbar-brand  ">
             <img
               src={logopadel}
               className="img-fluid"
-              width="125"
+              width="125px"
               height="125px"
             />
           </span>
+          
           <div className="ml-auto ">
-            <div className="d-flex align-items-center gap-2 ">
+            <div className="d-flex  gap-1 ">
               <Link to="/entrenadores">
-                <button className="btn offcanvas-title text-info fw-bold  fs-5">
+                <button className="btn offcanvas-title text-info fw-bold  fs-5 gap-2">
                 ¿Necesitas un entrenador?
                 </button>
               </Link>
               <Link to="/register">
-                <button className="btn offcanvas-title text-info fw-bold  fs-5">
+                <button className="btn offcanvas-title text-info fw-bold  fs-5 gap-2">
                   Inicia Sesion / Registrate
                 </button>
               </Link>
               <Link to="/ContactUs">
-                <button className="btn offcanvas-title text-info fw-bold  fs-5">
+                <button className="btn offcanvas-title text-info fw-bold  fs-5 gap-2">
                 ¿Eres un club?
                 </button>
               </Link>
